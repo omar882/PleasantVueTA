@@ -56,6 +56,8 @@
 		await load()
 		spinning = false
 	}
+
+	console.log(data, $session);
 </script>
 
 <svelte:head>

@@ -10,7 +10,16 @@ const config = {
 				additionalData: '@use "src/variables.scss" as *;'
 			}
 		}
-	}
+	},
+	// for linked package in dev
+	build: {
+		commonjsOptions: {
+			include: [/studentvue\.js/g, /node_modules/g]
+		}
+	},
+	optimizeDeps: {
+		include: ['studentvue.js'],
+	  },
 }
 
 export default config

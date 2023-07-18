@@ -9,3 +9,4 @@ node_modules
 .vercel
 .output
 /responses
+!node_modules/studentvue.js

@@ -14,7 +14,7 @@
 	</div>
 	<div class="content">
 		<table>
-			{#each $session.selected.Courses.Course as course, index}
+			{#each $session.selected.Courses[0].Course as course, index}
 				<a class="row-link" href={'/course/' + index}>
 					<td class="course-name"> {course.Title}</td>
 					<td class="course-staff">{course.Staff} </td>

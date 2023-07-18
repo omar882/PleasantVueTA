@@ -1,21 +1,35 @@
 import { login } from 'studentvue.js'
 import cookie from 'cookie'
+import { parseStringPromise } from "xml2js"
 
 export async function POST({ request }) {
 	console.log('post login')
 
-	const body = await request.json()
+	const body = await request.json();
 	let result
+	console.log(body);
 
 	try {
-		let client = await login(body.districtUrl, body.username, body.password)
+		let client = await login(body.districtUrl, body.username, body.password, {}, parseStringPromise);
 		result = await Promise.all([
-			client.getStudentInfo().then((value) => JSON.parse(value).StudentInfo),
-			client.getGradebook(0).then((value) => JSON.parse(value).Gradebook),
-			client.getGradebook(1).then((value) => JSON.parse(value).Gradebook),
-			client.getGradebook(2).then((value) => JSON.parse(value).Gradebook),
-			client.getGradebook(3).then((value) => JSON.parse(value).Gradebook)
-		])
+			
+			client.getStudentInfo().then(async (value) =>
+				{
+					console.log(value);
+					return value.StudentInfo;
+				}
+			),
+			client.getGradebook(0).then(async (value) =>
+				{
+					return value.Gradebook;
+				}
+			)
+			// client.getGradebook(0).then((value) => JSON.parse(value).Gradebook),
+			// client.getGradebook(1).then((value) => JSON.parse(value).Gradebook),
+			// client.getGradebook(2).then((value) => JSON.parse(value).Gradebook),
+			// client.getGradebook(3).then((value) => JSON.parse(value).Gradebook)
+		]);
+		console.log(result);
 
 		if (!result[0]) {
 			throw new Error('No data returned')
@@ -26,15 +40,16 @@ export async function POST({ request }) {
 			status: 401
 		})
 	}
+	console.dir(result[1].ReportingPeriods[0].ReportPeriod)
 
-	const currentPeriod =
-		result[1].ReportingPeriods.ReportPeriod.length -
-		1 -
-		result[1].ReportingPeriods.ReportPeriod.slice()
-			.reverse()
-			.findIndex((period) => {
-				return new Date() > new Date(period.StartDate)
-			})
+	const currentPeriod = 0;
+	// result[1].ReportingPeriods[0].ReportPeriod -
+	// 	1 -
+	// 	result[1].ReportingPeriods[0].ReportPeriod.slice()
+	// 		.reverse()
+	// 		.findIndex((period) => {
+	// 			return new Date() > new Date(period.StartDate)
+	// 		})
 
 	return new Response(
 		JSON.stringify({

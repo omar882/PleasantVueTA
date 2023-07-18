@@ -1,5 +1,6 @@
 import { login } from 'studentvue.js'
 import * as cookie from 'cookie'
+import { parseStringPromise } from "xml2js"
 
 export async function GET({ locals }) {
 	console.log('get data')
@@ -10,16 +11,22 @@ export async function GET({ locals }) {
 		let client = await login(
 			Buffer.from(locals.user.districtUrl, 'base64').toString('ascii'),
 			Buffer.from(locals.user.username, 'base64').toString('ascii'),
-			Buffer.from(locals.user.password, 'base64').toString('ascii')
+			Buffer.from(locals.user.password, 'base64').toString('ascii'),
+			parseStringPromise,
 		)
 		// let student = JSON.parse(await client.getStudentInfo()).StudentInfo
 		// let gradebook = JSON.parse(await client.getGradebook()).Gradebook
 		result = await Promise.all([
-			client.getStudentInfo().then((value) => JSON.parse(value).StudentInfo),
-			client.getGradebook(0).then((value) => JSON.parse(value).Gradebook),
-			client.getGradebook(1).then((value) => JSON.parse(value).Gradebook),
-			client.getGradebook(2).then((value) => JSON.parse(value).Gradebook),
-			client.getGradebook(3).then((value) => JSON.parse(value).Gradebook)
+			client.getStudentInfo().then(async (value) =>
+				{
+					return (await parseStringPromise(value)).StudentInfo;
+				}
+			),
+			client.getGradebook(0).then(async (value) =>
+				{
+					return (await parseStringPromise(value)).Gradebook;
+				}
+			)
 		])
 
 		if (!result[0]) {
@@ -42,14 +49,17 @@ export async function GET({ locals }) {
 
 	console.log('logged in')
 
-	const currentPeriod =
-		result[1].ReportingPeriods.ReportPeriod.length -
-		1 -
-		result[1].ReportingPeriods.ReportPeriod.slice()
-			.reverse()
-			.findIndex((period) => {
-				return new Date() > new Date(period.StartDate)
-			})
+	
+	const currentPeriod = 0;
+	// result[1].ReportingPeriods[0].ReportPeriod -
+	// 	1 -
+	// 	result[1].ReportingPeriods[0].ReportPeriod.slice()
+	// 		.reverse()
+	// 		.findIndex((period) => {
+	// 			return new Date() > new Date(period.$.StartDate)
+	// 		});
+
+	
 
 	return new Response(
 		JSON.stringify({

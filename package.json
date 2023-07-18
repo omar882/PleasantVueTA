@@ -28,10 +28,13 @@
 	"dependencies": {
 		"chart.js": "^3.7.0",
 		"cookie": "^0.4.1",
-		"studentvue.js": "^0.1.1"
+		"xml2js": "^0.6.0"
 	},
 	"engines": {
 		"node": ">=16.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"studentvue.js": {
+		"injected": true
+	  }
 }

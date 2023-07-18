@@ -10,10 +10,10 @@
 </svelte:head>
 
 <div class="layout" data-sveltekit-prefetch>
-	<h1>Good {greeting}, {$session.student.FormattedName.split(' ')[0]}!</h1>
+	<h1>Good {greeting}, {$session.student.FormattedName[0].split(' ')[0]}!</h1>
 	<div class="grid-heading-container">
 		<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo} />
-		<h1>{$session.student.FormattedName.split(' ')[0]}</h1>
+		<h1>{$session.student.FormattedName[0].split(' ')[0]}</h1>
 	</div>
 	<div class="average value">
 		<h1 style={$session.gradebook.averageStyle}>
@@ -46,7 +46,7 @@
 	<div class="grades">
 		<a class="link" href="/grades"><h2>Grades</h2></a>
 		<table class="grades-table">
-			{#each $session.gradebook.Courses.Course as course, index}
+			{#each $session.gradebook.Courses[0].Course as course, index}
 				<a class="row-link" href={'/course/' + index}>
 					<td class="course-name">{course.Title}</td>
 					<td class="course-grade" style={course.style}>{course.scoreString}</td>
