@@ -5,7 +5,7 @@ import { parseStringPromise } from "xml2js"
 export async function GET({ locals }) {
 	console.log('get data')
 
-	let result
+	let result;
 
 	try {
 		let client = await login(
@@ -23,11 +23,6 @@ export async function GET({ locals }) {
 					return (await parseStringPromise(value)).StudentInfo;
 				}
 			),
-			client.getGradebook(0).then(async (value) =>
-				{
-					return (await parseStringPromise(value)).Gradebook;
-				}
-			)
 		])
 
 		if (!result[0]) {
@@ -48,20 +43,10 @@ export async function GET({ locals }) {
 		})
 	}
 
-	console.log('logged in')
+	console.log('logged in');
 
 	
-	const currentPeriod = 0;
-	// result[1].ReportingPeriods[0].ReportPeriod -
-	// 	1 -
-	// 	result[1].ReportingPeriods[0].ReportPeriod.slice()
-	// 		.reverse()
-	// 		.findIndex((period) => {
-	// 			return new Date() > new Date(period.$.StartDate)
-	// 		});
 
-	
-	console.log(result[0]);
 	return new Response(
 		JSON.stringify({
 			student: result.shift(),

@@ -28,6 +28,7 @@
 	"dependencies": {
 		"chart.js": "^3.7.0",
 		"cookie": "^0.4.1",
+		"mongodb": "^5.7.0",
 		"xml2js": "^0.6.0"
 	},
 	"engines": {
@@ -36,5 +37,5 @@
 	"type": "module",
 	"studentvue.js": {
 		"injected": true
-	  }
+	}
 }
