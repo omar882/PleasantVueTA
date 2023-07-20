@@ -12,68 +12,31 @@
 <div class="layout" data-sveltekit-prefetch>
 	<h1>Good {greeting}, {$session.student.FormattedName[0].split(' ')[0]}!</h1>
 	<div class="grid-heading-container">
-		<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo} />
+		<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
 		<h1>{$session.student.FormattedName[0].split(' ')[0]}</h1>
 	</div>
-	<div class="average value">
-		<h1 style={$session.gradebook.averageStyle}>
-			{$session.gradebook.average}
-		</h1>
-		<div class="value-label">Average grade<br />&nbsp;</div>
-	</div>
-	<div class="improvement value">
-		<h1 style={$session.gradebook.week.averageStyle}>
-			{$session.gradebook.week.average}
-		</h1>
-		<div class="value-label">Average grade<br />this week</div>
-	</div>
-	<div class="week-assignments value">
-		<h1>{$session.gradebook.week.length}</h1>
-		<div class="value-label">
-			{$session.gradebook.week.length === 1 ? 'Assignment' : 'Assignments'}
-			<br />this week
-		</div>
-	</div>
-	<div class="days value">
-		<h1>
-			{$session.gradebook.days}
-		</h1>
-		<div class="value-label">
-			{$session.days === 1 ? 'Day' : 'Days'} left in
-			<br />{$session.gradebook.ReportingPeriod.GradePeriod}
-		</div>
+	<div class="school value">
+		<h2>School</h2>
+		<div class="value-label">{$session.student.CurrentSchool}</div>
 	</div>
 	<div class="grades">
-		<a class="link" href="/grades"><h2>Grades</h2></a>
+		<h2>Schedule</h2>
 		<table class="grades-table">
 			{#each $session.gradebook.Courses[0].Course as course, index}
-				<a class="row-link" href={'/course/' + index}>
-					<td class="course-name">{course.Title}</td>
-					<td class="course-grade" style={course.style}>{course.scoreString}</td>
-					<td class="course-score" style={course.style}>{course.score}</td>
-				</a>
+				<div class="row-link">
+					<td class="course-name">{course.$.	Title}</td>
+					<td class="course-teacher">{course.$.Staff}</td>
+					<td class="course-room">{course.$.Room}</td>
+					<td class="course-period">{course.$.Period}</td>
+				</div>
 			{/each}
 		</table>
 	</div>
 	<div class="assignments">
 		<div class="assignments-scroll">
-			<a class="link" href="/assignments"><h2>Assignments</h2></a>
+			<h2>News</h2>
 			<table class="assignments-table">
-				{#each $session.gradebook.assignments as assignment}
-					{#if assignment.scorePercent >= 0}
-						<tr class={assignment.fake || assignment.edited ? 'fake' : ''}>
-							<td
-								class="assignment-name"
-								style={assignment.new ? 'font-weight: bold;' : ''}
-							>
-								{assignment.Measure}
-							</td>
-							<td class="assignment-score" style={assignment.style}>
-								{assignment.score}
-							</td>
-						</tr>
-					{/if}
-				{/each}
+				Nothing Here For Now....
 			</table>
 		</div>
 	</div>
@@ -85,7 +48,7 @@
 		height: 100%;
 		width: 100%;
 		gap: $spacing;
-		grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+		grid-template-columns: repeat(1fr, 4) 2fr;
 		grid-template-rows: auto auto 1fr;
 	}
 
@@ -101,8 +64,8 @@
 
 	.value {
 		@include box;
-		aspect-ratio: 1;
 		text-align: center;
+		aspect-ratio: 1;
 		display: flex;
 		flex-direction: column;
 		min-width: 0;
@@ -110,7 +73,7 @@
 		overflow: hidden;
 		font-size: 0.9em;
 		padding: 0;
-		h1 {
+		h1, h2 {
 			margin-top: auto;
 			margin-bottom: $spacing-small;
 		}
@@ -166,7 +129,7 @@
 		vertical-align: middle;
 	}
 
-	.course-score {
+	.course-period {
 		text-align: right;
 	}
 
@@ -187,11 +150,10 @@
 	.assignment-score {
 		width: 80px;
 		text-align: right;
-		white-space: nowrap;
 		padding-left: 0;
 	}
 
-	.course-grade {
+	.course-teacher {
 		padding: 0;
 		font-weight: bold;
 	}
@@ -280,10 +242,10 @@
 			td {
 				@include nowrap;
 			}
-			.course-grade {
+			.course-teacher {
 				width: min-content;
 			}
-			.course-score {
+			.course-period {
 				width: 75px;
 			}
 		}

@@ -19,6 +19,7 @@ export async function GET({ locals }) {
 		result = await Promise.all([
 			client.getStudentInfo().then(async (value) =>
 				{
+					console.log(value);
 					return (await parseStringPromise(value)).StudentInfo;
 				}
 			),
@@ -60,7 +61,7 @@ export async function GET({ locals }) {
 	// 		});
 
 	
-
+	console.log(result[0]);
 	return new Response(
 		JSON.stringify({
 			student: result.shift(),

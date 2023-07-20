@@ -72,15 +72,9 @@
 			out:fade={{ duration: 200 }}
 			data-sveltekit-prefetch
 		>
-			<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo} />
+			<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
 			<a class:active={$page.url.pathname === '/'} href="/">
 				<i class="bi bi-house" />
-			</a>
-			<a class:active={$page.url.pathname === '/grades'} href="/grades">
-				<i class="bi bi-list-ol" />
-			</a>
-			<a class:active={$page.url.pathname === '/assignments'} href="/assignments">
-				<i class="bi bi-pen" />
 			</a>
 			<button class={'refresh' + (spinning ? ' spinning' : '')} on:click={refresh}>
 				<i class="bi bi-arrow-repeat" />
