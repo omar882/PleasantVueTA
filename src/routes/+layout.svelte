@@ -39,8 +39,8 @@
 			periods,
 			currentPeriod,
 			selectedPeriod: currentPeriod,
-			selected: periods[currentPeriod],
-			gradebook: periods[currentPeriod]
+			selected: periods,
+			gradebook: periods
 		}
 		parseData($session, $oldAssignments)
 		console.log($session)

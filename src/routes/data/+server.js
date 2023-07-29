@@ -19,12 +19,17 @@ export async function GET({ locals }) {
 		result = await Promise.all([
 			client.getStudentInfo().then(async (value) =>
 				{
-					console.log(value);
 					return (await parseStringPromise(value)).StudentInfo;
 				}
 			),
+			client.getGradebook(0).then(async (value) =>
+				{
+					return (await parseStringPromise(value)).Gradebook;
+				}
+			)
 		])
-
+		console.log(result);
+		
 		if (!result[0]) {
 			throw new Error('No data returned')
 		}
@@ -49,9 +54,9 @@ export async function GET({ locals }) {
 
 	return new Response(
 		JSON.stringify({
-			student: result.shift(),
-			periods: result,
-			currentPeriod
+			student: result[0],
+			periods: result[1],
+			currentPeriod: 0,
 		}),
 		{
 			headers: {

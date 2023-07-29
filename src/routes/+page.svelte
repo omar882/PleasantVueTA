@@ -3,6 +3,36 @@
 
 	let date = new Date()
 	let greeting = date.getHours() < 12 ? 'morning' : date.getHours() < 18 ? 'afternoon' : 'evening'
+	let copiedOk = "";
+	let shareLink = undefined;
+	async function shareSched() {
+		const resp = await fetch("/sharesched");
+		const body = await resp.json();
+		if (resp.status === 201) {
+			let success = false;
+			if (navigator.canShare && navigator.canShare()) {
+				try {
+					await navigator.share({
+						title: "Schedule",
+						text: "Here's my schedule!",
+						url: `http://127.0.0.1:5173/sched/${body.id}`
+					});
+					success = true;
+				} catch (ignored) {}
+			}
+			if (!success) {
+				try {
+					await navigator.clipboard.writeText(`http://127.0.0.1:5173/sched/${body.id}`)
+					copiedOk = "Copied to clipboard!";
+					success = true;
+				} catch (ignored) {
+					copiedOk = false;
+					shareLink = `http://127.0.0.1:5173/sched/${body.id}`;
+				}
+			}
+			
+		}
+	}
 </script>
 
 <svelte:head>
@@ -21,10 +51,14 @@
 	</div>
 	<div class="grades">
 		<h2>Schedule</h2>
+		<div>
+			<button on:click={shareSched}>Share My Schedule</button>
+			<div>{ copiedOk }</div>
+		</div>
 		<table class="grades-table">
 			{#each $session.gradebook.Courses[0].Course as course, index}
 				<div class="row-link">
-					<td class="course-name">{course.$.	Title}</td>
+					<td class="course-name">{course.$.Title}</td>
 					<td class="course-teacher">{course.$.Staff}</td>
 					<td class="course-room">{course.$.Room}</td>
 					<td class="course-period">{course.$.Period}</td>
