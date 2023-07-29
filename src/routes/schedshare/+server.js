@@ -2,43 +2,134 @@ import { login } from 'studentvue.js'
 import * as cookie from 'cookie'
 import { parseStringPromise } from "xml2js"
 import { env } from '$env/dynamic/private'
-import crypto from "crypto";
-import { MongoClient, ServerApiVersion } from "mongodb";
+import { createHash, randomBytes } from "node:crypto";
+import { promisify } from 'node:util';
+import clientPromise from '$lib/db.js';
+
+const createHashAsync = promisify(createHash);
+const randomBytesAsync = promisify(randomBytes)
+
+
+const hashMany = (many) => {
+    const hash = createHash("sha256");
+    for (const one of many) {
+        hash.update(one);
+    }
+    return hash.digest();
+};
+
+const hashOne = (one) => hashMany([one]);
+
 
 export async function GET({ locals }) {
 	console.log('get schedshare')
 
-	let result;
+	
+	const ctx = {
 
-    const client = new MongoClient(env.MONGO_DB_URL, {
-        serverApi: {
-          version: ServerApiVersion.v1,
-          strict: true,
-          deprecationErrors: true,
-        }
-    });
+	};
 
+    const dbCon = await clientPromise;
+	const db = dbCon.db();
+	const collection = await db.collection("schedules");
+
+	if (!("username" in locals.user) || !("password" in locals.user)) {
+		return new Response({
+            "error": "username and password fields required",
+        }, {
+			status: 400,
+		});
+    }
+	ctx.username = Buffer.from(locals.user.username, 'base64').toString('ascii');
+	ctx.password = Buffer.from(locals.user.password, 'base64').toString('ascii');
+
+	const svue = await login("https://vue-dev.avhs.app", ctx.username, ctx.password, parseStringPromise); // cache this for perf?
+    ctx.svue = svue;
+    try {
+        const sched = await svue.getSchedule(); // can we cache this?
+        const parsedSched = await parseStringPromise(sched)
+        ctx.sched = parsedSched;
+    } catch (e) {
+        console.log(e);
+		return new Response({
+			"error": "username or password fields are invalid",
+            "note": "if this is wrong, please contact"
+		}, {
+			status: 403,
+		});
+    }
+
+	try {
+        const sched = ctx.sched["StudentClassSchedule"];
+        const termName = sched?.$?.TermIndexName;
+        const classListing = sched?.ClassLists[0]?.ClassListing;
+        
+        const classes = classListing.map(clazz => {
+            const period = clazz?.$?.Period;
+            const name = clazz?.$?.CourseTitle;
+            const room = clazz?.$?.RoomName;
+            const teacherName = clazz?.$?.Teacher;
+            const teacherEmail = clazz?.$?.TeacherEmail;
+            const teacherId = hashOne(clazz?.$?.TeacherStaffGU.toLowerCase()).toString("hex"); // for consistency in DB?
+            const sectionId = hashOne(clazz?.$?.SectionGU.toLowerCase()).toString("hex");
+            
+            return {
+                period, name, room, id: sectionId, teacher: {
+                    name: teacherName,
+                    email: teacherEmail,
+                    id: teacherId,
+                },
+            };
+        })
+        ctx.classes = classes;
+        ctx.termName = termName;
+    
+
+    } catch (e) {
+        console.log(e);
+		return new Response({
+            "error": "could not parse schedule",
+            "note": "if this continues, please contact",
+        }, {
+			status: 503,
+		});
+    }
+
+    const salt = await randomBytesAsync(32);
+    const pepper = Buffer.from(env.PRIVATE_PEPPER)
+    const username = ctx.username;
+    const digest = hashMany([salt, pepper, username]).toString("hex");
+    const saltHex = salt.toString("hex");
+    
+
+    await collection.insertOne({
+        _id: saltHex,
+        digest: digest,
+        classes: ctx.classes,
+        termName: ctx.termName,
+
+    })
+	return new Response(JSON.stringify({
+        id: saltHex,
+        sched: ctx.classes,
+    }), {
+		status: 201,
+		headers: {
+			"Content-Type": "application/json",
+		},
+	});
+	/**
 	try {
 		let client = await login(
 			Buffer.from(locals.user.districtUrl, 'base64').toString('ascii'),
 			Buffer.from(locals.user.username, 'base64').toString('ascii'),
 			Buffer.from(locals.user.password, 'base64').toString('ascii'),
 			parseStringPromise,
-		)
-		// let student = JSON.parse(await client.getStudentInfo()).StudentInfo
-		// let gradebook = JSON.parse(await client.getGradebook()).Gradebook
-		result = await Promise.all([
-			client.getStudentInfo().then(async (value) =>
-				{
-					console.log(value);
-					return (await parseStringPromise(value)).StudentInfo;
-				}
-			),
-		])
+		);
 
-		if (!result[0]) {
-			throw new Error('No data returned')
-		}
+		const sched = await client.getSchedule();
+
+
 	} catch (error) {
 		console.log(error)
 		return new Response(null, {
@@ -57,11 +148,7 @@ export async function GET({ locals }) {
 	console.log('logged in')
 
 	
-    // const sha512_384 = CryptoJS.algo.sha512_384.create();
-	// const pepper = 
-	// sha512_384.update(locals.user.username);
-	// sha512_384.update()
-	const hashAlgo = crypto.createHash("sha3-512");
+	const hashAlgo = crypto.createHash("sha256");
 	hashAlgo.update(locals.user.username);
 	hashAlgo.update(env.PRIVATE_PEPPER);
 	const hash = hashAlgo.digest("hex");
@@ -109,4 +196,5 @@ export async function GET({ locals }) {
     finally {
         await client.close();
     }
+	*/
 }
