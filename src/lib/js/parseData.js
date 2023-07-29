@@ -3,7 +3,12 @@ import { getColor, fourToPercent, percentToLetter } from './utils.js'
 export function parseData(session, oldAssignments) {
 	console.log(session);
 	// for (let period of session.periods) {
-		const period = session.periods;
+		let period;
+		try {
+			period = session.periods[0];
+		} catch {
+			period = session.periods;
+		}
 		let grades = []
 		let assignments = []
 		console.log(period);

@@ -12,19 +12,19 @@ export async function GET({ locals }) {
 			Buffer.from(locals.user.districtUrl, 'base64').toString('ascii'),
 			Buffer.from(locals.user.username, 'base64').toString('ascii'),
 			Buffer.from(locals.user.password, 'base64').toString('ascii'),
-			parseStringPromise,
+			{}, parseStringPromise,
 		)
 		// let student = JSON.parse(await client.getStudentInfo()).StudentInfo
 		// let gradebook = JSON.parse(await client.getGradebook()).Gradebook
 		result = await Promise.all([
 			client.getStudentInfo().then(async (value) =>
 				{
-					return (await parseStringPromise(value)).StudentInfo;
+					return value.StudentInfo;
 				}
 			),
 			client.getGradebook(0).then(async (value) =>
 				{
-					return (await parseStringPromise(value)).Gradebook;
+					return value.Gradebook;
 				}
 			)
 		])
