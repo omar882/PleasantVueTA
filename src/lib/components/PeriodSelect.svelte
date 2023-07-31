@@ -4,8 +4,8 @@
 </script>
 
 <select bind:value={period}>
-	{#each $session.gradebook.ReportingPeriods.ReportPeriod as period, index}
-		<option value={index}>{period.GradePeriod}</option>
+	{#each $session.gradebook.ReportingPeriods[0].ReportPeriod as period, index}
+		<option value={index}>{period.$.GradePeriod}</option>
 	{/each}
 </select>
 

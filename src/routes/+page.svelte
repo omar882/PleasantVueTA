@@ -50,21 +50,21 @@
 		<div class="value-label">{$session.student.CurrentSchool}</div>
 	</div>
 	<div class="average value">
-		<h1 style={$session.gradebook[0].averageStyle}>
-			{$session.gradebook[0].average}
+		<h1 style={$session.gradebook.averageStyle}>
+			{$session.gradebook.average}
 		</h1>
 		<div class="value-label">Average grade<br />&nbsp;</div>
 	</div>
 	<div class="improvement value">
-		<h1 style={$session.gradebook[0].week.averageStyle}>
-			{$session.gradebook[0].week.average}
+		<h1 style={$session.gradebook.week.averageStyle}>
+			{$session.gradebook.week.average}
 		</h1>
 		<div class="value-label">Average grade<br />this week</div>
 	</div>
 	<div class="week-assignments value">
-		<h1>{$session.gradebook[0].week.length}</h1>
+		<h1>{$session.gradebook.week.length}</h1>
 		<div class="value-label">
-			{$session.gradebook[0].week.length === 1 ? 'Assignment' : 'Assignments'}
+			{$session.gradebook.week.length === 1 ? 'Assignment' : 'Assignments'}
 			<br />this week
 		</div>
 	</div>
@@ -75,7 +75,7 @@
 			<div>{ copiedOk }</div>
 		</div>
 		<table class="grades-table">
-			{#each $session.gradebook[0].Courses[0].Course as course, index}
+			{#each $session.gradebook.Courses[0].Course as course, index}
 				<div class="row-link">
 					<td class="course-name">{course.$.Title}</td>
 					<td class="course-teacher">{course.$.Staff}</td>
@@ -88,7 +88,7 @@
 	<div class="grades">
 		<a class="link" href="/grades"><h2>Grades</h2></a>
 		<table class="grades-table">
-			{#each $session.gradebook[0].Courses[0].Course as course, index}
+			{#each $session.gradebook.Courses[0].Course as course, index}
 				<a class="row-link" href={'/course/' + index}>
 					<td class="course-name">{course.$.Title}</td>
 					<td class="course-grade" style={course.style}>{course.scoreString}</td>
@@ -101,7 +101,7 @@
 		<div class="assignments-scroll">
 			<a class="link" href="/assignments"><h2>Assignments</h2></a>
 			<table class="assignments-table">
-				{#each $session.gradebook[0].assignments as assignment}
+				{#each $session.gradebook.assignments as assignment}
 					{#if assignment.scorePercent >= 0}
 						<tr class={assignment.fake || assignment.edited ? 'fake' : ''}>
 							<td

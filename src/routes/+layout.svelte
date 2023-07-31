@@ -39,8 +39,8 @@
 			periods,
 			currentPeriod,
 			selectedPeriod: currentPeriod,
-			selected: periods,
-			gradebook: periods
+			selected: periods[currentPeriod],
+			gradebook: periods[currentPeriod]
 		}
 		parseData($session, $oldAssignments)
 		$oldAssignments = $oldAssignments
