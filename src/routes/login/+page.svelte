@@ -5,17 +5,12 @@
 	import { oldAssignments } from '$lib/stores/oldAssignments.js'
 	import Spinner from '$lib/components/Spinner.svelte'
 
-	let districtUrl = 'https://vue-dev.avhs.app/'
 	let username
 	let password
 	let error
 	let loading = false
 
 	async function login() {
-		if (!districtUrl) {
-			error = 'Please enter a district URL.'
-			return
-		}
 		if (!username) {
 			error = 'Please enter a username.'
 			return
@@ -30,8 +25,7 @@
 			body: JSON.stringify({
 				username,
 				password,
-				districtUrl
-			})
+			}),
 		})
 		if (res.ok) {
 			const json = await res.json()
@@ -40,7 +34,6 @@
 				user: {
 					username,
 					password,
-					districtUrl
 				},
 				student,
 				periods,
@@ -65,7 +58,6 @@
 <div class="content">
 	<form on:submit|preventDefault={login}>
 		<h2>Login</h2>
-		<input type="text" placeholder="District URL" bind:value={districtUrl} />
 		<input type="text" placeholder="Username" bind:value={username} />
 		<input type="password" placeholder="Password" bind:value={password} />
 		<div class="error">
@@ -74,7 +66,7 @@
 			{:else}
 				Your login info will not be saved anywhere except your browser.<br />
 				You can see all the code on the
-				<a rel="external" href="https://github.com/refact0r/studentvue">github</a>.
+				<a rel="external" href="https://github.com/amadorapps/studentvue">github</a>.
 			{/if}
 		</div>
 		<button type="submit">

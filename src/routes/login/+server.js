@@ -61,9 +61,7 @@ export async function POST({ request }) {
 					'auth',
 					Buffer.from(body.username).toString('base64') +
 						':' +
-						Buffer.from(body.password).toString('base64') +
-						':' +
-						Buffer.from(body.districtUrl).toString('base64'),
+						Buffer.from(body.password).toString('base64'),
 					{
 						httpOnly: true,
 						maxAge: 60 * 60 * 24 * 30,
