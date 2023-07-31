@@ -45,19 +45,21 @@
 		shown = false
 		name ??= 'Fake Assignment'
 		let assignment = {
-			GradebookID: '-',
-			Measure: name,
-			Type: type,
-			Date: today,
-			DueDate: today,
-			ScoreType: course.fourPoint ? 'Rubric 0-4' : 'Raw Score',
-			Points: points + ' / ' + total,
-			Notes: '',
+			$: {
+				GradebookID: '-',
+				Date: today,
+				DueDate: today,
+				Measure: name,
+				Type: type,
+				ScoreType: course.fourPoint ? 'Rubric 0-4' : 'Raw Score',
+				Points: points + ' / ' + total,
+				Notes: '',
+			},
 			fake: true
 		}
-		$session.periods[$session.selectedPeriod].Courses.Course[
+		$session.periods[$session.selectedPeriod].Courses[0].Course[
 			course.index
-		].Marks.Mark.Assignments.Assignment.unshift(assignment)
+		].Marks[0].Mark[0].Assignments[0].Assignment.unshift(assignment)
 		// sort assignments
 		parseData($session, null)
 		$session = $session

@@ -7,7 +7,7 @@
 	import EditAssignment from '$lib/components/EditAssignment.svelte'
 
 	export let data
-	$: course = $session.selected.Courses.Course[data.courseIndex]
+	$: course = $session.selected.Courses[0].Course[data.courseIndex]
 
 	let fakeAssignment
 	let editAssignment
@@ -134,7 +134,7 @@
 
 <div class="layout">
 	<div class="grid-heading-container">
-		<h1 class="title">{course.Title}</h1>
+		<h1 class="title">{course.$.Title}</h1>
 		<PeriodSelect bind:period={$session.selectedPeriod} />
 	</div>
 	<div class="grade">
@@ -182,8 +182,8 @@
 				</button>
 			</div>
 			<table>
-				{#if course.Marks.Mark.Assignments.Assignment}
-					{#each course.Marks.Mark.Assignments.Assignment as assignment, index}
+				{#if course.Marks[0].Mark[0].Assignments[0].Assignment}
+					{#each course.Marks[0].Mark[0].Assignments[0].Assignment as assignment, index}
 						<tr
 							class={'assignment' +
 								(assignment.fake || assignment.edited ? ' fake' : '')}
@@ -193,10 +193,10 @@
 								class="assignment-name"
 								style={assignment.new ? 'font-weight: bold;' : ''}
 							>
-								{assignment.Measure}
+								{assignment.$.Measure}
 							</td>
-							<td class="assignment-course">{assignment.Type}</td>
-							<td class="assignment-date">{assignment.DueDate}</td>
+							<td class="assignment-course">{assignment.$.Type}</td>
+							<td class="assignment-date">{assignment.$.DueDate}</td>
 							<td class="assignment-points" style={assignment.style}>
 								{assignment.score}
 							</td>

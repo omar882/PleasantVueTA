@@ -1,6 +1,7 @@
 import { getColor, fourToPercent, percentToLetter } from './utils.js'
 
 export function parseData(session, oldAssignments) {
+	window.session = session;
 	for (let period of session.periods) {	
 		let grades = []
 		let assignments = []
@@ -57,7 +58,7 @@ export function parseData(session, oldAssignments) {
 					assignment.courseIndex = idx
 					assignment.style = null
 					assignment.scorePercent = -1
-					if (assignment.$.Points.includes('Points Possible')) {
+					if (assignment.$.Points?.includes?.('Points Possible')) {
 						assignment.percent = '?'
 						assignment.score = 'Not Graded'
 					} else {
@@ -71,8 +72,8 @@ export function parseData(session, oldAssignments) {
 						oldAssignments.add(assignment.$.GradebookID)
 					}
 
-					if (assignment.$.Points.includes(' / ') || assignment.edited) {
-						if (assignment.$.Points.includes(' / ')) {
+					if (assignment.$.Points?.includes?.(' / ') || assignment.edited) {
+						if (assignment.$.Points?.includes?.(' / ')) {
 							let split = assignment.$.Points.split(' / ')
 							assignment.$.PointsOriginal = parseFloat(split[0])
 							assignment.totalOriginal = parseFloat(split[1])
@@ -145,7 +146,7 @@ export function parseData(session, oldAssignments) {
 				// 	assignment.courseIndex = index
 				// 	assignment.style = null
 				// 	assignment.scorePercent = -1
-				// 	if (assignment.$.Points.includes('Points Possible')) {
+				// 	if (assignment.$.Points?.includes?.('Points Possible')) {
 				// 		assignment.percent = '?'
 				// 		assignment.score = 'Not Graded'
 				// 	} else {
@@ -159,8 +160,8 @@ export function parseData(session, oldAssignments) {
 				// 		oldAssignments.add(assignment.GradebookID)
 				// 	}
 
-				// 	if (assignment.$.Points.includes(' / ') || assignment.edited) {
-				// 		if (assignment.$.Points.includes(' / ')) {
+				// 	if (assignment.$.Points?.includes?.(' / ') || assignment.edited) {
+				// 		if (assignment.$.Points?.includes?.(' / ')) {
 				// 			let split = assignment.$.Points.split(' / ')
 				// 			assignment.$.PointsOriginal = parseFloat(split[0])
 				// 			assignment.totalOriginal = parseFloat(split[1])
@@ -271,8 +272,6 @@ export function parseData(session, oldAssignments) {
 		period.assignments = assignments
 		period.week = getWeek(period.assignments)
 	}
-
-	window.session = session;
 }
 
 function getWeek(assignments) {
