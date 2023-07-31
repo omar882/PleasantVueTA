@@ -1,6 +1,7 @@
-import { login } from 'studentvue.js'
-import * as cookie from 'cookie'
-import { parseStringPromise } from "xml2js"
+import { login } from 'studentvue.js';
+import * as cookie from 'cookie';
+import { parseStringPromise } from "xml2js";
+import { env } from "$env/dynamic/private";
 
 export async function GET({ locals }) {
 	console.log('get data')
@@ -9,7 +10,7 @@ export async function GET({ locals }) {
 
 	try {
 		let client = await login(
-			Buffer.from(locals.user.districtUrl, 'base64').toString('ascii'),
+			env.PRIVATE_SYNERGY_BACKEND,
 			Buffer.from(locals.user.username, 'base64').toString('ascii'),
 			Buffer.from(locals.user.password, 'base64').toString('ascii'),
 			{}, parseStringPromise,
@@ -54,8 +55,8 @@ export async function GET({ locals }) {
 
 	return new Response(
 		JSON.stringify({
-			student: result[0],
-			periods: result[1],
+			student: result.shift(),
+			periods: result,
 			currentPeriod: 0,
 		}),
 		{

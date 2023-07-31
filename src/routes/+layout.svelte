@@ -43,7 +43,6 @@
 			gradebook: periods
 		}
 		parseData($session, $oldAssignments)
-		console.log($session)
 		$oldAssignments = $oldAssignments
 	}
 
@@ -56,8 +55,6 @@
 		await load()
 		spinning = false
 	}
-
-	console.log(data, $session);
 </script>
 
 <svelte:head>

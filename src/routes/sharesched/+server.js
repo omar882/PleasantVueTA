@@ -43,7 +43,7 @@ export async function GET({ locals }) {
 	ctx.username = Buffer.from(locals.user.username, 'base64').toString('ascii');
 	ctx.password = Buffer.from(locals.user.password, 'base64').toString('ascii');
 
-	const svue = await login("https://vue-dev.avhs.app", ctx.username, ctx.password, parseStringPromise); // cache this for perf?
+	const svue = await login(env.PRIVATE_SYNERGY_BACKEND, ctx.username, ctx.password, parseStringPromise); // cache this for perf?
     ctx.svue = svue;
     try {
         const sched = await svue.getSchedule(); // can we cache this?

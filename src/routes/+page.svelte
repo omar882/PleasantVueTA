@@ -49,14 +49,33 @@
 		<h2>School</h2>
 		<div class="value-label">{$session.student.CurrentSchool}</div>
 	</div>
-	<div class="grades">
+	<div class="average value">
+		<h1 style={$session.gradebook[0].averageStyle}>
+			{$session.gradebook[0].average}
+		</h1>
+		<div class="value-label">Average grade<br />&nbsp;</div>
+	</div>
+	<div class="improvement value">
+		<h1 style={$session.gradebook[0].week.averageStyle}>
+			{$session.gradebook[0].week.average}
+		</h1>
+		<div class="value-label">Average grade<br />this week</div>
+	</div>
+	<div class="week-assignments value">
+		<h1>{$session.gradebook[0].week.length}</h1>
+		<div class="value-label">
+			{$session.gradebook[0].week.length === 1 ? 'Assignment' : 'Assignments'}
+			<br />this week
+		</div>
+	</div>
+	<!-- <div class="grades">
 		<h2>Schedule</h2>
 		<div>
 			<button on:click={shareSched}>Share My Schedule</button>
 			<div>{ copiedOk }</div>
 		</div>
 		<table class="grades-table">
-			{#each $session.gradebook.Courses[0].Course as course, index}
+			{#each $session.gradebook[0].Courses[0].Course as course, index}
 				<div class="row-link">
 					<td class="course-name">{course.$.Title}</td>
 					<td class="course-teacher">{course.$.Staff}</td>
@@ -65,12 +84,38 @@
 				</div>
 			{/each}
 		</table>
+	</div> -->
+	<div class="grades">
+		<a class="link" href="/grades"><h2>Grades</h2></a>
+		<table class="grades-table">
+			{#each $session.gradebook[0].Courses[0].Course as course, index}
+				<a class="row-link" href={'/course/' + index}>
+					<td class="course-name">{course.$.Title}</td>
+					<td class="course-grade" style={course.style}>{course.scoreString}</td>
+					<td class="course-score" style={course.style}>{course.score}</td>
+				</a>
+			{/each}
+		</table>
 	</div>
 	<div class="assignments">
 		<div class="assignments-scroll">
-			<h2>News</h2>
+			<a class="link" href="/assignments"><h2>Assignments</h2></a>
 			<table class="assignments-table">
-				Nothing Here For Now....
+				{#each $session.gradebook[0].assignments as assignment}
+					{#if assignment.scorePercent >= 0}
+						<tr class={assignment.fake || assignment.edited ? 'fake' : ''}>
+							<td
+								class="assignment-name"
+								style={assignment.new ? 'font-weight: bold;' : ''}
+							>
+								{assignment.$.Measure}
+							</td>
+							<td class="assignment-score" style={assignment.style}>
+								{assignment.score}
+							</td>
+						</tr>
+					{/if}
+				{/each}
 			</table>
 		</div>
 	</div>
@@ -82,7 +127,7 @@
 		height: 100%;
 		width: 100%;
 		gap: $spacing;
-		grid-template-columns: repeat(1fr, 4) 2fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
 		grid-template-rows: auto auto 1fr;
 	}
 

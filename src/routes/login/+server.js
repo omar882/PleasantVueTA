@@ -1,6 +1,7 @@
 import { login } from 'studentvue.js'
 import cookie from 'cookie'
 import { parseStringPromise } from "xml2js"
+import { env } from '$env/dynamic/private'
 
 export async function POST({ request }) {
 	console.log('post login')
@@ -10,7 +11,7 @@ export async function POST({ request }) {
 	console.log(body);
 
 	try {
-		let client = await login(body.districtUrl, body.username, body.password, {}, parseStringPromise);
+		let client = await login(env.PRIVATE_SYNERGY_BACKEND, body.username, body.password, {}, parseStringPromise);
 		result = await Promise.all([
 			
 			client.getStudentInfo().then(async (value) =>
@@ -39,8 +40,6 @@ export async function POST({ request }) {
 			status: 401
 		})
 	}
-	console.dir(result[1].ReportingPeriods[0].ReportPeriod)
-
 	const currentPeriod = 0;
 	// result[1].ReportingPeriods[0].ReportPeriod -
 	// 	1 -

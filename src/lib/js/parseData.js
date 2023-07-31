@@ -1,14 +1,7 @@
 import { getColor, fourToPercent, percentToLetter } from './utils.js'
 
 export function parseData(session, oldAssignments) {
-	console.log(session);
-	// for (let period of session.periods) {
-		let period;
-		try {
-			period = session.periods[0];
-		} catch {
-			period = session.periods;
-		}
+	for (let period of session.periods) {	
 		let grades = []
 		let assignments = []
 		console.log(period);
@@ -36,17 +29,17 @@ export function parseData(session, oldAssignments) {
 				// 	course.Marks[0].Mark[0].Assignments.Assignment = [
 				// 		course.Marks[0].Mark[0].Assignments.Assignment[0]
 				// 	]
-				// }
+				// } // new xml2js = always array
 
 				course.scoreTypes = {}
-				if (course.Marks[0].Mark[0].GradeCalculationSummary.AssignmentGradeCalc) {
-					for (let type of course.Marks[0].Mark[0].GradeCalculationSummary
+				if (course.Marks[0].Mark[0].GradeCalculationSummary[0].AssignmentGradeCalc) {
+					for (let type of course.Marks[0].Mark[0].GradeCalculationSummary[0]
 						.AssignmentGradeCalc) {
-						if (parseInt(type.Weight) !== 100.0) {
-							course.scoreTypes[type.Type] = {
+						if (parseInt(type.$.Weight) !== 100.0) {
+							course.scoreTypes[type.$.Type] = {
 								score: 0,
 								total: 0,
-								weight: parseInt(type.Weight)
+								weight: parseInt(type.$.Weight)
 							}
 						}
 					}
@@ -102,7 +95,7 @@ export function parseData(session, oldAssignments) {
 								? assignment.scorePercent.toFixed(1) + '%'
 								: '0.0%'
 
-							if (course.Marks[0].Mark[0].GradeCalculationSummary.AssignmentGradeCalc) {
+							if (course.Marks[0].Mark[0].GradeCalculationSummary[0].AssignmentGradeCalc) {
 								if (course.scoreTypes[assignment.Type]) {
 									course.scoreTypes[assignment.Type].score += assignment.$.Points
 									course.scoreTypes[assignment.Type].total += assignment.total
@@ -112,7 +105,7 @@ export function parseData(session, oldAssignments) {
 								course.scoreTypes.All.total += assignment.total
 							}
 
-							let date = new Date(assignment.DueDate)
+							let date = new Date(assignment.$.DueDate)
 							let scoreSum = 0
 							let totalSum = 0
 
@@ -277,7 +270,9 @@ export function parseData(session, oldAssignments) {
 		assignments.sort((a, b) => new Date(b.DueDate) - new Date(a.DueDate))
 		period.assignments = assignments
 		period.week = getWeek(period.assignments)
-	// }
+	}
+
+	window.session = session;
 }
 
 function getWeek(assignments) {
