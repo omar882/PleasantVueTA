@@ -15,7 +15,7 @@
 
 	export function show(index) {
 		index = index
-		assignment = course.Marks.Mark.Assignments.Assignment[index]
+		assignment = course.Marks[0].Mark[0].Assignments[0].Assignment[index]
 		clear()
 		shown = true
 	}
@@ -34,7 +34,7 @@
 
 	function del() {
 		shown = false
-		course.Marks.Mark.Assignments.Assignment.splice(assignment.index, 1)
+		course.Marks[0].Mark[0].Assignments[0].Assignment.splice(assignment.index, 1)
 		parseData($session, null)
 		$session = $session
 	}
@@ -86,14 +86,14 @@
 			in:fly={{ y: -5, duration: 200 }}
 			out:fly|local={{ y: 5, duration: 200 }}
 		>
-			<h3>{assignment.Measure}</h3>
+			<h3>{assignment.$.Measure}</h3>
 			<div class="row info">
-				<p class="name">{assignment.Type}</p>
-				<p class="date">{assignment.DueDate}</p>
+				<p class="name">{assignment.$.Type}</p>
+				<p class="date">{assignment.$.DueDate}</p>
 			</div>
 			<div class="row info">
 				{#if assignment.Notes}
-					<p class="name">{assignment.Notes}</p>
+					<p class="name">{assignment.$.Notes}</p>
 				{/if}
 			</div>
 			<form on:submit={save}>

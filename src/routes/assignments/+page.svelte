@@ -18,14 +18,14 @@
 				{#each $session.selected.assignments as assignment}
 					<tr class={assignment.fake || assignment.edited ? 'fake' : ''}>
 						<td class="name" style={assignment.new ? 'font-weight: bold;' : ''}>
-							{assignment.Measure}
+							{assignment.$.Measure}
 						</td>
 						<td class="course">
 							<a class="link" href={'/course/' + assignment.courseIndex}>
 								{assignment.course}
 							</a>
 						</td>
-						<td class="date">{assignment.DueDate}</td>
+						<td class="date">{assignment.$.DueDate}</td>
 						<td class="points" style={assignment.style}>
 							{assignment.score}
 						</td>
