@@ -1,8 +1,9 @@
 <script>
-	import { session } from '$lib/stores/session.js'
 	import { fly } from 'svelte/transition'
 	import { fade } from 'svelte/transition'
-	import { parseData } from '$lib/js/parseData.js'
+    import { env  } from '$env/dynamic/public'
+
+    
 
 	let shown = false;
 
@@ -20,34 +21,6 @@
     let showLink;
     let copiedOk;
 
-    async function shareSched() {
-		
-		if (resp.status === 201) {
-			let success = false;
-			if (navigator.canShare && navigator.canShare()) {
-				try {
-					await navigator.share({
-						title: "Schedule",
-						text: "Here's my schedule!",
-						url: `http://127.0.0.1:5173/sched/${body.id}`
-					});
-					success = true;
-				} catch (ignored) {}
-			}
-			if (!success) {
-				try {
-					await navigator.clipboard.writeText(`http://127.0.0.1:5173/sched/${body.id}`)
-					copiedOk = "Copied to clipboard!";
-					success = true;
-				} catch (ignored) {
-					copiedOk = false;
-					shareLink = `http://127.0.0.1:5173/sched/${body.id}`;
-				}
-			}
-			
-        }
-	}
-
     async function getNewLink() {
             const resp = await fetch("/sharesched");
 		    const body = await resp.json();
@@ -61,12 +34,15 @@
         }
 
     async function copyImage() {
+        copiedOk = false;
         try {
             if (!imageId) {
                 imageId = await getNewLink();
             }
-            const link = `http://127.0.0.1:5173/sched/${imageId}`
+            const link = `${env.PUBLIC_URL}sched/${imageId}`
+            error = "Loading...";
             const resp = await fetch(link);
+            error = false;
             const blob = await resp.blob();
             const file = new File([blob], 'schedule.png', {
                 type: blob.type,
@@ -110,14 +86,13 @@
     }
 
     async function shareLink() {
-        debugger;
         copiedOk = false;
         showLink = false;
         try {
             if (!imageId) {
                 imageId = await getNewLink();
             }
-            const link = `http://127.0.0.1:5173/sched/${imageId}`
+            const link = `${env.PUBLIC_URL}sched/${imageId}`
             const shareData = {
                 title: "Schedule",
                 text: "Here's my schedule!",

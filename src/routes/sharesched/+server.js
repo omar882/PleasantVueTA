@@ -1,4 +1,4 @@
-import { login } from 'studentvue.js'
+import { login } from '$lib/studentvue.js'
 import * as cookie from 'cookie'
 import { parseStringPromise } from "xml2js"
 import { env } from '$env/dynamic/private'

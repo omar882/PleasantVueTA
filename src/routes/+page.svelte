@@ -1,6 +1,6 @@
 <script>
 	import ShareSchedule from '$lib/components/ShareSchedule.svelte'
-import { session } from '$lib/stores/session.js'
+	import { session } from '$lib/stores/session.js'
 
 	let date = new Date()
 	let greeting = date.getHours() < 12 ? 'morning' : date.getHours() < 18 ? 'afternoon' : 'evening'
