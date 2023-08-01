@@ -86,7 +86,7 @@
 		</table>
 	</div> -->
 	<div class="grades">
-		<a class="link" href="/grades"><h2>Grades</h2></a>
+		<a class="link" href="/grades"><h2>Courses</h2></a>
 		<table class="grades-table">
 			{#each $session.gradebook.Courses[0].Course as course, index}
 				<a class="row-link" href={'/course/' + index}>

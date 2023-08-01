@@ -9,7 +9,7 @@
 
 <div class="layout" data-sveltekit-prefetch>
 	<div class="grid-heading-container">
-		<h1>Grades</h1>
+		<h1>Courses</h1>
 		<PeriodSelect bind:period={$session.selectedPeriod} />
 	</div>
 	<div class="content">

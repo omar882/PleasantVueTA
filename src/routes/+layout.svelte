@@ -73,7 +73,7 @@
 			<a class:active={$page.url.pathname === '/'} href="/">
 				<i class="bi bi-house" />
 			</a>
-			<a class:active={$page.url.pathname === '/grades'} href="/grades">
+			<a class:active={$page.url.pathname === '/courses'} href="/courses">
 				<i class="bi bi-list-ol" />
 			</a>
 			<a class:active={$page.url.pathname === '/assignments'} href="/assignments">
