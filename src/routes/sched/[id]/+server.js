@@ -1,13 +1,10 @@
 import clientPromise from '$lib/db.js';
-import { compile } from "handlebars"
-import path from 'node:path';
-import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import handlebars from "handlebars";
 import { env } from '$env/dynamic/private';
-const __filename = fileURLToPath(import.meta.url);
+import templateFile from "$lib/template.js";
+const { compile } = handlebars;
 
-const CWD = path.join(path.dirname(__filename));
-const template = compile(readFileSync(path.join(CWD, "template.html"), "utf-8"));
+const template = compile(templateFile);
 
 const renderImage = async (html) => {
     const resp = await fetch(`${env.SECRET_SCREENSHOT_SERVER}`, {
