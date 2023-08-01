@@ -1,38 +1,10 @@
 <script>
-	import { session } from '$lib/stores/session.js'
+	import ShareSchedule from '$lib/components/ShareSchedule.svelte'
+import { session } from '$lib/stores/session.js'
 
 	let date = new Date()
 	let greeting = date.getHours() < 12 ? 'morning' : date.getHours() < 18 ? 'afternoon' : 'evening'
-	let copiedOk = "";
-	let shareLink = undefined;
-	async function shareSched() {
-		const resp = await fetch("/sharesched");
-		const body = await resp.json();
-		if (resp.status === 201) {
-			let success = false;
-			if (navigator.canShare && navigator.canShare()) {
-				try {
-					await navigator.share({
-						title: "Schedule",
-						text: "Here's my schedule!",
-						url: `http://127.0.0.1:5173/sched/${body.id}`
-					});
-					success = true;
-				} catch (ignored) {}
-			}
-			if (!success) {
-				try {
-					await navigator.clipboard.writeText(`http://127.0.0.1:5173/sched/${body.id}`)
-					copiedOk = "Copied to clipboard!";
-					success = true;
-				} catch (ignored) {
-					copiedOk = false;
-					shareLink = `http://127.0.0.1:5173/sched/${body.id}`;
-				}
-			}
-			
-		}
-	}
+	let shareSchedule;
 </script>
 
 <svelte:head>
@@ -86,7 +58,10 @@
 		</table>
 	</div> -->
 	<div class="grades">
-		<a class="link" href="/grades"><h2>Courses</h2></a>
+		<div class="grades-header">
+			<a class="link" href="/grades"><h2>Courses</h2></a>
+			<button on:click={shareSchedule.show}>Share Schedule</button>
+		</div>
 		<table class="grades-table">
 			{#each $session.gradebook.Courses[0].Course as course, index}
 				<a class="row-link" href={'/course/' + index}>
@@ -120,6 +95,7 @@
 		</div>
 	</div>
 </div>
+<ShareSchedule bind:this={shareSchedule} />
 
 <style lang="scss">
 	.layout {
@@ -181,9 +157,16 @@
 		padding: $spacing;
 	}
 
+	.grades-header {
+		display: flex;
+		justify-content: space-between;	
+	}
+
 	.grades-table {
 		height: calc(100% - 2 * $spacing);
 	}
+
+	
 
 	.row-link {
 		display: table-row;
