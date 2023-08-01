@@ -1,7 +1,7 @@
-import clientPromise from '$lib/db.js';
+import clientPromise from '$lib/server/db.js';
 import handlebars from "handlebars";
 import { env } from '$env/dynamic/private';
-import templateFile from "$lib/template.js";
+import templateFile from "$lib/server/template.js";
 const { compile } = handlebars;
 
 const template = compile(templateFile);

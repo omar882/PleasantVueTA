@@ -1,10 +1,9 @@
-import { login } from '$lib/studentvue.js'
-import * as cookie from 'cookie'
+import { login } from '$lib/server/studentvue.js';
 import { parseStringPromise } from "xml2js"
 import { env } from '$env/dynamic/private'
 import { createHash, randomBytes } from "node:crypto";
 import { promisify } from 'node:util';
-import clientPromise from '$lib/db.js';
+import clientPromise from '$lib/server/db.js';
 
 const createHashAsync = promisify(createHash);
 const randomBytesAsync = promisify(randomBytes)
