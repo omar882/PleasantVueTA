@@ -3,11 +3,27 @@ import { compile } from "handlebars"
 import path from 'node:path';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import nodeImageToHtml from "node-html-to-image";
+import { env } from '$env/dynamic/private';
 const __filename = fileURLToPath(import.meta.url);
 
 const CWD = path.join(path.dirname(__filename));
 const template = compile(readFileSync(path.join(CWD, "template.html"), "utf-8"));
+
+const renderImage = async (html) => {
+    const resp = await fetch(`${env.SECRET_SCREENSHOT_SERVER}`, {
+        method: "POST",
+        body: JSON.stringify({
+            html: Buffer.from(html, "utf-8").toString("base64"),
+        }),
+        headers: {
+            "Content-Type": "application/json",
+            "X-Authorization": `Bearer ${env.SECRET_SCREENSHOT_SERVER_TOKEN}`
+        }
+    });
+
+    const image = await resp.blob();
+    return image;
+}
 
 export async function GET({ locals, params }) {
 	console.log('get schedshare')
@@ -62,10 +78,7 @@ export async function GET({ locals, params }) {
 
     });
 
-    const image = await nodeImageToHtml({
-        html: html,
-    });
-    
+    const image = await renderImage(html);
 
 	return new Response(image, {
 		status: 200,
