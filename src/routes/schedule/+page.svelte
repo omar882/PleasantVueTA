@@ -1,7 +1,7 @@
 <script>
 	import calendar from "$lib/data/calendar.json";
 
-    import {nextSaturday, format, isSaturday, previousSunday, isSunday, nextMonday, previousFriday, startOfDay, eachDayOfInterval, isWeekend, isToday, isTomorrow, isYesterday } from "date-fns";
+    import {nextSaturday, format, isSaturday, previousSunday, isSunday, nextMonday, previousFriday, startOfDay, eachDayOfInterval, isWeekend, isToday, isTomorrow, isYesterday, nextDay, previousDay, isSameDay, addMinutes } from "date-fns";
 	import { onMount } from "svelte"
 
     let selectedDate = startOfDay(new Date());
@@ -21,7 +21,7 @@
         if (isYesterday(date)) {
             return "Yesterday";
         }
-        return formatDate(date);
+        return format(date, "MMM d");
     }
 
     $: selectedDateFormatted = prettyDate(selectedDate);
@@ -29,13 +29,14 @@
     $: weekEnd = isSaturday(selectedDate) ? selectedDate : nextSaturday(selectedDate);
 
     $: if (dateInput) {
-        dateInput.value = selectedDate;
+        dateInput.valueAsDate = selectedDate;
+        // console.log(dateInput.value);
     }
 
     function makeWeek(selDate) {
         const interval = {
-            start: weekStart,
-            end: weekEnd
+            start: nextMonday(weekStart),
+            end: previousFriday(weekEnd),
         };
         return eachDayOfInterval(interval).map((day) => {
             const info = calendar[formatDate(day)];
@@ -56,7 +57,9 @@
     }
 
     function onDateChange(event) {
-        selectedDate = startOfDay(new Date(event.target.value));
+        const user_date = new Date(event.target.value) 
+        console.log(new Date(event.target.value), event.target.value)
+        selectedDate = startOfDay(addMinutes(new Date(event.target.value), user_date.getTimezoneOffset()));
     }
 
     $: week = makeWeek(selectedDate);
@@ -73,12 +76,12 @@
 </script>
 
 <svelte:head>
-	<title>Calendar</title>
+	<title>Schedule</title>
 </svelte:head>
 
 <div class="layout" data-sveltekit-prefetch>
 	<div class="grid-heading-container">
-		<h1>Calendar</h1>
+		<h1>Schedule</h1>
 	</div>
 	<div class="content">
 		<div class="date-selection">
@@ -91,8 +94,10 @@
         </div>
         <div class="week">
             {#each week as day}
-                <div class="day">
-                    {format(day.date, "EEEE")}
+                <div class="day" class:today={isSameDay(selectedDate, day.date)}>
+                    <div class="day-heading">
+                        {prettyDate(day.date, "EEEE")}
+                    </div>
                     {#if !(day.info) && !isWeekend(day.date)}
                         <span class="no-data">No Data!</span>                        
                     {/if}
@@ -112,7 +117,7 @@
 
 <style lang="scss">
     .date-input {
-        padding: $spacing;
+        padding: 0px;
         background-color: transparent;
         visibility: hidden;
     }
@@ -122,6 +127,7 @@
     }
 
     .date-button {
+        background-color: var(--bg-color-3);
         padding: 10px;
         display: grid;
         grid-template-columns: 1fr;
@@ -158,29 +164,59 @@
         grid-template-rows: max-content 1fr;
         grid-template-columns: 1fr;
         align-items: center;
+        row-gap: 0.5em;
         justify-content: center;
+        background-color: transparent;
 
 	}
 
     .date-selection {
-        // padding-block: 0.3em;
+        @include box;
+        margin-top: 0.4em;
         grid-row: 1/2;
 
         align-items: center;
         justify-content: center;
         column-gap: 0.4em;
+        padding: 0.5em;
+        width: fit-content;
+        margin-inline: auto;
 
         display: flex;
     }
 
     .week {
-        --cols: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        --cols: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-row: 2/3;
+        margin-inline: 0.2em;
         
         display: grid;
+        column-gap: 0.2em;
         grid-template-columns: var(--cols);
-        align-items: center;
+        // align-items: center;
         justify-content: center;
+        height: 100%;
+    }
+
+    .week .day {
+        @include box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .week .day.today {
+        grid-column: span 2;
+    }
+
+    .day-scroll {
+        overflow-y: scroll;
+        display: grid;
+        grid-auto-columns: 1fr;
+    }
+
+    .day-heading {
+        font-size: 1.4em;
+        font-weight: 500;
     }
 
 
