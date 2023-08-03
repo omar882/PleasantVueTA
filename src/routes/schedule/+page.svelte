@@ -3,6 +3,8 @@
 
     import {nextSaturday, format, isSaturday, previousSunday, isSunday, nextMonday, previousFriday, startOfDay, eachDayOfInterval, isWeekend, isToday, isTomorrow, isYesterday, nextDay, previousDay, isSameDay, addMinutes, isWithinInterval, add, parse } from "date-fns";
 	import { onMount } from "svelte"
+    import { session } from '$lib/stores/session.js'
+
 
     let selectedDate = startOfDay(new Date());
     let dateInput;
@@ -22,6 +24,18 @@
             return "Yesterday";
         }
         return format(date, "MMM d");
+    }
+
+    function getPeriodName(periodName, idx) {
+        if (!(session && Object.keys(session)?.length > 0)) {
+            return periodName; 
+        }
+        for (const course of $session.gradebook.Courses[0].Course) {
+            if (course.index == (periodName[0] - 1)) {
+                return course.$.Title;
+            }
+        }
+        return periodName;
     }
 
     $: selectedDateFormatted = prettyDate(selectedDate);
@@ -116,10 +130,10 @@
                         <!-- {#if  console.log(day)}{/if} -->
                         {#if day.info?.schedule && Object.keys(day.info.schedule).length > 0}
                         <span class="periods-head">Bells:</span>
-                        {#each Object.keys(day.info.schedule) as periodName}
+                        {#each Object.keys(day.info.schedule) as periodName, idx}
                         <div class="period">
                             <span class="period-name">
-                                {periodName}
+                                {getPeriodName(periodName, idx)}
                             </span>
                             <span class="period-timings" class:now={isWithinInterval(new Date(), {
                                     start: parse(day.info.schedule[periodName].start, "h:mm a", day.date),
