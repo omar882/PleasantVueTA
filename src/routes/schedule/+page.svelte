@@ -1,7 +1,7 @@
 <script>
 	import calendar from "$lib/data/calendar.json";
 
-    import {nextSaturday, format, isSaturday, previousSunday, isSunday, nextMonday, previousFriday, startOfDay, eachDayOfInterval, isWeekend, isToday, isTomorrow, isYesterday, nextDay, previousDay, isSameDay, addMinutes, isWithinInterval, add, parse } from "date-fns";
+    import {nextSaturday, format, isSaturday, previousSunday, isSunday, nextMonday, previousFriday, startOfDay, eachDayOfInterval, isWeekend, isToday, isTomorrow, isYesterday, nextDay, previousDay, isSameDay, addMinutes, isWithinInterval, add, parse, isFriday, isMonday } from "date-fns";
 	import { onMount } from "svelte"
     import { session } from '$lib/stores/session.js'
 
@@ -23,7 +23,7 @@
         if (isYesterday(date)) {
             return "Yesterday";
         }
-        return format(date, "MMM d");
+        return format(date, "EEE, MMM d");
     }
 
     function getPeriodName(periodName, idx) {
@@ -60,6 +60,22 @@
             };
         });
 
+    }
+
+    function selectNextDay() {
+        if (isFriday(selectedDate)) {
+            selectedDate = nextMonday(selectedDate);
+            return;
+        }
+        selectedDate = add(selectedDate, { days: 1 })
+    }
+
+    function selectPreviousDay() {
+        if (isMonday(selectedDate)) {
+            selectedDate = previousFriday(selectedDate);
+            return;
+        }
+        selectedDate = add(selectedDate, { days: -1 })
     }
 
     function selectNextWeek() {
@@ -108,11 +124,14 @@
             <button on:click={selectNextWeek}>Next Week</button>
         </div>
         <div class="week">
+            <div class="arrow" on:click={selectPreviousDay}>
+                <i class="bi bi-arrow-left"></i>
+            </div>
             {#each week as day}
                 <div class="day" on:click={()=>onDateChange({target: { value: day.date }})} class:today={isSameDay(selectedDate, day.date)}>
                     <div class="day-heading">
                         <span>{prettyDate(day.date, "EEEE")}</span>
-                        {#if isSameDay(selectedDate, day.date) && day?.info?.noSchool}
+                        {#if isSameDay(selectedDate, day.date) && (day?.info?.noSchool || !day.info)}
                         <span class="no-school-head">No School!</span>
                         {/if}
                     </div>
@@ -123,7 +142,7 @@
                         {/if}
                         {#if day.info.events && day.info.events.length > 0 && !isSameDay(selectedDate, day.date)}
                         <div class="event-count">
-                            {day.info.events.length} Events
+                            {day.info.events.length} Event{day.info.events.length > 1 ? "s" : ""}
                         </div>
                         {/if}
                         {#if isSameDay(selectedDate, day.date)}
@@ -133,7 +152,7 @@
                         {#each Object.keys(day.info.schedule) as periodName, idx}
                         <div class="period">
                             <span class="period-name">
-                                {getPeriodName(periodName, idx)}
+                                {@html getPeriodName(periodName, idx)}
                             </span>
                             <span class="period-timings" class:now={isWithinInterval(new Date(), {
                                     start: parse(day.info.schedule[periodName].start, "h:mm a", day.date),
@@ -162,6 +181,9 @@
                     {/if}
                 </div>
             {/each}
+            <div class="arrow" on:click={selectNextDay}>
+                <i class="bi bi-arrow-right"></i>
+            </div>
         </div>
 	</div>
 </div>
@@ -248,6 +270,14 @@
         height: 100%;
     }
 
+    .week .arrow {
+        @include box;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
     .week .day {
         @include box;
         display: flex;
@@ -256,6 +286,10 @@
 
     .week .day.today {
         grid-column: span 3;
+    }
+
+    .week .day:not(.today) {
+        cursor: pointer;
     }
 
     .day-scroll {
@@ -271,6 +305,7 @@
         @include box;
         background-color: var(--bg-color-2-5);
     }
+    
     .no-school-head {
         text-align: center;
         font-size: 0.7em;
@@ -313,15 +348,46 @@
 
 
 
-		@media (max-width: $breakpoint-phone) {
-		.content {
-			font-size: 1em;
-		}
+    @media (max-width: $breakpoint-phone) {
+        .content {
+            font-size: 1em;
+        }
 
-		h1 {
-			margin-top: 0;
-		}
+        h1 {
+            margin-top: 0;
+        }
 
+        .week .arrow {
+            display: flex;
+        }
 
-	}
+        .week .day:not(.today) {
+            display: none;
+        }
+
+        .week .day.today {
+            grid-column: span 5;
+        }
+
+        .day-heading {
+            display: block;
+            text-align: center;
+        }
+
+        .day-heading > span {
+            display: block;
+        }
+
+        .period {
+            display: block;
+        }
+
+        .period .period-name {
+            display: block;
+        }
+
+        .event {
+            display: block;
+        }
+    }
 </style>
