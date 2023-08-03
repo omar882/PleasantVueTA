@@ -279,7 +279,7 @@ function getWeek(assignments) {
 	const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
 	const lastSunday = new Date(today.setDate(today.getDate() - today.getDay()))
 	let week = assignments.filter((a) => {
-		return new Date(a.DueDate) > lastSunday && a.scorePercent >= 0
+		return new Date(a.$.DueDate) > lastSunday && a.scorePercent >= 0
 	})
 	let average = -1
 	if (week.length > 0)
