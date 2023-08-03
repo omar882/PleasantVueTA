@@ -1,0 +1,2405 @@
+[
+  {
+    "id": 17479784,
+    "first_name": "Frances",
+    "last_name": "Acosta",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "2", "names": ["Biology (P)"], "hasTA": true },
+      { "period": "3", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "5", "names": ["Chemistry (P)"], "hasTA": true },
+      { "period": "6", "names": ["Chemistry (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "facosta@pleasantonusd.net",
+    "category": "Science",
+    "clubs": []
+  },
+  {
+    "id": 18910920,
+    "first_name": "Rabia",
+    "last_name": "Akrami",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Econ of Bus Ownership (P)"], "hasTA": false },
+      {
+        "period": "3",
+        "names": ["Integrated Marketing Comm (P)"],
+        "hasTA": false
+      },
+      {
+        "period": "5",
+        "names": ["Integrated Marketing Comm (P)"],
+        "hasTA": false
+      },
+      { "period": "6", "names": ["Econ of Bus Ownership (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "ROP",
+    "email": "rakrami@pleasantonusd.net",
+    "category": "ROP",
+    "clubs": ["Bollywood and Bhangra", "Model UN Club", "DECA"]
+  },
+  {
+    "id": 16297763,
+    "first_name": "Samantha",
+    "last_name": "Allen",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Honors Algebra 2 (P)"], "hasTA": false },
+      { "period": "3", "names": ["Honors Algebra 2 (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "sallen@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": ["Chemistry Club"]
+  },
+  {
+    "id": 16297710,
+    "first_name": "Delise",
+    "last_name": "Anderson",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Honors World History (P)"], "hasTA": false },
+      { "period": "2", "names": ["AP World History (HP)"], "hasTA": false },
+      { "period": "3", "names": ["AP World History (HP)"], "hasTA": false },
+      { "period": "4", "names": ["AP World History (HP)"], "hasTA": true },
+      { "period": "5", "names": ["Honors World History (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "ddanderson@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": ["#Happy Period", "Dance Team"]
+  },
+  {
+    "id": 16299842,
+    "first_name": "Elsa",
+    "last_name": "Backers",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Spanish 3 (P)"], "hasTA": false },
+      { "period": "3", "names": ["Spanish 2 (P)"], "hasTA": false },
+      { "period": "4", "names": ["Spanish 3 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Spanish 2 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Spanish 3 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "World Languages",
+    "email": "ebackers@pleasantonusd.net",
+    "category": "World Languages",
+    "clubs": []
+  },
+  {
+    "id": 16297804,
+    "first_name": "Haley",
+    "last_name": "Baldwin",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["World History (P)"], "hasTA": false },
+      { "period": "2", "names": ["World History (P)"], "hasTA": true },
+      { "period": "3", "names": ["World History (P)"], "hasTA": false },
+      { "period": "4", "names": ["World History (P)"], "hasTA": false },
+      { "period": "5", "names": ["World History (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "hbaldwin@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": ["Mock Trial", "National Honors Society"]
+  },
+  {
+    "id": 16297665,
+    "first_name": "Susan",
+    "last_name": "Bantz",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "4",
+        "names": ["Study Skills: Intens Rdg Interv"],
+        "hasTA": false
+      },
+      {
+        "period": "5",
+        "names": ["Freshman English", "Sophomore English"],
+        "hasTA": false
+      },
+      { "period": "6", "names": ["Study Skills"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Special Education",
+    "email": "sbantz@pleasantonusd.net",
+    "category": "Special Education",
+    "clubs": ["FCSN"]
+  },
+  {
+    "id": 16297735,
+    "first_name": "Brandy",
+    "last_name": "Barnett",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Chemistry (P)"], "hasTA": true },
+      { "period": "2", "names": ["Chemistry (P)"], "hasTA": false },
+      { "period": "3", "names": ["Chemistry (P)"], "hasTA": true },
+      { "period": "4", "names": ["AP Chemistry (HP)"], "hasTA": false },
+      { "period": "5", "names": ["AP Chemistry (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "blbarnett@pleasantonusd.net",
+    "category": "Science",
+    "clubs": []
+  },
+  {
+    "id": 16297666,
+    "first_name": "Bree",
+    "last_name": "Barnett Dreyfuss",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Physics (P)"], "hasTA": false },
+      { "period": "2", "names": ["Physics (P)"], "hasTA": true },
+      { "period": "3", "names": ["AP Physics C (HP)"], "hasTA": true },
+      { "period": "4", "names": ["AP Physics C (HP)"], "hasTA": true },
+      { "period": "5", "names": ["AP Physics C (HP)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "bbarnettdreyfuss@pleasantonusd.net",
+    "category": "Science",
+    "clubs": ["AV Botz", "Physics Club", "STEP UP Club"]
+  },
+  {
+    "id": 16297703,
+    "first_name": "Jill",
+    "last_name": "Battilega",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["US History (P)"], "hasTA": false },
+      { "period": "2", "names": ["Honors World History (P)"], "hasTA": true },
+      { "period": "4", "names": ["US History (P)"], "hasTA": false },
+      { "period": "5", "names": ["US History (P)"], "hasTA": true },
+      { "period": "6", "names": ["Honors World History (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "jbattilega@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": ["Habitat For Humanity Campus Club", "No Child Left Behind Club"]
+  },
+  {
+    "id": 16297805,
+    "first_name": "Phillip",
+    "last_name": "Becker",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Earth & Space Science (P)"], "hasTA": false },
+      { "period": "3", "names": ["Physics (P)"], "hasTA": false },
+      { "period": "4", "names": ["Physics (P)"], "hasTA": false },
+      { "period": "5", "names": ["Physics (P)"], "hasTA": false },
+      { "period": "6", "names": ["Physics (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "pbecker@pleasantonusd.net",
+    "category": "Science",
+    "clubs": ["Space and Astronomy Club"]
+  },
+  {
+    "id": 16297672,
+    "first_name": "Neil",
+    "last_name": "Bello",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["Ceramics 1 (P)", "Ceramics 2 (P)"],
+        "hasTA": true
+      },
+      { "period": "2", "names": ["Ceramics 1 (P)"], "hasTA": false },
+      { "period": "3", "names": ["Ceramics 1 (P)"], "hasTA": true },
+      { "period": "4", "names": ["Ceramics 1 (P)"], "hasTA": true },
+      {
+        "period": "5",
+        "names": ["Ceramics 1 (P)", "Ceramics 2 (P)"],
+        "hasTA": false
+      },
+      { "period": "6", "names": ["Ceramics 1 (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Art",
+    "email": "nbello@pleasantonusd.net",
+    "category": "Visual & Performing Arts (VAPA)",
+    "clubs": ["Origami Club"]
+  },
+  {
+    "id": 16297673,
+    "first_name": "Manja",
+    "last_name": "Benadjaoud",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["AP French Language/Culture (HP)"],
+        "hasTA": false
+      },
+      { "period": "3", "names": ["French 2 (P)"], "hasTA": false },
+      { "period": "4", "names": ["French 3 (P)"], "hasTA": true },
+      { "period": "5", "names": ["French 3 (P)"], "hasTA": true },
+      { "period": "6", "names": ["French 2 (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "World Languages",
+    "email": "mbenadjaoud@pleasantonusd.net",
+    "category": "World Languages",
+    "clubs": ["French Honors Society"]
+  },
+  {
+    "id": 16297674,
+    "first_name": "John",
+    "last_name": "Benbenek",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP English Language/Composition (HP)"], "hasTA": false },
+      { "period": "2", "names": ["Advanced Composition/World Literature (P)"], "hasTA": false },
+      { "period": "3", "names": ["AP English Language/Composition (HP)"], "hasTA": false },
+      { "period": "4", "names": ["Advanced Composition/World Literature (P)"], "hasTA": false },
+      { "period": "5", "names": ["AP English Language/Composition (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "jbenbenek@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 16297781,
+    "first_name": "Bee",
+    "last_name": "Benson",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Economics (P)"], "hasTA": false },
+      { "period": "2", "names": ["US History (P)"], "hasTA": false },
+      { "period": "3", "names": ["Economics (P)"], "hasTA": false },
+      { "period": "4", "names": ["Publications/ Yearbook (P)"], "hasTA": false },
+      { "period": "6", "names": ["Economics (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "bbenson@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": ["Gender Sexuality Alliance (GSA)"]
+  },
+  {
+    "id": 16297816,
+    "first_name": "Chelsea",
+    "last_name": "Blea",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Junior English (P)"], "hasTA": false },
+      { "period": "3", "names": ["Junior English (P)"], "hasTA": false },
+      { "period": "4", "names": ["Junior English (P)"], "hasTA": true },
+      { "period": "5", "names": ["Expos Read & Writing (P)"], "hasTA": false },
+      { "period": "6", "names": ["Expos Read & Writing (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "cblea@pleasantonusd.net",
+    "category": "English",
+    "clubs": ["Hockey Club"]
+  },
+  {
+    "id": 16297704,
+    "first_name": "Julie",
+    "last_name": "Boe",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Advanced ELD 3-4 (P)"], "hasTA": false },
+      { "period": "2", "names": ["Freshman English (P)"], "hasTA": true },
+      { "period": "4", "names": ["Freshman English (P)"], "hasTA": false },
+      { "period": "5", "names": ["Freshman English (P)"], "hasTA": false },
+      { "period": "6", "names": ["Sheltered English (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "jboe@pleasantonusd.net",
+    "category": "English",
+    "clubs": ["Book Club"]
+  },
+  {
+    "id": 16297770,
+    "first_name": "Jon",
+    "last_name": "Boone",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["US History (P)"], "hasTA": false },
+      { "period": "2", "names": ["AP Government & Politics: US (HP)"], "hasTA": false },
+      { "period": "3", "names": ["US History (P)"], "hasTA": true },
+      { "period": "4", "names": ["US History (P)"], "hasTA": false },
+      { "period": "5", "names": ["AP Government & Politics: US (HP)"], "hasTA": false },
+      { "period": "6", "names": ["AP Government & Politics: US (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "jboone@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": [
+      "Entreprenuership Club",
+      "Investment Club",
+      "Music Production Club"
+    ]
+  },
+  {
+    "id": 16297842,
+    "first_name": "Kyra",
+    "last_name": "Britto",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["American Sign Lang 2 (P)"], "hasTA": true },
+      { "period": "2", "names": ["American Sign Lang 2 (P)"], "hasTA": false },
+      { "period": "3", "names": ["American Sign Lang 3 (P)"], "hasTA": true },
+      { "period": "4", "names": ["American Sign Lang 2 (P)"], "hasTA": false },
+      { "period": "5", "names": ["American Sign Lang 4 (P)"], "hasTA": true },
+      {
+        "period": "6",
+        "names": ["American Sign Lang 3 (P)"],
+        "hasTA": true
+      },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "World Languages",
+    "email": "kbritto@pleasantonusd.net",
+    "category": "World Languages",
+    "clubs": []
+  },
+  {
+    "id": 18021761,
+    "first_name": "Nicole",
+    "last_name": "Calame",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Algebra 1 (P)"], "hasTA": false },
+      { "period": "2", "names": ["Algebra 1 (P)"], "hasTA": false },
+      { "period": "4", "names": ["Honors Algebra 2 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Honors Algebra 2 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Honors Algebra 2 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "ncalame@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": []
+  },
+  {
+    "id": 16297715,
+    "first_name": "Louis",
+    "last_name": "Cesario",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["PE Course 2 - Weight Training"],
+        "hasTA": false
+      },
+      {
+        "period": "2",
+        "names": ["PE Course 2 - Weight Training"],
+        "hasTA": false
+      },
+      {
+        "period": "3",
+        "names": ["PE Course 2 - Weight Training"],
+        "hasTA": false
+      },
+      {
+        "period": "4",
+        "names": ["PE Course 2 - Weight Training"],
+        "hasTA": false
+      },
+      { "period": "6", "names": ["PE Course 2 - Athletic PE"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Physical Education",
+    "email": "lcesario@pleasantonusd.net",
+    "category": "Physical Education",
+    "clubs": []
+  },
+  {
+    "id": 16297758,
+    "first_name": "Aaron",
+    "last_name": "Cheng",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Honors Algebra 2 (P)"], "hasTA": false },
+      { "period": "3", "names": ["Calculus (P)"], "hasTA": false },
+      { "period": "4", "names": ["Calculus (P)"], "hasTA": false },
+      { "period": "5", "names": ["Honors Algebra 2 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Honors Algebra 2 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "acheng@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": ["Chess Club"]
+  },
+  {
+    "id": 16297783,
+    "first_name": "Raymond",
+    "last_name": "Chun",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Alg II-PreCal: Crse 2 (P)"], "hasTA": false },
+      { "period": "3", "names": ["Geom-Alg II: Crse 1 (P)"], "hasTA": false },
+      { "period": "4", "names": ["Pre-Calculus (P)"], "hasTA": false },
+      { "period": "5", "names": ["Pre-Calculus (P)"], "hasTA": true },
+      { "period": "6", "names": ["Pre-Calculus (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "rchun@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": []
+  },
+  {
+    "id": 18835645,
+    "first_name": "Claire",
+    "last_name": "Cochran",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Anatomy/Physiology (P)"], "hasTA": false },
+      { "period": "3", "names": ["Anatomy/Physiology (P)"], "hasTA": false },
+      { "period": "4", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "5", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "6", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "ccochran@pleasantonusd.net",
+    "category": "Science",
+    "clubs": ["Biotechnology Club"]
+  },
+  {
+    "id": 11919899,
+    "first_name": "Wendy",
+    "last_name": "Connelly",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Digital Art (P)"], "hasTA": false },
+      { "period": "2", "names": ["Digital Art (P)"], "hasTA": false },
+      { "period": "3", "names": ["Advanced Journalism (P)"], "hasTA": true },
+      { "period": "4", "names": ["Advanced Journalism (P)"], "hasTA": false },
+      { "period": "5", "names": ["Video Production 1 (P)"], "hasTA": false },
+      {
+        "period": "6",
+        "names": ["Video Production 2 (P)", "Video Prod 3 (P)"],
+        "hasTA": false
+      },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Journalism",
+    "email": "wconnelly@pleasantonusd.net",
+    "category": "Visual & Performing Arts (VAPA)",
+    "clubs": ["Film Club"]
+  },
+  {
+    "id": 16297852,
+    "first_name": "Edwin",
+    "last_name": "Cordoba",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Jazz Band 1 (P)"], "hasTA": false },
+      { "period": "5", "names": ["AP Music Theory (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Music",
+    "email": "ecordoba@pleasantonusd.net",
+    "category": "Visual & Performing Arts (VAPA)",
+    "clubs": ["Homeless Hearts Club"]
+  },
+  {
+    "id": 16297837,
+    "first_name": "Callie",
+    "last_name": "Cox",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["ESN Math", "ESN Math"], "hasTA": false },
+      {
+        "period": "2",
+        "names": ["ESN Humanities", "ESN Humanities", "Spec Ed Tutor"],
+        "hasTA": false
+      },
+      {
+        "period": "3",
+        "names": [
+          "ESN Science (Earth, Physical, Life)",
+          "ESN Science (Earth, Physical, Life)",
+          "Spec Ed Tutor"
+        ],
+        "hasTA": false
+      },
+      {
+        "period": "4",
+        "names": [
+          "Life Skills: Community, Rec &Lei",
+          "Life Skills: Domestic & Vocation",
+          "Life Skills: Domestic & Vocation"
+        ],
+        "hasTA": false
+      },
+      {
+        "period": "5",
+        "names": [
+          "Life Skills: Vocational Pract",
+          "Life Skills: Vocational Pract"
+        ],
+        "hasTA": false
+      },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "email": "ccox@pleasantonusd.net",
+    "clubs": []
+  },
+  {
+    "id": 16297778,
+    "first_name": "Jessica",
+    "last_name": "Cuevas-Rowland",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Spanish 2 (P)"], "hasTA": false },
+      { "period": "2", "names": ["Spanish 2 (P)"], "hasTA": false },
+      { "period": "4", "names": ["Spanish 1 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Spanish 1 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Spanish 1 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "World Languages",
+    "email": "jcuevas-rowland@pleasantonusd.net",
+    "category": "World Languages",
+    "clubs": []
+  },
+  {
+    "id": 11419658,
+    "first_name": "Cora",
+    "last_name": "Da Costa Pereira",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP Biology (HP)"], "hasTA": true },
+      { "period": "2", "names": ["AP Biology (HP)"], "hasTA": false },
+      { "period": "3", "names": ["Biology (P)"], "hasTA": true },
+      { "period": "4", "names": ["Biology (P)"], "hasTA": true },
+      { "period": "5", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "cdacosta@pleasantonusd.net",
+    "category": "Science",
+    "clubs": []
+  },
+  {
+    "id": 16297803,
+    "first_name": "Steven",
+    "last_name": "Dady",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Culinary Skills (P)"], "hasTA": false },
+      { "period": "2", "names": ["Culinary Skills (P)"], "hasTA": true },
+      { "period": "3", "names": ["Culinary Skills (P)"], "hasTA": false }
+    ],
+    "subject": "Career & Technical Education (CTE)",
+    "email": "sdady@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE)",
+    "clubs": []
+  },
+  {
+    "id": 16297716,
+    "first_name": "Thomas",
+    "last_name": "Dalldorf Jr",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["US History (P)"], "hasTA": false },
+      { "period": "2", "names": ["US History (P)"], "hasTA": false },
+      { "period": "3", "names": ["Global Studies (P)"], "hasTA": true },
+      { "period": "4", "names": ["Global Studies (P)"], "hasTA": false },
+      { "period": "5", "names": ["US History (P)"], "hasTA": true },
+      { "period": "6", "names": ["US History (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "tdalldorf@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": ["UNICEF Club"]
+  },
+  {
+    "id": 16297717,
+    "first_name": "Tony",
+    "last_name": "Dennis",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "3",
+        "names": [
+          "Honors Principles of Engineering (PLTW)(HP)",
+          "Principles of  Engineering (PLTW)(P)"
+        ],
+        "hasTA": false
+      },
+      {
+        "period": "4",
+        "names": [
+          "Honors Principles of Engineering (PLTW)(HP)",
+          "Principles of  Engineering (PLTW)(P)"
+        ],
+        "hasTA": false
+      },
+      {
+        "period": "5",
+        "names": [
+          "Honors Principles of Engineering (PLTW)(HP)",
+          "Principles of  Engineering (PLTW)(P)"
+        ],
+        "hasTA": true
+      },
+      { "period": "6", "names": ["Honors Digital Electronics (PLTW)(HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Engineering",
+    "email": "tdennis@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE)",
+    "clubs": ["Engineering Club", "SWENext Club", "UAV Club"]
+  },
+  {
+    "id": 16297719,
+    "first_name": "Michael",
+    "last_name": "Di Paola",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Honors Pre-Calculus (HP)"], "hasTA": false },
+      { "period": "2", "names": ["Honors Pre-Calculus (HP)"], "hasTA": true },
+      { "period": "3", "names": ["AP Calculus AB (HP)"], "hasTA": false },
+      { "period": "4", "names": ["AP Calculus AB (HP)"], "hasTA": false },
+      { "period": "5", "names": ["Honors Pre-Calculus (HP)"], "hasTA": false },
+      { "period": "6", "names": ["AP Calculus AB (HP)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "mdipaola@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": []
+  },
+  {
+    "id": 16297721,
+    "first_name": "Michael",
+    "last_name": "Doyle",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["AP Studio Art-2D (HP)", "AP Studio Art-Draw (HP)"],
+        "hasTA": false
+      },
+      { "period": "2", "names": ["Art 1 (P)"], "hasTA": true },
+      { "period": "3", "names": ["Art 1 (P)"], "hasTA": false },
+      { "period": "4", "names": ["Art 2 (P)", "Art 3 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Art 1 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Art 1 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Art",
+    "email": "mdoyle@pleasantonusd.net",
+    "category": "Visual & Performing Arts (VAPA)",
+    "clubs": ["Art Club"]
+  },
+  {
+    "id": 11406390,
+    "first_name": "Athena",
+    "last_name": "Duran",
+    "role": "admin",
+    "category": "Administration",
+    "position": "Vice Principal (M-R)",
+    "email": "aduran@pleasantonusd.net"
+  },
+  {
+    "id": 16666189,
+    "first_name": "Shelley",
+    "last_name": "Durbin",
+    "role": "teacher",
+    "classes": [
+      { "period": "3", "names": ["Chamber Choir (P)"], "hasTA": true },
+      { "period": "4", "names": ["Concert Choir (P)"], "hasTA": false },
+      { "period": "6", "names": ["String Orchestra (P)"], "hasTA": false },
+      { "period": "A", "names": ["Symphony Orchestra (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false },
+      { "period": "B", "names": ["Color Guard/Music"], "hasTA": false }
+    ],
+    "subject": "VAPA",
+    "email": "sdurbin@pleasantonusd.net",
+    "category": "Visual & Performing Arts (VAPA)",
+    "clubs": ["Ukulele Club"]
+  },
+  {
+    "id": 16297722,
+    "first_name": "Erik",
+    "last_name": "Ekstrom",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Junior English (P)"], "hasTA": false },
+      { "period": "3", "names": ["AP English Literature/Composition (HP)"], "hasTA": true },
+      { "period": "4", "names": ["AP English Literature/Composition (HP)"], "hasTA": false },
+      { "period": "5", "names": ["AP English Literature/Composition (HP)"], "hasTA": false },
+      { "period": "6", "names": ["Junior English (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "eekstrom@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 17441525,
+    "first_name": "Jeffrey",
+    "last_name": "Feng",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["AP Statistics (HP)"], "hasTA": false },
+      { "period": "3", "names": ["AP Statistics (HP)"], "hasTA": false },
+      { "period": "4", "names": ["Algebra 1 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Algebra 1 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Algebra 1 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "jfeng@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": ["Interact Club"]
+  },
+  {
+    "id": 16297743,
+    "first_name": "Robyn",
+    "last_name": "Fewster",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "2", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "3", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "5", "names": ["AP Environmental Science (HP)"], "hasTA": false },
+      {
+        "period": "6",
+        "names": ["Env Science Lab & Field Study (P)"],
+        "hasTA": false
+      },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "rfewster@pleasantonusd.net",
+    "category": "Science",
+    "clubs": ["Local Leaders of 21st Cent."]
+  },
+  {
+    "id": 18835653,
+    "first_name": "Jon",
+    "last_name": "Fey",
+    "role": "admin",
+    "category": "Administration",
+    "position": "Principal",
+    "email": "jfey@pleasantonusd.net"
+  },
+  {
+    "id": 16297705,
+    "first_name": "Merilee",
+    "last_name": "Fisher",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Ceramics 1 (P)"], "hasTA": true },
+      {
+        "period": "2",
+        "names": ["AP Studio Art-2D (HP)", "Photography 2 (P)"],
+        "hasTA": false
+      },
+      { "period": "3", "names": ["Photography 1 (P)"], "hasTA": false },
+      { "period": "4", "names": ["Photography 1 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Photography 1 (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Art",
+    "email": "mfisher@pleasantonusd.net",
+    "category": "Visual & Performing Arts (VAPA)",
+    "clubs": ["Quizbowl Club"]
+  },
+  {
+    "id": 11424918,
+    "first_name": "Julie",
+    "last_name": "Foley",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Health Education (P)"], "hasTA": true },
+      { "period": "2", "names": ["Health Education (P)"], "hasTA": false },
+      { "period": "3", "names": ["Health Education (P)"], "hasTA": false },
+      { "period": "4", "names": ["Health Education (P)"], "hasTA": true },
+      {
+        "period": "5",
+        "names": ["Child Growth & Development (P)"],
+        "hasTA": true
+      },
+      { "period": "6", "names": ["Health Education (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Health",
+    "email": "jfoley@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 16297766,
+    "first_name": "Julia",
+    "last_name": "Ford",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Baking and Pastry (P)"], "hasTA": true },
+      { "period": "2", "names": ["Baking and Pastry (P)"], "hasTA": true },
+      { "period": "3", "names": ["Baking and Pastry (P)"], "hasTA": false },
+      { "period": "4", "names": ["Culinary Skills (P)"], "hasTA": false },
+      { "period": "5", "names": ["Culinary Skills (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Career & Technical Education (CTE)",
+    "email": "jford@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE)",
+    "clubs": []
+  },
+  {
+    "id": 16666188,
+    "first_name": "Kimberly",
+    "last_name": "Gawel",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["Principles of Biomed Science (PLTW)(P)"],
+        "hasTA": false
+      },
+      {
+        "period": "2",
+        "names": ["Principles of Biomed Science (PLTW)(P)"],
+        "hasTA": false
+      },
+      {
+        "period": "3",
+        "names": ["Principles of Biomed Science (PLTW)(P)"],
+        "hasTA": false
+      },
+      { "period": "5", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "6", "names": ["Biology (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "kgawel@pleasantonusd.net",
+    "category": "Science",
+    "clubs": []
+  },
+  {
+    "id": 16299839,
+    "first_name": "Zachary",
+    "last_name": "Gose",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Expos Read & Writing (P)"], "hasTA": false },
+      { "period": "2", "names": ["Expos Read & Writing (P)"], "hasTA": false },
+      { "period": "3", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "4", "names": ["Expos Read & Writing (P)"], "hasTA": false },
+      { "period": "5", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "zgose@pleasantonusd.net",
+    "category": "English",
+    "clubs": ["Junior State of America", "Epidemically Club"]
+  },
+  {
+    "id": 16297652,
+    "first_name": "Jonathan",
+    "last_name": "Grantham",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Wind Ensemble (P)"], "hasTA": true },
+      { "period": "2", "names": ["Symphonic Band (P)"], "hasTA": false },
+      { "period": "4", "names": ["Symphonic Band (P)"], "hasTA": true },
+      { "period": "6", "names": ["Concert Band (P)"], "hasTA": false },
+      { "period": "A", "names": ["Wind Ensemble (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Music",
+    "email": "jgrantham@pleasantonusd.net",
+    "category": "Visual & Performing Arts (VAPA)",
+    "clubs": []
+  },
+  {
+    "id": 16297810,
+    "first_name": "Christopher",
+    "last_name": "Griese",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Geometry (P)"], "hasTA": false },
+      { "period": "2", "names": ["Geometry (P)"], "hasTA": false },
+      { "period": "3", "names": ["Algebra 2 (P)"], "hasTA": false },
+      { "period": "4", "names": ["Algebra 2 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Algebra 2 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "cgriese@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": []
+  },
+  {
+    "id": 11406380,
+    "first_name": "Melanie",
+    "last_name": "Harris",
+    "role": "admin",
+    "category": "Administration",
+    "position": "Vice Principal (A-E)",
+    "email": "mharris@pleasantonusd.net"
+  },
+  {
+    "id": 16297800,
+    "first_name": "Nakisha",
+    "last_name": "Harris",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["Criminal Justice Academy (P)"],
+        "hasTA": false
+      }
+    ],
+    "subject": "ROP",
+    "email": "nharris@pleasantonusd.net",
+    "category": "ROP",
+    "clubs": []
+  },
+  {
+    "id": 18746776,
+    "first_name": "John",
+    "last_name": "Harris",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Civics"], "hasTA": false },
+      {
+        "period": "3",
+        "names": ["Global Studies", "Global Studies"],
+        "hasTA": false
+      },
+      { "period": "5", "names": ["Civics"], "hasTA": false },
+      { "period": "6", "names": ["Study Skills"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Special Education",
+    "email": "jharris@pleasantonusd.net",
+    "category": "Special Education",
+    "clubs": []
+  },
+  {
+    "id": 16297731,
+    "first_name": "Diana",
+    "last_name": "Hasenpflug",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["PE Course 1"], "hasTA": false },
+      { "period": "2", "names": ["PE Course 1"], "hasTA": false },
+      {
+        "period": "3",
+        "names": ["Sports Med/Athletic Trainer (P)"],
+        "hasTA": false
+      },
+      {
+        "period": "5",
+        "names": ["Sports Med/Athletic Trainer (P)"],
+        "hasTA": false
+      },
+      { "period": "6", "names": ["Sports Medicine 2 (P)"], "hasTA": false },
+      { "period": "A", "names": ["PE Course 1"], "hasTA": false }
+    ],
+    "subject": "Physical Education",
+    "email": "dhasenpflug@pleasantonusd.net",
+    "category": "Physical Education",
+    "clubs": ["HOSA"]
+  },
+  {
+    "id": 16297741,
+    "first_name": "Kristin",
+    "last_name": "Haut",
+    "role": "teacher",
+    "classes": [
+      { "period": "3", "names": ["Spanish 2 (P)"], "hasTA": false },
+      { "period": "4", "names": ["French 1 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Spanish 2 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Spanish 2 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "World Languages",
+    "email": "khaut@pleasantonusd.net",
+    "category": "World Languages",
+    "clubs": []
+  },
+  {
+    "id": 16297745,
+    "first_name": "Shannon",
+    "last_name": "Heller",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["American Sign Language 1 (P)"], "hasTA": false },
+      { "period": "2", "names": ["American Sign Language 1 (P)"], "hasTA": true },
+      {
+        "period": "3",
+        "names": ["Avid 11 (P)", "Avid 12 (P)", "Avid Tutor"],
+        "hasTA": false
+      },
+      { "period": "4", "names": ["American Sign Language 1 (P)"], "hasTA": false },
+      { "period": "5", "names": ["American Sign Language 1 (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "World Languages",
+    "email": "sheller@pleasantonusd.net",
+    "category": "World Languages",
+    "clubs": []
+  },
+  {
+    "id": 16297659,
+    "first_name": "Barbara",
+    "last_name": "Henriquez",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Spanish 2 (P)"], "hasTA": false },
+      { "period": "2", "names": ["Spanish 3 (P)"], "hasTA": false },
+      { "period": "3", "names": ["Spanish 3 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Spanish 3 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Spanish 3 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "World Languages",
+    "email": "bhenriquez@pleasantonusd.net",
+    "category": "World Languages",
+    "clubs": ["Latino Club", "Spanish Honors Society"]
+  },
+  {
+    "id": 16297782,
+    "first_name": "Danielle",
+    "last_name": "Hubbard",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Literature & Soc Justice (P)"], "hasTA": false },
+      { "period": "3", "names": ["Honors Freshman English (P)"], "hasTA": false },
+      { "period": "4", "names": ["Literature & Soc Justice (P)"], "hasTA": false },
+      { "period": "5", "names": ["Honors Freshman English (P)"], "hasTA": false },
+      { "period": "6", "names": ["Honors Freshman English (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "dhubbard@pleasantonusd.net",
+    "category": "English",
+    "clubs": ["GlamourGals", "LEAD Club"]
+  },
+  {
+    "id": 16297828,
+    "first_name": "Wendy",
+    "last_name": "Hush",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["ELD Support 1-2 (P)"], "hasTA": false },
+      { "period": "2", "names": ["ELD 1-2"], "hasTA": false },
+      { "period": "3", "names": ["Junior English (P)"], "hasTA": true },
+      { "period": "4", "names": ["Junior English (P)"], "hasTA": false },
+      { "period": "5", "names": ["Junior English (P)"], "hasTA": false },
+      { "period": "6", "names": ["Sheltered English (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "whush@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 17531862,
+    "first_name": "Austin",
+    "last_name": "Hutson",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "4",
+        "names": ["Intro to Criminal Justice (P)"],
+        "hasTA": false
+      }
+    ],
+    "subject": "ROP",
+    "email": "ahutson@pleasantonusd.net",
+    "category": "ROP",
+    "clubs": []
+  },
+  {
+    "id": 11406353,
+    "first_name": "Michael",
+    "last_name": "Jaramillo",
+    "role": "admin",
+    "category": "Administration",
+    "position": "Vice Principal (S-Z)",
+    "email": "mjaramillo@pleasantonusd.net"
+  },
+  {
+    "id": 16297725,
+    "first_name": "Victoria",
+    "last_name": "Johnson",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["Junior English", "Senior English"],
+        "hasTA": false
+      },
+      { "period": "5", "names": ["Study Skills"], "hasTA": false },
+      { "period": "6", "names": ["Study Skills"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Special Education",
+    "email": "vjohnson@pleasantonusd.net",
+    "category": "Special Education",
+    "clubs": []
+  },
+  {
+    "id": 16297748,
+    "first_name": "Gary",
+    "last_name": "Johnson",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Honors Aerospace Engineering (PLTW)(HP)"], "hasTA": false }
+    ],
+    "subject": "Career & Technical Education (CTE)",
+    "email": "gjohnson@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE)",
+    "clubs": []
+  },
+  {
+    "id": 16297851,
+    "first_name": "Kyle",
+    "last_name": "Johnston",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Freshman English (P)"], "hasTA": false },
+      { "period": "2", "names": ["Freshman English (P)"], "hasTA": false },
+      { "period": "3", "names": ["Freshman English (P)"], "hasTA": false },
+      {
+        "period": "4",
+        "names": [
+          "Advanced Drama (P)",
+          "Drama  2 - Inter (P)",
+          "Theatre Prod (P)"
+        ],
+        "hasTA": false
+      },
+      { "period": "5", "names": ["Drama 1 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Drama 1 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "kjohnston@pleasantonusd.net",
+    "category": "English",
+    "clubs": ["Drama Club"]
+  },
+  {
+    "id": 16297750,
+    "first_name": "Daniel",
+    "last_name": "Jones",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Academic Support/Study Skills"], "hasTA": false },
+      { "period": "3", "names": ["PE Course 1"], "hasTA": false },
+      { "period": "4", "names": ["PE Course 2 - Team Sports"], "hasTA": false },
+      { "period": "5", "names": ["PE Course 2 - Athletic PE"], "hasTA": true },
+      { "period": "6", "names": ["PE Course 2 - Athletic PE"], "hasTA": true },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Physical Education",
+    "email": "djones@pleasantonusd.net",
+    "category": "Physical Education",
+    "clubs": []
+  },
+  {
+    "id": 16297661,
+    "first_name": "Aimee",
+    "last_name": "Jurewicz Buckley",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Math 1", "Math 2"], "hasTA": false },
+      { "period": "2", "names": ["Senior English"], "hasTA": false },
+      { "period": "3", "names": ["US History"], "hasTA": false },
+      { "period": "5", "names": ["Junior English"], "hasTA": true },
+      { "period": "6", "names": ["Study Skills"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Special Education",
+    "email": "abuckley@pleasantonusd.net",
+    "category": "Special Education",
+    "clubs": []
+  },
+  {
+    "id": 16297662,
+    "first_name": "Stephanie",
+    "last_name": "Kamali",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Honors Freshman English (P)"], "hasTA": false },
+      { "period": "2", "names": ["Honors Freshman English (P)"], "hasTA": false },
+      { "period": "3", "names": ["Journalism 1-2 (P)"], "hasTA": false },
+      { "period": "4", "names": ["Journalism 1-2 (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "skamali@pleasantonusd.net",
+    "category": "English",
+    "clubs": ["Key Club", "Writers Ensemble"]
+  },
+  {
+    "id": 11422907,
+    "first_name": "Matthew",
+    "last_name": "Kelly",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP Statistics (HP)"], "hasTA": false },
+      { "period": "2", "names": ["AP Statistics (HP)"], "hasTA": false },
+      { "period": "3", "names": ["AP Statistics (HP)"], "hasTA": false },
+      { "period": "4", "names": ["AP Statistics (HP)"], "hasTA": false },
+      { "period": "5", "names": ["AP Statistics (HP)"], "hasTA": false },
+      { "period": "6", "names": ["AP Statistics (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "mkelly@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": []
+  },
+  {
+    "id": 16297855,
+    "first_name": "Daniel",
+    "last_name": "Kennard",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "2", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "4", "names": ["AP English Language/Composition (HP)"], "hasTA": false },
+      {
+        "period": "5",
+        "names": ["Avid 10 (P)", "Avid 9 (P)", "Avid Tutor"],
+        "hasTA": false
+      },
+      { "period": "6", "names": ["AP English Language/Composition (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "dkennard@pleasantonusd.net",
+    "category": "English",
+    "clubs": ["Stress Less Club", "Ethics Bowl Club"]
+  },
+  {
+    "id": 11419565,
+    "first_name": "Kevin",
+    "last_name": "Kiyoi",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP Computer Science A (HP)"], "hasTA": true },
+      { "period": "3", "names": ["Cybersecurity (P)"], "hasTA": false },
+      {
+        "period": "4",
+        "names": ["AP Computer Science A (HP)"],
+        "hasTA": false
+      },
+      {
+        "period": "5",
+        "names": ["AP Computer Science A (HP)"],
+        "hasTA": false
+      },
+      {
+        "period": "6",
+        "names": ["AP Computer Science A (HP)"],
+        "hasTA": false
+      },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Computer Science",
+    "email": "kkiyoi@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE)",
+    "clubs": ["Competitive Computer Science", "Girls Who Code"]
+  },
+  {
+    "id": 16297832,
+    "first_name": "George",
+    "last_name": "Kramer",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "2", "names": ["Freshman English (P)"], "hasTA": false },
+      { "period": "3", "names": ["Freshman English (P)"], "hasTA": false },
+      { "period": "4", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "6", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "gkramer@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 16297771,
+    "first_name": "Mark",
+    "last_name": "Kushner",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["AP Psychology (HP)"], "hasTA": false },
+      { "period": "3", "names": ["AP Psychology (HP)"], "hasTA": false },
+      { "period": "4", "names": ["Civics (P)"], "hasTA": false },
+      { "period": "5", "names": ["AP Psychology (HP)"], "hasTA": false },
+      { "period": "6", "names": ["AP Psychology (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "mkushner@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": ["Psychology Club"]
+  },
+  {
+    "id": 18180857,
+    "first_name": "Chong",
+    "last_name": "Lor",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "2", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "3", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "4", "names": ["Earth & Space Science (P)"], "hasTA": true },
+      { "period": "5", "names": ["Earth & Space Science (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "clor@pleasantonusd.net",
+    "category": "Science",
+    "clubs": []
+  },
+  {
+    "id": 16297668,
+    "first_name": "Karen",
+    "last_name": "Lord-Eyewe",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["AP Spanish Language/Culture (HP)"],
+        "hasTA": false
+      },
+      { "period": "2", "names": ["Spanish 2 (P)"], "hasTA": false },
+      {
+        "period": "3",
+        "names": ["AP Spanish Language/Culture (HP)"],
+        "hasTA": false
+      },
+      { "period": "4", "names": ["Spanish 2 (P)"], "hasTA": false },
+      {
+        "period": "5",
+        "names": ["AP Spanish Language/Culture (HP)"],
+        "hasTA": true
+      },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "World Languages",
+    "email": "klord-eyewe@pleasantonusd.net",
+    "category": "World Languages",
+    "clubs": ["Korean Culture Club", "Neuroscience Club"]
+  },
+  {
+    "id": 17441534,
+    "first_name": "Nicole",
+    "last_name": "Louie",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Pre-Calculus (P)"], "hasTA": false },
+      { "period": "2", "names": ["Pre-Calculus (P)"], "hasTA": false },
+      { "period": "3", "names": ["Pre-Calculus (P)"], "hasTA": false },
+      { "period": "4", "names": ["Algebra 1 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Algebra 1 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "nlouie@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": ["Artifical Intelligence Club"]
+  },
+  {
+    "id": 16297764,
+    "first_name": "Sara",
+    "last_name": "Marek",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Junior English (P)"], "hasTA": false },
+      { "period": "3", "names": ["Junior English (P)"], "hasTA": false },
+      { "period": "4", "names": ["Honors Freshman English (P)"], "hasTA": true },
+      { "period": "5", "names": ["Honors Freshman English (P)"], "hasTA": false },
+      { "period": "6", "names": ["Junior English (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "smarek@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 16297707,
+    "first_name": "Kimberly",
+    "last_name": "Martin",
+    "role": "teacher",
+    "classes": [
+      { "period": "5", "names": ["Study Skills"], "hasTA": false },
+      { "period": "6", "names": ["World History"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Special Education",
+    "email": "kmartin@pleasantonusd.net",
+    "category": "Special Education",
+    "clubs": []
+  },
+  {
+    "id": 16297780,
+    "first_name": "Marisa",
+    "last_name": "Mejasich",
+    "role": "teacher",
+    "classes": [
+      { "period": "4", "names": ["Geometry (P)"], "hasTA": true },
+      { "period": "5", "names": ["Geometry (P)"], "hasTA": false },
+      { "period": "6", "names": ["Geometry (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "mmejasich@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": ["Middle Eastern Student Assoc."]
+  },
+  {
+    "id": 16297724,
+    "first_name": "Drew",
+    "last_name": "Melby",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["AP Chemistry (HP)"], "hasTA": false },
+      { "period": "3", "names": ["AP Chemistry (HP)"], "hasTA": false },
+      { "period": "4", "names": ["Chemistry (P)"], "hasTA": false },
+      { "period": "5", "names": ["Chemistry (P)"], "hasTA": false },
+      { "period": "6", "names": ["Chemistry (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "dmelby@pleasantonusd.net",
+    "category": "Science",
+    "clubs": []
+  },
+  {
+    "id": 16297671,
+    "first_name": "Brenton",
+    "last_name": "Miller",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["PE Course 2 - Team Sports"], "hasTA": false },
+      { "period": "3", "names": ["PE Course 1"], "hasTA": true },
+      { "period": "4", "names": ["PE Course 1"], "hasTA": false },
+      { "period": "5", "names": ["PE Course 1"], "hasTA": false },
+      { "period": "A", "names": ["PE Course 1"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Physical Education",
+    "email": "bmiller@pleasantonusd.net",
+    "category": "Physical Education",
+    "clubs": []
+  },
+  {
+    "id": 16297844,
+    "first_name": "Lynne",
+    "last_name": "Morrison",
+    "role": "teacher",
+    "classes": [
+      { "period": "5", "names": ["Nursing Careers (P)"], "hasTA": false }
+    ],
+    "subject": "Career & Technical Education (CTE)",
+    "email": "lmorrison@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE)",
+    "clubs": []
+  },
+  {
+    "id": 16297675,
+    "first_name": "Christopher",
+    "last_name": "Murphy",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP World History (HP)"], "hasTA": false },
+      { "period": "2", "names": ["World History (P)"], "hasTA": true },
+      { "period": "4", "names": ["World History (P)"], "hasTA": false },
+      { "period": "5", "names": ["AP World History (HP)"], "hasTA": false },
+      { "period": "6", "names": ["AP World History (HP)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "cmurphy@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": ["Mr. Amador Fund", "Speech and Debate"]
+  },
+  {
+    "id": 16297676,
+    "first_name": "Rieko",
+    "last_name": "Murphy",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "2",
+        "names": [
+          "AP Japanese Language/Culture (HP)",
+          "Honors Japanese 5 (HP)",
+          "Japanese 2 (P)"
+        ],
+        "hasTA": false
+      },
+      { "period": "3", "names": ["Japanese 1 (P)"], "hasTA": false },
+      { "period": "4", "names": ["Japanese 1 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Japanese 2 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Japanese 3 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "World Languages",
+    "email": "rmurphy@pleasantonusd.net",
+    "category": "World Languages",
+    "clubs": ["Anime Club", "Pink Dot Club"]
+  },
+  {
+    "id": 16297740,
+    "first_name": "Sarah",
+    "last_name": "Murray",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP Psychology (HP)"], "hasTA": false },
+      { "period": "2", "names": ["AP Psychology (HP)"], "hasTA": false },
+      { "period": "3", "names": ["AP Psychology (HP)"], "hasTA": false },
+      { "period": "4", "names": ["AP Psychology (HP)"], "hasTA": false },
+      { "period": "6", "names": ["US History (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "smelvin@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": []
+  },
+  {
+    "id": 11406387,
+    "first_name": "Brendan",
+    "last_name": "Nelson",
+    "role": "admin",
+    "category": "Administration",
+    "position": "Vice Principal (G-L)",
+    "email": "bnelson@pleasantonusd.net"
+  },
+  {
+    "id": 16297795,
+    "first_name": "April",
+    "last_name": "Nicolas",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["Geometry (P)", "Study Skills"],
+        "hasTA": false
+      },
+      {
+        "period": "2",
+        "names": ["Life Science", "Physical Science"],
+        "hasTA": false
+      },
+      {
+        "period": "3",
+        "names": ["Algebra 1 (P)", "Junior English", "Math 1"],
+        "hasTA": false
+      },
+      {
+        "period": "4",
+        "names": [
+          "Freshman English",
+          "Junior English",
+          "Senior English",
+          "Sophomore English"
+        ],
+        "hasTA": false
+      },
+      {
+        "period": "5",
+        "names": [
+          "Civics",
+          "Global Studies",
+          "Global Studies",
+          "US History",
+          "World History"
+        ],
+        "hasTA": false
+      },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Special Education",
+    "email": "anicolas@pleasantonusd.net",
+    "category": "Special Education",
+    "clubs": ["Fencing Club"]
+  },
+  {
+    "id": 16297677,
+    "first_name": "Michael",
+    "last_name": "Ogle",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP Calculus AB (HP)"], "hasTA": true },
+      { "period": "2", "names": ["AP Calculus AB (HP)"], "hasTA": false },
+      { "period": "3", "names": ["AP Calculus BC (HP)"], "hasTA": false },
+      { "period": "5", "names": ["AP Calculus AB (HP)"], "hasTA": false },
+      { "period": "6", "names": ["AP Calculus BC (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "cogle@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": ["Girls Who Start", "Hacks Club"]
+  },
+  {
+    "id": 16297678,
+    "first_name": "Renee",
+    "last_name": "Ogle",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["Honors Human Body Sys (PLTW)(HP)"],
+        "hasTA": true
+      },
+      {
+        "period": "2",
+        "names": ["Honors Human Body Sys (PLTW)(HP)"],
+        "hasTA": true
+      },
+      { "period": "3", "names": ["AP Biology (HP)"], "hasTA": true },
+      { "period": "4", "names": ["AP Biology (HP)"], "hasTA": false },
+      { "period": "5", "names": ["AP Biology (HP)"], "hasTA": true },
+      { "period": "6", "names": ["AP Biology (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "rogle@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE) / Science",
+    "clubs": ["Biology Club (USABO)", "Students Interested in Medical Science"]
+  },
+  {
+    "id": 16297831,
+    "first_name": "Allyson",
+    "last_name": "Ortner",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["Intro to Health Careers A&B (P)"],
+        "hasTA": false
+      }
+    ],
+    "subject": "Career & Technical Education (CTE)",
+    "email": "aortner@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE)",
+    "clubs": []
+  },
+  {
+    "id": 16297679,
+    "first_name": "Jason",
+    "last_name": "Oswalt",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Algebra 2 (P)"], "hasTA": false },
+      { "period": "2", "names": ["Algebra 2 (P)"], "hasTA": false },
+      { "period": "3", "names": ["Algebra 2 (P)"], "hasTA": false },
+      {
+        "period": "4",
+        "names": ["Computer Science Principles (PLTW)(P)"],
+        "hasTA": false
+      },
+      {
+        "period": "5",
+        "names": ["Computer Science Principles (PLTW)(P)"],
+        "hasTA": false
+      },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "joswalt@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": ["Self Defense Club"]
+  },
+  {
+    "id": 11407353,
+    "first_name": "Darren",
+    "last_name": "Pagtakhan",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["African American Literature (P)"], "hasTA": false },
+      { "period": "2", "names": ["AP English Literature/Composition (HP)"], "hasTA": false },
+      { "period": "3", "names": ["African American Literature (P)"], "hasTA": false },
+      { "period": "5", "names": ["AP English Literature/Composition (HP)"], "hasTA": false },
+      { "period": "6", "names": ["Honors Sophomore English (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "dpagtakhan@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 16297806,
+    "first_name": "Robert",
+    "last_name": "Palmer",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP Psychology (HP)"], "hasTA": true },
+      { "period": "2", "names": ["Economics (P)"], "hasTA": false },
+      { "period": "4", "names": ["AP Psychology (HP)"], "hasTA": false },
+      { "period": "5", "names": ["Economics (P)"], "hasTA": false },
+      { "period": "6", "names": ["AP Psychology (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "rpalmer@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": ["English for Change", "Ocean Conservancy Club"]
+  },
+  {
+    "id": 16297680,
+    "first_name": "Phillip",
+    "last_name": "Peacock",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Global Studies (P)"], "hasTA": false },
+      { "period": "2", "names": ["Global Studies (P)"], "hasTA": false },
+      { "period": "3", "names": ["World History (P)"], "hasTA": false },
+      { "period": "5", "names": ["World History (P)"], "hasTA": false },
+      { "period": "6", "names": ["Global Studies (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "ppeacock@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": []
+  },
+  {
+    "id": 16297749,
+    "first_name": "Lisa",
+    "last_name": "Perry",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Sophomore English (P)"], "hasTA": true },
+      { "period": "2", "names": ["Creative Writing (P)"], "hasTA": false },
+      { "period": "3", "names": ["British Literature (P)"], "hasTA": true },
+      { "period": "4", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "lperry@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 16297820,
+    "first_name": "Alex",
+    "last_name": "Porter",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Math 2 (P)"], "hasTA": false },
+      { "period": "2", "names": ["Math 4 (P)"], "hasTA": false },
+      { "period": "3", "names": ["Math 2 (P)"], "hasTA": false },
+      { "period": "4", "names": ["Math 4 (P)"], "hasTA": false },
+      { "period": "6", "names": ["Math 2 (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "aporter@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": []
+  },
+  {
+    "id": 11703916,
+    "first_name": "Alphonso",
+    "last_name": "Powell",
+    "role": "admin",
+    "category": "Administration",
+    "position": "Coordinator of Operations",
+    "email": "apowell@pleasantonusd.net"
+  },
+  {
+    "id": 18627768,
+    "first_name": "Eric",
+    "last_name": "Ra",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["Intro to Engineering Design (PLTW)(P)"],
+        "hasTA": false
+      },
+      {
+        "period": "2",
+        "names": ["Intro to Engineering Design (PLTW)(P)"],
+        "hasTA": false
+      },
+      {
+        "period": "3",
+        "names": ["Intro to Engineering Design (PLTW)(P)"],
+        "hasTA": false
+      },
+      {
+        "period": "4",
+        "names": ["Intro to Engineering Design (PLTW)(P)"],
+        "hasTA": false
+      },
+      { "period": "6", "names": ["Acad Support/Stu Skills"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Math & Career & Technical Education (CTE)",
+    "email": "era@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": ["Technology Student Association (TSA)"]
+  },
+  {
+    "id": 16297790,
+    "first_name": "Gauri",
+    "last_name": "Reyes",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["Multivariable Calculus (P)"],
+        "hasTA": false
+      },
+      { "period": "3", "names": ["Honors Pre-Calculus (HP)"], "hasTA": false },
+      { "period": "4", "names": ["Honors Pre-Calculus (HP)"], "hasTA": false },
+      { "period": "5", "names": ["Honors Pre-Calculus (HP)"], "hasTA": false },
+      { "period": "6", "names": ["Honors Pre-Calculus (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "greyes@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": ["Crochet and Knitting Club"]
+  },
+  {
+    "id": 16297809,
+    "first_name": "Kyle",
+    "last_name": "Riddle",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Math 3 (P)"], "hasTA": false },
+      { "period": "2", "names": ["Algebra 2 (P)"], "hasTA": true },
+      { "period": "3", "names": ["Math 3 (P)"], "hasTA": true },
+      { "period": "4", "names": ["Math 3 (P)"], "hasTA": false },
+      { "period": "5", "names": ["Algebra 2 (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "kriddle@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": []
+  },
+  {
+    "id": 16297684,
+    "first_name": "Peter",
+    "last_name": "Robbins",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Expos Read & Wrt (P)"], "hasTA": false },
+      { "period": "2", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "4", "names": ["Expos Read & Wrt (P)"], "hasTA": true },
+      { "period": "5", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "6", "names": ["Sophomore English (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "probbins@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 17479782,
+    "first_name": "Tyler",
+    "last_name": "Rust",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Civics (P)"], "hasTA": false },
+      { "period": "2", "names": ["Civics (P)"], "hasTA": false },
+      { "period": "4", "names": ["US History (P)"], "hasTA": false },
+      { "period": "5", "names": ["US History (P)"], "hasTA": false },
+      { "period": "6", "names": ["US History (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "trust@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": []
+  },
+  {
+    "id": 16297838,
+    "first_name": "Timothy",
+    "last_name": "Sakogawa",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Chemistry (P)"], "hasTA": false },
+      { "period": "2", "names": ["Chemistry (P)"], "hasTA": false },
+      { "period": "3", "names": ["Chemistry (P)"], "hasTA": false },
+      { "period": "4", "names": ["Chemistry (P)"], "hasTA": false },
+      { "period": "6", "names": ["Chemistry (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "tsakogawa@pleasantonusd.net",
+    "category": "Science",
+    "clubs": [
+      "American Cancer Society",
+      "International Advance Math Society",
+      "Technovation Club"
+    ]
+  },
+  {
+    "id": 16297773,
+    "first_name": "Fabiola",
+    "last_name": "Salceda",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "3",
+        "names": ["Devel Psych of Children (P)"],
+        "hasTA": false
+      }
+    ],
+    "subject": "Career & Technical Education (CTE)",
+    "email": "fsalceda@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE)",
+    "clubs": []
+  },
+  {
+    "id": 16297686,
+    "first_name": "Mary",
+    "last_name": "Scavone",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["PE Course 1"], "hasTA": false },
+      { "period": "2", "names": ["PE Course 1"], "hasTA": false },
+      { "period": "4", "names": ["PE Course 1"], "hasTA": true },
+      { "period": "5", "names": ["PE Course 1"], "hasTA": false },
+      { "period": "A", "names": ["PE Course 1"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Physical Education",
+    "email": "mscavone@pleasantonusd.net",
+    "category": "Physical Education",
+    "clubs": ["FCA"]
+  },
+  {
+    "id": 16297755,
+    "first_name": "Mina",
+    "last_name": "Shah",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Math 1"], "hasTA": false },
+      { "period": "2", "names": ["Freshman English"], "hasTA": false },
+      { "period": "4", "names": ["Physical Science"], "hasTA": false },
+      { "period": "5", "names": ["Sophomore English"], "hasTA": false },
+      { "period": "6", "names": ["Study Skills"], "hasTA": true },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Special Education",
+    "email": "mshah@pleasantonusd.net",
+    "category": "Special Education",
+    "clubs": []
+  },
+  {
+    "id": 16297787,
+    "first_name": "Madhura",
+    "last_name": "Shetty",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Fund Algebra 1A"], "hasTA": false },
+      { "period": "2", "names": ["Fund Algebra 1B"], "hasTA": false },
+      { "period": "5", "names": ["Study Skills"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Special Education",
+    "email": "mshetty@pleasantonusd.net",
+    "category": "Special Education",
+    "clubs": []
+  },
+  {
+    "id": 16297688,
+    "first_name": "Dawn",
+    "last_name": "Silva",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["PE Course 1"], "hasTA": false },
+      {
+        "period": "2",
+        "names": ["PE Course 2 - Lifetime Fitness"],
+        "hasTA": false
+      },
+      {
+        "period": "3",
+        "names": ["PE Course 2 - Lifetime Fitness"],
+        "hasTA": false
+      },
+      {
+        "period": "5",
+        "names": ["PE Course 2 - Lifetime Fitness"],
+        "hasTA": false
+      },
+      { "period": "6", "names": ["PE Course 1"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Physical Education",
+    "email": "dsilva@pleasantonusd.net",
+    "category": "Physical Education",
+    "clubs": ["Young Life"]
+  },
+  {
+    "id": 16297691,
+    "first_name": "Stacey",
+    "last_name": "Sklar",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Honors Sophomore English (P)"], "hasTA": false },
+      { "period": "3", "names": ["Honors Sophomore English (P)"], "hasTA": false },
+      { "period": "4", "names": ["Honors Sophomore English (P)"], "hasTA": false },
+      { "period": "5", "names": ["Honors Sophomore English (P)"], "hasTA": false },
+      { "period": "6", "names": ["Honors Government & Politics WTP (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "English and Social Studies",
+    "email": "ssklar@pleasantonusd.net",
+    "category": "English / Social Studies",
+    "clubs": []
+  },
+  {
+    "id": 16297785,
+    "first_name": "Charles",
+    "last_name": "Snyder",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Algebra 1 (P)"], "hasTA": true },
+      { "period": "3", "names": ["Algebra 1 (P)"], "hasTA": false },
+      { "period": "4", "names": ["AP Calculus BC (HP)"], "hasTA": false },
+      { "period": "5", "names": ["AP Calculus BC (HP)"], "hasTA": false },
+      { "period": "6", "names": ["Algebra 1 (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "charles_snyder@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": ["Kids Against Hunger", "Black Student Union", "CSF"]
+  },
+  {
+    "id": 16297798,
+    "first_name": "Amy",
+    "last_name": "Suto",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Freshman English (P)"], "hasTA": false },
+      { "period": "2", "names": ["Junior English (P)"], "hasTA": false },
+      { "period": "4", "names": ["Freshman English (P)"], "hasTA": true },
+      { "period": "5", "names": ["Freshman English (P)"], "hasTA": false },
+      { "period": "6", "names": ["Freshman English (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "asuto@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 16297693,
+    "first_name": "Rebecca",
+    "last_name": "Teczon",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Honors Sophomore English (P)"], "hasTA": false },
+      { "period": "3", "names": ["Literature & Soc Justice (P)"], "hasTA": false },
+      { "period": "4", "names": ["Honors Sophomore English (P)"], "hasTA": false },
+      { "period": "5", "names": ["Literature & Soc Justice (P)"], "hasTA": true },
+      { "period": "6", "names": ["Honors Sophomore English (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "rteczon@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 16297849,
+    "first_name": "Bryan",
+    "last_name": "Thai",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "2",
+        "names": ["AP Computer Science A (HP)"],
+        "hasTA": false
+      },
+      { "period": "3", "names": ["AP Computer Science A (HP)"], "hasTA": true },
+      { "period": "4", "names": ["Geometry (P)"], "hasTA": true },
+      { "period": "5", "names": ["Geometry (P)"], "hasTA": false },
+      {
+        "period": "6",
+        "names": ["AP Computer Science A (HP)"],
+        "hasTA": false
+      },
+      { "period": "AC", "names": ["Access 10"], "hasTA": false }
+    ],
+    "subject": "Math",
+    "email": "bthai@pleasantonusd.net",
+    "category": "Mathematics",
+    "clubs": [
+      "ACE Coding Club",
+      "Math Team",
+      "Science (Olympiad) Team",
+      "Web Development"
+    ]
+  },
+  {
+    "id": 16297708,
+    "first_name": "Matthew",
+    "last_name": "Thayer",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP English Language/Composition (HP)"], "hasTA": true },
+      { "period": "2", "names": ["AP English Language/Composition (HP)"], "hasTA": false },
+      {
+        "period": "3",
+        "names": ["Debate 1 (P)", "Debate 3 (P)"],
+        "hasTA": false
+      },
+      {
+        "period": "4",
+        "names": ["Debate 1 (P)", "Debate 3 (P)"],
+        "hasTA": true
+      },
+      { "period": "6", "names": ["AP English Language/Composition (HP)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "English",
+    "email": "mthayer@pleasantonusd.net",
+    "category": "English",
+    "clubs": []
+  },
+  {
+    "id": 16297695,
+    "first_name": "Christopher",
+    "last_name": "Thompson",
+    "role": "teacher",
+    "classes": [
+      { "period": "6", "names": ["Adapted PE"], "hasTA": false }
+    ],
+    "subject": "Physical Education",
+    "email": "cthompson@pleasantonusd.net",
+    "category": "Physical Education",
+    "clubs": []
+  },
+  {
+    "id": 16297784,
+    "first_name": "Jaimi",
+    "last_name": "Turner",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Health Education (P)"], "hasTA": false },
+      { "period": "2", "names": ["Health Education (P)"], "hasTA": false },
+      { "period": "3", "names": ["Health Education (P)"], "hasTA": false },
+      { "period": "4", "names": ["Health Education (P)"], "hasTA": false },
+      { "period": "5", "names": ["Health Education (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Health",
+    "email": "jturner@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE)",
+    "clubs": []
+  },
+  {
+    "id": 16297696,
+    "first_name": "Amy",
+    "last_name": "Turner Bull",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Zoology (P)"], "hasTA": false },
+      { "period": "2", "names": ["Zoology (P)"], "hasTA": false },
+      { "period": "3", "names": ["Zoology (P)"], "hasTA": false },
+      {
+        "period": "5",
+        "names": ["Principles of Biomed Science (PLTW)(P)"],
+        "hasTA": true
+      },
+      {
+        "period": "6",
+        "names": ["Principles of Biomed Science (PLTW)(P)"],
+        "hasTA": false
+      },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "aturnerbull@pleasantonusd.net",
+    "category": "Career & Technical Education (CTE) / Science",
+    "clubs": ["Make-A-Wish"]
+  },
+  {
+    "id": 16297697,
+    "first_name": "Samuel",
+    "last_name": "Weaver",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP Government & Politics: US (HP)"], "hasTA": false },
+      { "period": "2", "names": ["AP Government & Politics: US (HP)"], "hasTA": false },
+      { "period": "3", "names": ["AP Government & Politics: US (HP)"], "hasTA": false },
+      { "period": "4", "names": ["AP Government & Politics: US (HP)"], "hasTA": false },
+      { "period": "5", "names": ["AP Government & Politics: US (HP)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "sweaver@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": ["FISH Club"]
+  },
+  {
+    "id": 16297814,
+    "first_name": "Shawn",
+    "last_name": "Weber",
+    "role": "teacher",
+    "classes": [
+      { "period": "3", "names": ["Civics (P)"], "hasTA": false },
+      { "period": "4", "names": ["Student Leadership (P)"], "hasTA": false },
+      { "period": "5", "names": ["Civics (P)"], "hasTA": false },
+      { "period": "6", "names": ["Civics (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access Combo 9-12"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "sweber@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": []
+  },
+  {
+    "id": 16279204,
+    "first_name": "Maria",
+    "last_name": "White",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "1",
+        "names": ["Honors Medical Interv (PLTW)(HP)"],
+        "hasTA": false
+      },
+      {
+        "period": "2",
+        "names": ["Honors Medical Interv (PLTW)(HP)"],
+        "hasTA": false
+      },
+      { "period": "4", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "5", "names": ["Biology (P)"], "hasTA": false },
+      { "period": "6", "names": ["Biology (P)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "mwhite@pleasantonusd.net",
+    "category": "Science",
+    "clubs": []
+  },
+  {
+    "id": 16297699,
+    "first_name": "Mairi",
+    "last_name": "Wohlgemuth",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["AP US History (HP)"], "hasTA": false },
+      { "period": "3", "names": ["Civics (P)"], "hasTA": true },
+      { "period": "4", "names": ["AP US History (HP)"], "hasTA": true },
+      { "period": "5", "names": ["AP US History (HP)"], "hasTA": true },
+      { "period": "6", "names": ["AP US History (HP)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 11"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "mwohlgemuth@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": []
+  },
+  {
+    "id": 19741895,
+    "first_name": "Paige",
+    "last_name": "Wright-Henry",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Earth & Space Science (P)"], "hasTA": false },
+      { "period": "2", "names": ["Earth & Space Science (P)"], "hasTA": false },
+      { "period": "3", "names": ["Earth & Space Science (P)"], "hasTA": false },
+      { "period": "4", "names": ["Earth & Space Science (P)"], "hasTA": false },
+      { "period": "6", "names": ["Earth & Space Science (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Science",
+    "email": "pwright-henry@pleasantonusd.net",
+    "category": "Science",
+    "clubs": []
+  },
+  {
+    "id": 16297853,
+    "first_name": "Bo Eun",
+    "last_name": "Yang",
+    "role": "teacher",
+    "classes": [
+      {
+        "period": "9",
+        "names": ["Korean 1 (P)", "Korean 3 (P)"],
+        "hasTA": false
+      }
+    ],
+    "subject": "World Languages",
+    "email": "byang@pleasantonusd.net",
+    "category": "World Languages",
+    "clubs": []
+  },
+  {
+    "id": 16297752,
+    "first_name": "Antonio",
+    "last_name": "Yovino",
+    "role": "teacher",
+    "classes": [
+      { "period": "2", "names": ["Honors Global Studies (P)"], "hasTA": false },
+      { "period": "3", "names": ["Honors Global Studies (P)"], "hasTA": false },
+      { "period": "4", "names": ["World History (P)"], "hasTA": true },
+      { "period": "5", "names": ["Honors Global Studies (P)"], "hasTA": false },
+      { "period": "6", "names": ["World History (P)"], "hasTA": false },
+      { "period": "AC", "names": ["Access 9"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "ayovino@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": ["Red Cross"]
+  },
+  {
+    "id": 10323561,
+    "first_name": "Jennifer",
+    "last_name": "Zuanich",
+    "role": "teacher",
+    "classes": [
+      { "period": "1", "names": ["Honors Global Studies (P)"], "hasTA": false },
+      { "period": "2", "names": ["AP Human Geo (HP)"], "hasTA": false },
+      { "period": "3", "names": ["AP Human Geo (HP)"], "hasTA": false },
+      { "period": "4", "names": ["Honors Global Studies (P)"], "hasTA": true },
+      { "period": "5", "names": ["AP Human Geo (HP)"], "hasTA": true },
+      { "period": "AC", "names": ["Access 12"], "hasTA": false }
+    ],
+    "subject": "Social Studies",
+    "email": "jzuanich@pleasantonusd.net",
+    "category": "Social Studies",
+    "clubs": []
+  }
+]

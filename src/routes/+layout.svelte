@@ -82,6 +82,9 @@
 			<a class:active={$page.url.pathname === '/schedule'} href="/schedule">
 				<i class="bi bi-bell" />
 			</a>
+			<a class:active={$page.url.pathname === '/staff'} href="/staff">
+				<i class="bi bi-people"></i>
+			</a>
 			<button class={'refresh' + (spinning ? ' spinning' : '')} on:click={refresh}>
 				<i class="bi bi-arrow-repeat" />
 			</button>
