@@ -5,11 +5,11 @@ export function parseData(session, oldAssignments) {
 	for (let period of session.periods) {	
 		let grades = []
 		let assignments = []
-		console.log(period);
+		// console.log(period);
 		const Course_S = [...period.Courses[0].Course]
 
 		Course_S.forEach((course, idx) => {
-			console.log(course)
+			// console.log(course)
 			course.$.Title = course.$.Title.replace(/ \([\s\S]*?\)/g, '')
 			course.index = idx
 			course.chartData = []
@@ -52,7 +52,7 @@ export function parseData(session, oldAssignments) {
 					}
 				}
 				[...course.Marks[0].Mark[0].Assignments[0].Assignment].reverse().forEach((assignment, aidx) => {
-					console.log(assignment)
+					// console.log(assignment)
 					assignment.$.Measure = assignment.$.Measure.replace('&amp;', '&')
 					assignment.course = course.Title
 					assignment.courseIndex = idx

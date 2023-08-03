@@ -113,7 +113,7 @@
                         </div>
                         {/if}
                         {#if isSameDay(selectedDate, day.date)}
-                        {#if  console.log(day)}{/if}
+                        <!-- {#if  console.log(day)}{/if} -->
                         {#if day.info?.schedule && Object.keys(day.info.schedule).length > 0}
                         <span class="periods-head">Bells:</span>
                         {#each Object.keys(day.info.schedule) as periodName}
