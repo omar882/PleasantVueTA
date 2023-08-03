@@ -24,8 +24,6 @@
         return format(date, "MMM d");
     }
 
-    window.parse = parse;
-
     $: selectedDateFormatted = prettyDate(selectedDate);
     $: weekStart = isSunday(selectedDate) ? selectedDate : previousSunday(selectedDate);
     $: weekEnd = isSaturday(selectedDate) ? selectedDate : nextSaturday(selectedDate);
@@ -67,6 +65,7 @@
     $: week = makeWeek(selectedDate);
 
     onMount(() => {
+        window.parse = parse;
         dateInput.value = selectedDate.toISOString();
     });
 

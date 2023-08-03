@@ -108,14 +108,18 @@
 			</div>
 		</div>
 	{/if}
-{:else}
-	<div
+{:else if $page.url.pathname == "/login"}
+<div
 		class="login-container"
 		in:fade={{ duration: 200, delay: 200 }}
 		out:fade={{ duration: 200 }}
 	>
 		<slot />
 	</div>
+{:else}
+<main>
+	<slot />
+</main>
 {/if}
 
 <style lang="scss">
