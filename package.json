@@ -30,7 +30,9 @@
 		"cookie": "^0.4.1",
 		"date-fns": "^2.30.0",
 		"handlebars": "^4.7.7",
+		"leaflet": "^1.9.4",
 		"mongodb": "^5.7.0",
+		"ordinal": "^1.0.3",
 		"soap": "^1.0.0",
 		"xml2js": "^0.6.0"
 	},
