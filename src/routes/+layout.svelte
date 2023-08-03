@@ -133,6 +133,7 @@
 		align-items: center;
 		width: min-content;
 		padding: $spacing-small;
+		z-index: 50;
 	}
 
 	main {
