@@ -237,13 +237,12 @@
     }
 
     .week {
-        --cols: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-row: 2/3;
         margin-inline: 0.2em;
         
         display: grid;
         column-gap: 0.2em;
-        grid-template-columns: var(--cols);
+        grid-template-columns: repeat(7, 1fr);
         // align-items: center;
         justify-content: center;
         height: 100%;
@@ -256,7 +255,7 @@
     }
 
     .week .day.today {
-        grid-column: span 2;
+        grid-column: span 3;
     }
 
     .day-scroll {
