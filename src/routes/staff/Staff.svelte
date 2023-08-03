@@ -19,7 +19,7 @@
                 <i class="bi bi-envelope"></i>
             </a>
         {/if}
-        {#if staff.role === "teacher" && innerHeight < innerWidth}
+        {#if staff.role === "teacher"}
             <span class="role">{staff.subject}</span>
         {:else}
             <span class="role">{staff.position}</span>
@@ -68,7 +68,7 @@
     {/if}
 </div>
 
-<style>
+<style type="scss">
     div.container {
         box-sizing: initial;
         width: 80%;
@@ -161,7 +161,9 @@
         padding: 1pt;
     }
 
-    @media only screen and (orientation: portrait) {
+    
+
+    @media only screen and (max-width: $breakpoint-phone) {
         div.container {
             width: 85%;
             height: 40px;
@@ -222,5 +224,9 @@
             padding: 1pt;
             margin: 2px 0 5px 0;
         }    
+
+        .role {
+        display: none;
+    }
     }
 </style>

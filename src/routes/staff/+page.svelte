@@ -135,16 +135,17 @@
             placeholder={window.innerWidth > window.innerHeight ? "Search by name, club, class, subject, etc." : "Search"}
         />
       </div>
-      <div>
+      <div class="staff-list">
         {#each staffListFiltered as staff}
             <Staff
-                {staff}
+                bind:staff={staff}
             />
         {/each}
       </div>
 </div>
 
 <style lang="scss">
+
     div#search-container {
         text-align: center;
         border-bottom: 2px solid black;
@@ -172,4 +173,10 @@
         left: -4pt;
         font-size: x-large;
     }
+
+	.staff-list {
+		overflow-y: scroll;
+		// max-height: 400px;
+		max-height: calc(100vh - 50px);
+	}
 </style>
