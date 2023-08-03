@@ -1,7 +1,7 @@
 <script>
 	import calendar from "$lib/data/calendar.json";
 
-    import {nextSaturday, format, isSaturday, previousSunday, isSunday, nextMonday, previousFriday, startOfDay, eachDayOfInterval, isWeekend, isToday, isTomorrow, isYesterday, nextDay, previousDay, isSameDay, addMinutes } from "date-fns";
+    import {nextSaturday, format, isSaturday, previousSunday, isSunday, nextMonday, previousFriday, startOfDay, eachDayOfInterval, isWeekend, isToday, isTomorrow, isYesterday, nextDay, previousDay, isSameDay, addMinutes, isWithinInterval, add, parse } from "date-fns";
 	import { onMount } from "svelte"
 
     let selectedDate = startOfDay(new Date());
@@ -23,6 +23,8 @@
         }
         return format(date, "MMM d");
     }
+
+    window.parse = parse;
 
     $: selectedDateFormatted = prettyDate(selectedDate);
     $: weekStart = isSunday(selectedDate) ? selectedDate : previousSunday(selectedDate);
@@ -58,7 +60,7 @@
 
     function onDateChange(event) {
         const user_date = new Date(event.target.value) 
-        console.log(new Date(event.target.value), event.target.value)
+        // console.log(new Date(event.target.value), event.target.value)
         selectedDate = startOfDay(addMinutes(new Date(event.target.value), user_date.getTimezoneOffset()));
     }
 
@@ -94,20 +96,56 @@
         </div>
         <div class="week">
             {#each week as day}
-                <div class="day" class:today={isSameDay(selectedDate, day.date)}>
+                <div class="day" on:click={()=>onDateChange({target: { value: day.date }})} class:today={isSameDay(selectedDate, day.date)}>
                     <div class="day-heading">
-                        {prettyDate(day.date, "EEEE")}
+                        <span>{prettyDate(day.date, "EEEE")}</span>
+                        {#if isSameDay(selectedDate, day.date) && day?.info?.noSchool}
+                        <span class="no-school-head">No School!</span>
+                        {/if}
                     </div>
-                    {#if !(day.info) && !isWeekend(day.date)}
-                        <span class="no-data">No Data!</span>                        
-                    {/if}
                     {#if day.info}
-                    {#if day?.info?.noSchool && !isWeekend(day.date)}
-                        No School!
-                    {/if}
-                    {#if day.info.events && day.info.events.length > 0}
-                        {day.info.events.length} events!
-                    {/if}
+                    <div class="day-scroll">
+                        {#if day.info?.noSchool && !isWeekend(day.date) && !isSameDay(selectedDate, day.date)}
+                        <div class="no-school">No School!</div>
+                        {/if}
+                        {#if day.info.events && day.info.events.length > 0 && !isSameDay(selectedDate, day.date)}
+                        <div class="event-count">
+                            {day.info.events.length} Events
+                        </div>
+                        {/if}
+                        {#if isSameDay(selectedDate, day.date)}
+                        {#if  console.log(day)}{/if}
+                        {#if day.info?.schedule && Object.keys(day.info.schedule).length > 0}
+                        <span class="periods-head">Bells:</span>
+                        {#each Object.keys(day.info.schedule) as periodName}
+                        <div class="period">
+                            <span class="period-name">
+                                {periodName}
+                            </span>
+                            <span class="period-timings" class:now={isWithinInterval(new Date(), {
+                                    start: parse(day.info.schedule[periodName].start, "h:mm a", day.date),
+                                    end: parse(day.info.schedule[periodName].end, "h:mm a", day.date),
+                            })}>{day.info.schedule[periodName].start} - {day.info.schedule[periodName].end}</span>
+                        </div>
+                        {/each}
+                        {/if}
+                        {#if day.info?.events?.length > 0}
+                        <span class="events-head">Events:</span>
+                        {#each day.info.events as event}
+                        <div class="event">
+                            <span class="event-name">
+                                {event.Title}
+                            </span>
+                            {#if event.Information}
+                            <span class="event-info">
+                                {event.Information}
+                            </span>
+                            {/if}
+                        </div> 
+                        {/each}
+                        {/if}
+                        {/if}
+                    </div>
                     {/if}
                 </div>
             {/each}
@@ -209,14 +247,56 @@
     }
 
     .day-scroll {
-        overflow-y: scroll;
+        margin-top: 10px;
+        // overflow-y: scroll;
         display: grid;
         grid-auto-columns: 1fr;
+        gap: 3px;
     }
+
+    .no-school, .event-count {
+        text-align: center;
+        @include box;
+        background-color: var(--bg-color-2-5);
+    }
+    .no-school-head {
+        text-align: center;
+        font-size: 0.7em;
+        font-weight: 300;
+    }
+
+    .period {
+        padding: 5px;
+        background-color: var(--bg-color-2-5);
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .event {
+        padding: 5px;
+        background-color: var(--bg-color-2-5);
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .period.now {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        background-color: var(--bg-color-2);
+    }
+
+
 
     .day-heading {
         font-size: 1.4em;
         font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
 
