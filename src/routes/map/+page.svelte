@@ -212,15 +212,16 @@
 </svelte:head>
 
 <div class="layout" data-sveltekit-prefetch>
-	<div class="grid-heading-container">
-		<h1>Map of AVHS</h1>
-        {#if $session.student?.CurrentSchool?.[0] && !($session.student.CurrentSchool[0].includes("Amador"))}
+    {#if $session.student?.CurrentSchool?.[0] && !($session.student.CurrentSchool[0].includes("Amador"))}
 		<MissingData message={"We are missing map data for your school!"} />
-		{/if}
+    {:else}
+    <div class="grid-heading-container">
+		<h1>Map of AVHS</h1>
 	</div>
 	<div class="content">
 		<div id="map"></div>
 	</div>
+    {/if}
 </div>
 
 <style lang="scss">
