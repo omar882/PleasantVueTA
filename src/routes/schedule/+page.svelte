@@ -27,7 +27,7 @@
     }
 
     function getPeriodName(periodName, idx) {
-        if (!(session && Object.keys(session)?.length > 0)) {
+        if (!(session?.gradebook?.Courses?.[0]?.Course)) {
             return periodName; 
         }
         for (const course of $session.gradebook.Courses[0].Course) {
