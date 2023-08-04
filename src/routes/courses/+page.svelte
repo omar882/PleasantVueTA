@@ -1,6 +1,8 @@
 <script>
 	import { session } from '$lib/stores/session.js'
 	import PeriodSelect from '$lib/components/PeriodSelect.svelte'
+
+	let missingAssignments = $session.gradebook.assignments.filter(assignment => eval(assignment.score) === 0).length
 </script>
 
 <svelte:head>
@@ -14,10 +16,27 @@
 	</div>
 	<div class="content">
 		<table>
+			<div class="grade-stats-row">
+				<span>Missing assignments</span>
+				<span>{missingAssignments}</span>
+			</div>
+			<div class="grade-stats-row">
+				<span>Average grade</span>
+				<span>{$session.gradebook.average}</span>
+			</div>
+			<div class="grade-stats-row">
+				<span>Average grade this week</span>
+				<span>{$session.gradebook.week.average}</span>
+			</div>
+		</table>
+	</div>
+	<div class="content">
+		<table>
 			{#each $session.selected.Courses[0].Course as course, index}
 				<a class="row-link" href={'/course/' + index}>
 					<td class="course-name"> {course.$.Title}</td>
 					<td class="course-staff">{course.$.Staff} </td>
+					<td class="course-room">{course.$.Room} </td>
 					<td class="course-grade" style={course.style}>{course.scoreString} </td>
 					<td class="course-score" style={course.style}>{course.score} </td>
 				</a>
@@ -38,12 +57,19 @@
 		font-size: 1.2em;
 		padding-top: 0;
 		padding-bottom: 0;
+		margin-bottom: 10px;
 	}
 
 	table {
 		height: 100%;
 		width: 100%;
 		border-spacing: 0 $spacing;
+	}
+
+	.grade-stats-row {
+		display: flex;
+		justify-content: space-between;
+		padding: $spacing-small;
 	}
 
 	.row-link {
