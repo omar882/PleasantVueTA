@@ -1,6 +1,6 @@
 <script>
 	import '../app.scss'
-	import { onMount } from 'svelte'
+	import { onDestroy, onMount } from 'svelte'
 	import { fly } from 'svelte/transition'
 	import { fade } from 'svelte/transition'
 	import { page } from '$app/stores'
@@ -10,9 +10,11 @@
 	import { settings } from '$lib/stores/settings.js'
 	import { oldAssignments } from '$lib/stores/oldAssignments.js'
 	import Spinner from '$lib/components/Spinner.svelte'
+	import { browser } from '$app/environment'
 
 	export let data
 
+	let interval;
 	let spinning = false
 
 	onMount(async () => {
@@ -22,8 +24,48 @@
 		if (data.user) {
 			console.log('load')
 			await load()
+			if (!interval) {
+				interval = setInterval(refresh, 10*1000 );
+			}
+		}
+	});
+
+	onDestroy(() => {
+		if (interval) {
+			clearInterval(interval);
 		}
 	})
+
+	async function showNotifications() {
+		for (const assignment of $session.gradebook.assignments) {
+			if (assignment?.new === true) {
+				// console.log(assignment)
+				new Notification(`PleasantVue - ${assignment.$.Measure} Posted`, {
+				body: `${$session.gradebook.Courses[0].Course[assignment.courseIndex].$.Staff} posted assignment`,
+				})
+				assignment.new = false;
+			}
+		}
+	}
+
+	async function checkNotificationPermissions() {
+		if (!browser) {
+			return;
+		}
+		if (!("Notification" in window)) return;
+		if (Notification.permission === "granted") {
+			await showNotifications();
+			return;
+		} else if (Notification.permission !== "denied") {
+			const permission = await Notification.requestPermission();
+			if (permission === "granted") {
+				await showNotifications();
+				return;
+			}
+
+		}
+		return;
+	}
 
 	async function load() {
 		const res = await fetch('/data')
@@ -42,7 +84,10 @@
 			selected: periods[currentPeriod],
 			gradebook: periods[currentPeriod]
 		}
-		parseData($session, $oldAssignments)
+		parseData($session, $oldAssignments);
+		await checkNotificationPermissions();
+		
+
 		$oldAssignments = $oldAssignments
 	}
 
@@ -85,6 +130,9 @@
 			<a class:active={$page.url.pathname === '/staff'} href="/staff">
 				<i class="bi bi-people"></i>
 			</a>
+			<a class:active={$page.url.pathname === '/map'} href="/map">
+				<i class="bi bi-map"></i>
+			</a>
 			<a class="settings" class:active={$page.url.pathname === '/settings'} href="/settings">
 				<i class="bi bi-gear" />
 			</a>
@@ -122,6 +170,9 @@
 		</a>
 		<a class:active={$page.url.pathname === '/staff'} href="/staff">
 			<i class="bi bi-people"></i>
+		</a>
+		<a class:active={$page.url.pathname === '/map'} href="/map">
+			<i class="bi bi-map"></i>
 		</a>
 </nav>
 {#if $page.url.pathname == "/login"}
