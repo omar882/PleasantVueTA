@@ -261,6 +261,8 @@ export function parseData(session, oldAssignments) {
 			}
 			course.color = getColor(course.scorePercent)
 			course.style = `color: ${course.color};`
+
+			course.chartData.sort((a, b) => a.x - b.x);
 		});
 
 		let averageRaw = -1

@@ -129,7 +129,7 @@
 </script>
 
 <svelte:head>
-	<title>{course.Title}</title>
+	<title>{course.$.Title}</title>
 </svelte:head>
 
 <div class="layout">
@@ -235,7 +235,6 @@
 		text-align: center;
 		display: flex;
 		flex-direction: column;
-		aspect-ratio: 1;
 		h1 {
 			margin-top: auto;
 			margin-bottom: $spacing-small;
