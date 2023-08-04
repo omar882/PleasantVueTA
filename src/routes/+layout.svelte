@@ -85,10 +85,7 @@
 			<a class:active={$page.url.pathname === '/staff'} href="/staff">
 				<i class="bi bi-people"></i>
 			</a>
-			<button class={'refresh' + (spinning ? ' spinning' : '')} on:click={refresh}>
-				<i class="bi bi-arrow-repeat" />
-			</button>
-			<a class:active={$page.url.pathname === '/settings'} href="/settings">
+			<a class="settings" class:active={$page.url.pathname === '/settings'} href="/settings">
 				<i class="bi bi-gear" />
 			</a>
 		</nav>
@@ -202,12 +199,10 @@
 		margin-bottom: 12.5px;
 	}
 
-	.refresh {
+	.settings {
 		margin-top: auto;
-		&.spinning i {
-			animation: spin 1s ease-in-out infinite;
-		}
 	}
+	
 
 	a,
 	button {
