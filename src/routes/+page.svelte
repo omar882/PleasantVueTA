@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Gradenight</title>
+	<title>PleasantVue</title>
 </svelte:head>
 
 <div class="layout" data-sveltekit-prefetch>

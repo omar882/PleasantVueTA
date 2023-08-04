@@ -43,9 +43,9 @@
 				on:click={() => changeSetting('theme', 'light')}
 			/>
 			<button
-				class={'theme' + ($settings.theme === 'olivia' ? ' active' : '')}
+				class={'theme' + ($settings.theme === 'bronze' ? ' active' : '')}
 				style="background: linear-gradient(45deg, #1f1d20 0% 50%, #1a181b 50% 100%);"
-				on:click={() => changeSetting('theme', 'olivia')}
+				on:click={() => changeSetting('theme', 'bronze')}
 			/>
 			<button
 				class={'theme' + ($settings.theme === 'glass' ? ' active' : '')}
