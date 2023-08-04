@@ -29,7 +29,7 @@
 		{/if}
 		<div class="value-label">
             {#each info.events as event}
-				<div>{event.Title} {event.Information}</div>
+				<div>&#x2022; {event.Title} {event.Information}</div>
             {/each}
 		</div>
 	</div>
@@ -155,14 +155,21 @@
 		aspect-ratio: unset;
 		grid-column: span 2;
 		h2 {
-			margin-top: 10px;
+			margin-top: auto;
 			margin-left: 15px;
-			text-align: left;
+			// text-align: left;
 		}
 
 		.value-label {
-			text-align: left;
+			// text-align: left;
 			margin-left: 15px;
+		}
+
+		.value-label:last-child {
+			margin-bottom: auto;
+		}
+
+		.value-label:nth-child(2) {
 			margin-bottom: 10px;
 		}
 	}
