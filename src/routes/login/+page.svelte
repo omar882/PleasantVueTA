@@ -56,6 +56,9 @@
 </svelte:head>
 
 <div class="content">
+	<header class="header">
+		<h1>Pleasant Vue</h1>
+	</header>
 	<form on:submit|preventDefault={login}>
 		<h2>Login</h2>
 		<input type="text" placeholder="Username" bind:value={username} />
@@ -81,14 +84,26 @@
 
 <style lang="scss">
 	.content {
-		position: absolute;
-		top: 0;
-		left: 0;
 		width: 100%;
 		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content min-content;
+		gap: 10px;
+		
+	}
+	
+	.header {
+		@include box;
+		padding: 5px;
+		width: 100%;
+		margin-inline: 10px;
+	}
+
+	.header h1 {
+		padding: 0px;
+		margin: 0px;
+		margin-left: 10px;
 	}
 
 	form {
@@ -96,6 +111,7 @@
 		width: 500px;
 		display: flex;
 		flex-direction: column;
+		margin-inline: auto;
 	}
 
 	.error {
