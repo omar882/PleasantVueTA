@@ -1,5 +1,6 @@
 <script>
 	import calendar from "$lib/data/calendar.json";
+    import MissingData from "$lib/components/MissingData.svelte";
 
     import {nextSaturday, format, isSaturday, previousSunday, isSunday, nextMonday, previousFriday, startOfDay, eachDayOfInterval, isWeekend, isToday, isTomorrow, isYesterday, nextDay, previousDay, isSameDay, addMinutes, isWithinInterval, add, parse, isFriday, isMonday } from "date-fns";
 	import { onMount } from "svelte"
@@ -113,6 +114,9 @@
 <div class="layout" data-sveltekit-prefetch>
 	<div class="grid-heading-container">
 		<h1>Schedule</h1>
+        {#if $session.student?.CurrentSchool?.[0] && !($session.student.CurrentSchool[0].includes("__"))}
+		<MissingData message={"We are missing schedule data for your school!"} />
+		{/if}
 	</div>
 	<div class="content">
 		<div class="date-selection">
@@ -189,6 +193,11 @@
 </div>
 
 <style lang="scss">
+    .grid-heading-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     .date-input {
         padding: 0px;
         background-color: transparent;

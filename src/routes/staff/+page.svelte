@@ -1,6 +1,8 @@
 <script>
 	import staffList from "$lib/data/staff.json";
     import Staff from './Staff.svelte';
+	import { session } from "$lib/stores/session";
+	import MissingData from "$lib/components/MissingData.svelte";
 
     var staffListFiltered = [...staffList];
 
@@ -122,6 +124,9 @@
 <div class="layout" data-sveltekit-prefetch>
 	<div class="grid-heading-container">
 		<h1>Staff</h1>
+		{#if $session.student?.CurrentSchool?.[0] && !($session.student.CurrentSchool[0].includes("__")) }
+		<MissingData message={"We are missing staff data for your school!"} />
+		{/if}
 	</div>
 
     <div id="search-container">
@@ -145,6 +150,11 @@
 </div>
 
 <style lang="scss">
+	.grid-heading-container {
+		display: flex;
+        justify-content: space-between;
+		align-items: center;
+	}
 
     div#search-container {
         text-align: center;

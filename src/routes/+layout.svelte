@@ -111,19 +111,37 @@
 			</div>
 		</div>
 	{/if}
-{:else if $page.url.pathname == "/login"}
-<div
+{:else}
+<nav
+			in:fade={{ duration: 200, delay: 200 }}
+			out:fade={{ duration: 200 }}
+			data-sveltekit-prefetch
+		>
+		<a class:active={$page.url.pathname === '/'} href="/">
+			<i class="bi bi-house" />
+		</a>
+		<a class:active={$page.url.pathname === '/schedule'} href="/schedule">
+			<i class="bi bi-bell" />
+		</a>
+		<a class:active={$page.url.pathname === '/staff'} href="/staff">
+			<i class="bi bi-people"></i>
+		</a>
+</nav>
+{#if $page.url.pathname == "/login"}
+<main
 		class="login-container"
 		in:fade={{ duration: 200, delay: 200 }}
 		out:fade={{ duration: 200 }}
 	>
 		<slot />
-	</div>
+</main>
 {:else}
 <main>
 	<slot />
 </main>
 {/if}
+{/if}
+
 
 <style lang="scss">
 	nav {

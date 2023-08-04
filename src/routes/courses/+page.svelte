@@ -1,6 +1,7 @@
 <script>
 	import { session } from '$lib/stores/session.js'
 	import PeriodSelect from '$lib/components/PeriodSelect.svelte'
+	import MissingData from '$lib/components/MissingData.svelte';
 </script>
 
 <svelte:head>
@@ -10,7 +11,9 @@
 <div class="layout" data-sveltekit-prefetch>
 	<div class="grid-heading-container">
 		<h1>Courses</h1>
-		<PeriodSelect bind:period={$session.selectedPeriod} />
+		{#if $session.student?.CurrentSchool?.[0] && !($session.student.CurrentSchool[0].includes("__"))}
+		<MissingData message={"We are missing course data for your school!"} />
+		{/if}
 	</div>
 	<div class="content">
 		<table>
@@ -31,6 +34,12 @@
 		display: flex;
 		height: 100%;
 		flex-direction: column;
+	}
+
+	.grid-heading-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center
 	}
 
 	.content {
