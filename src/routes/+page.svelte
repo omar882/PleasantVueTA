@@ -1,10 +1,15 @@
 <script>
+	import calendar from "$lib/data/calendar.json";
+	import { format } from "date-fns";
 	import ShareSchedule from '$lib/components/ShareSchedule.svelte'
 	import { session } from '$lib/stores/session.js'
+	import AssignmentHomepage from "$lib/components/AssignmentHomepage.svelte"
 
 	let date = new Date()
 	let greeting = date.getHours() < 12 ? 'morning' : date.getHours() < 18 ? 'afternoon' : 'evening'
 	let shareSchedule;
+
+	let info = calendar[format(new Date(), "MM/dd/yyyy")];
 </script>
 
 <svelte:head>
@@ -17,27 +22,37 @@
 		<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
 		<h1>{$session.student.FormattedName[0].split(' ')[0]}</h1>
 	</div>
-	<div class="school value">
-		<h2>School</h2>
-		<div class="value-label">{$session.student.CurrentSchool}</div>
+	<div class="events value">
+		<h2>Events</h2>
+		{#if info.noSchool}
+			<div class="value-label">No school today.</div>
+		{/if}
+		<div class="value-label">
+            {#each info.events as event}
+				<div>{event.Title} {event.Information}</div>
+            {/each}
+		</div>
 	</div>
-	<div class="average value">
+	<!-- <div class="average value">
 		<h1 style={$session.gradebook.averageStyle}>
 			{$session.gradebook.average}
 		</h1>
 		<div class="value-label">Average grade<br />&nbsp;</div>
-	</div>
-	<div class="improvement value">
-		<h1 style={$session.gradebook.week.averageStyle}>
-			{$session.gradebook.week.average}
-		</h1>
-		<div class="value-label">Average grade<br />this week</div>
-	</div>
+	</div> -->
 	<div class="week-assignments value">
 		<h1>{$session.gradebook.week.length}</h1>
 		<div class="value-label">
 			{$session.gradebook.week.length === 1 ? 'Assignment' : 'Assignments'}
 			<br />this week
+		</div>
+	</div>
+	<div class="days value">
+		<h1>
+			{$session.gradebook.days}
+		</h1>
+		<div class="value-label">
+			{$session.days === 1 ? 'School day' : 'School days'} left in
+			<br />{$session.gradebook.ReportingPeriod[0].$.GradePeriod}
 		</div>
 	</div>
 	<!-- <div class="grades">
@@ -59,36 +74,35 @@
 	</div> -->
 	<div class="grades">
 		<div class="grades-header">
-			<a class="link" href="/grades"><h2>Courses</h2></a>
+			<a class="link" href="/courses"><h2>Courses</h2></a>
 			<button on:click={shareSchedule.show}>Share Schedule</button>
 		</div>
 		<table class="grades-table">
 			{#each $session.gradebook.Courses[0].Course as course, index}
 				<a class="row-link" href={'/course/' + index}>
 					<td class="course-name">{course.$.Title}</td>
-					<td class="course-grade" style={course.style}>{course.scoreString}</td>
-					<td class="course-score" style={course.style}>{course.score}</td>
+					<!-- <td class="course-grade" style={course.style}>{course.scoreString}</td>
+					<td class="course-score" style={course.style}>{course.score}</td> -->
+					<td class="course-view"><i class="bi bi-eye"></i></td>
 				</a>
 			{/each}
 		</table>
 	</div>
 	<div class="assignments">
 		<div class="assignments-scroll">
-			<a class="link" href="/assignments"><h2>Assignments</h2></a>
+			<div class="assignents-header">
+				<a class="link" href="/assignments"><h2>Assignments</h2></a>
+			<span class="show-all"><i on:click={() => {
+				document.querySelectorAll(".assignment-score").forEach((el) => {
+					el.click();
+				});
+			}} class="bi bi-eye"></i></span>
+			</div>
+			
 			<table class="assignments-table">
 				{#each $session.gradebook.assignments as assignment}
 					{#if assignment.scorePercent >= 0}
-						<tr class={assignment.fake || assignment.edited ? 'fake' : ''}>
-							<td
-								class="assignment-name"
-								style={assignment.new ? 'font-weight: bold;' : ''}
-							>
-								{assignment.$.Measure}
-							</td>
-							<td class="assignment-score" style={assignment.style}>
-								{assignment.score}
-							</td>
-						</tr>
+						<AssignmentHomepage assignment={assignment} />
 					{/if}
 				{/each}
 			</table>
@@ -137,6 +151,22 @@
 		}
 	}
 
+	.events {
+		aspect-ratio: unset;
+		grid-column: span 2;
+		h2 {
+			margin-top: 10px;
+			margin-left: 15px;
+			text-align: left;
+		}
+
+		.value-label {
+			text-align: left;
+			margin-left: 15px;
+			margin-bottom: 10px;
+		}
+	}
+
 	.grades {
 		@include box;
 		grid-column: 1 / 5;
@@ -155,6 +185,20 @@
 		overflow-y: auto;
 		scrollbar-color: var(--bg-color-2-5) transparent;
 		padding: $spacing;
+		
+	}
+
+	.assignments-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.show-all {
+		cursor: pointer;
+		float: right;
+		position: relative;
+		top: 10px;
 	}
 
 	.grades-header {
@@ -166,23 +210,22 @@
 		height: calc(100% - 2 * $spacing);
 	}
 
-	
-
 	.row-link {
 		display: table-row;
 		text-decoration: none;
-
-		td:first-child {
-			border-radius: $roundness-small 0 0 $roundness-small;
-		}
-		td:last-child {
-			border-radius: 0 $roundness-small $roundness-small 0;
-		}
-		&:hover td {
+		border-radius: $roundness-small;
+		
+		&:hover {
 			background: var(--bg-color-1-5);
 		}
-		&:active td {
+		&:active {
 			background: var(--bg-color-1);
+		}
+
+		.course-view {
+			font-size: large;
+			float: right;
+			margin-left: auto;
 		}
 	}
 

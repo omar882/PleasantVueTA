@@ -1,4 +1,6 @@
 import { getColor, fourToPercent, percentToLetter } from './utils.js'
+import calendar from "$lib/data/calendar.json";
+import { format } from "date-fns";
 
 export function parseData(session, oldAssignments) {
 	window.session = session;
@@ -267,11 +269,25 @@ export function parseData(session, oldAssignments) {
 		period.averageStyle = `color: ${getColor(averageRaw)};`
 		period.average = averageRaw >= 0 ? averageRaw.toFixed(1) + '%' : '-'
 
-		period.days = Math.round((new Date(period.ReportingPeriod.EndDate) - new Date()) / 86400000)
+		period.days = getDaysLeft(new Date(period.ReportingPeriod[0].$.EndDate))
 		assignments.sort((a, b) => new Date(b.DueDate) - new Date(a.DueDate))
 		period.assignments = assignments
 		period.week = getWeek(period.assignments)
 	}
+}
+
+function getDaysLeft(date) {
+	let currentDate = format(new Date(), "MM/dd/yyyy");
+	let endDate = format(date, "MM/dd/yyyy");
+	let start = Object.keys(calendar).indexOf(currentDate);
+	let end = Object.keys(calendar).indexOf(endDate);
+	let noSchool = 0;
+	for (let i = start; i < end; i++) {
+		if (calendar[Object.keys(calendar)[i]].noSchool) {
+			noSchool++;
+		}
+	}
+	return end - start - noSchool;
 }
 
 function getWeek(assignments) {
