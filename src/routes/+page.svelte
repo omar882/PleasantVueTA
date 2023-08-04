@@ -23,7 +23,7 @@
 		<h1>{$session.student.FormattedName[0].split(' ')[0]}</h1>
 	</div>
 	<div class="events value">
-		<h2>Events</h2>
+		<h1>Events</h1>
 		{#if info.noSchool}
 			<div class="value-label">No school today.</div>
 		{/if}
@@ -154,15 +154,8 @@
 	.events {
 		aspect-ratio: unset;
 		grid-column: span 2;
-		h2 {
+		h1 {
 			margin-top: auto;
-			margin-left: 15px;
-			// text-align: left;
-		}
-
-		.value-label {
-			// text-align: left;
-			margin-left: 15px;
 		}
 
 		.value-label:last-child {
