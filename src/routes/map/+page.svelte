@@ -1,11 +1,13 @@
 <script>
 	import { session } from '$lib/stores/session.js'
-	import { onMount } from 'svelte'
+	import { onDestroy, onMount } from 'svelte'
     import ordinal from 'ordinal';
     import MissingData from '$lib/components/MissingData.svelte';
-	import { normalize } from 'xml2js/lib/processors'
+	import { normalize } from 'xml2js/lib/processors';
+    import { browser } from '$app/environment';
 
     let map;
+    let L;
 
     const roomLocations = {
         LOCKER_ROOM_MALE: [37.66885,-121.87506],
@@ -152,9 +154,15 @@
         R212: [37.66705,-121.87591],
     }
 
+    onDestroy(() => {
+        if (browser) {
+            map.remove();
+        }
+    })
+
     async function loadMap() {
         await import("leaflet/dist/leaflet.css");
-        const L = await import("leaflet");
+        L = await import("leaflet");
         // alert(window.screen.width);
         map = L.map("map", {
             maxBounds: L.latLngBounds(L.latLng(37.67080,-121.87760),L.latLng(37.66583,-121.87245)),
