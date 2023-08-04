@@ -114,7 +114,7 @@
 <div class="layout" data-sveltekit-prefetch>
 	<div class="grid-heading-container">
 		<h1>Schedule</h1>
-        {#if $session.student?.CurrentSchool?.[0] && !($session.student.CurrentSchool[0].includes("__"))}
+        {#if $session.student?.CurrentSchool?.[0] && !($session.student.CurrentSchool[0].includes("Amador"))}
 		<MissingData message={"We are missing schedule data for your school!"} />
 		{/if}
 	</div>

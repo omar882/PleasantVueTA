@@ -2,10 +2,14 @@
 	import { session } from '$lib/stores/session.js'
 	import { onMount } from 'svelte'
     import ordinal from 'ordinal';
+    import MissingData from '$lib/components/MissingData.svelte';
+	import { normalize } from 'xml2js/lib/processors'
 
     let map;
 
     const roomLocations = {
+        LOCKER_ROOM_MALE: [37.66885,-121.87506],
+        LOCKER_ROOM_FEMALE: [37.66833,-121.87463],
         GYM: [37.6688376, -121.8753378],
         "SMALL GYM": [37.66830,-121.87443],
         OFFICE: [37.66772,-121.87401],
@@ -165,9 +169,22 @@
 
         if ($session?.gradebook) {
             for (const course of ($session?.gradebook?.Courses?.[0]?.Course) || []) {
-                if (course?.$?.Room && course?.$?.Room?.toUpperCase?.() in roomLocations) {
+                const normalizedName = course?.$?.Room?.toUpperCase?.();
+                if (course?.$?.Room && normalizedName in roomLocations) {
                     // L.marker(roomLocations[course.$.Room.toUpperCase()]).addTo(map)
-                    const tooltip = L.tooltip(roomLocations[course.$.Room.toUpperCase()])
+                    const tooltip = L.tooltip(roomLocations[normalizedName])
+                    // console.log([normalizedName.includes("GYM") && $session?.student?.Gender?.[0]]);
+                    if (normalizedName.includes("GYM") && $session?.student?.Gender?.[0]) {
+                        if ($session?.student?.Gender?.[0] === "Male" || $session?.student?.Gender?.[0] === "Spider") {
+                            const tooltip_locker_room = L.tooltip(roomLocations.LOCKER_ROOM_MALE);
+                            tooltip_locker_room.setContent(`<span>Locker Room</span>`);
+                            tooltip_locker_room.addTo(map);
+                        } else if ($session?.student?.Gender?.[0] == "Female") {
+                            const tooltip_locker_room = L.tooltip(roomLocations.LOCKER_ROOM_FEMALE);
+                            tooltip_locker_room.setContent(`<span>Locker Room</span>`);
+                            tooltip_locker_room.addTo(map);
+                        }
+                    }
                     if (course.$.Period) {
                         try {
                             const num = parseInt(course.$.Period);
@@ -196,7 +213,10 @@
 
 <div class="layout" data-sveltekit-prefetch>
 	<div class="grid-heading-container">
-		<h1>Map</h1>
+		<h1>Map of AVHS</h1>
+        {#if $session.student?.CurrentSchool?.[0] && !($session.student.CurrentSchool[0].includes("Amador"))}
+		<MissingData message={"We are missing map data for your school!"} />
+		{/if}
 	</div>
 	<div class="content">
 		<div id="map"></div>
@@ -216,9 +236,14 @@
         grid-row: 1/2;
         z-index: 1000;
         position: absolute;
-        
         justify-self: end;
+        justify-items: end;
         margin-right: 10px;
+        align-items: center;
+        padding: 10px;
+        border-radius: 10px;
+        gap: 10px;
+        background-color: rgb(255 255 255 / 40%);
     }
 
     .content {
