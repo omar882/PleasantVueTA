@@ -22,7 +22,7 @@
 						</td>
 						<td class="course">
 							<a class="link" href={'/course/' + assignment.courseIndex}>
-								{assignment.course}
+								{$session.selected.Courses[0].Course[assignment.courseIndex].$.Title}
 							</a>
 						</td>
 						<td class="date">{assignment.$.DueDate}</td>
