@@ -96,7 +96,7 @@
 	.header {
 		@include box;
 		padding: 5px;
-		width: 100%;
+		// width: 100%;
 		margin-inline: 10px;
 	}
 
@@ -108,7 +108,7 @@
 
 	form {
 		@include box;
-		width: 500px;
+
 		display: flex;
 		flex-direction: column;
 		margin-inline: auto;
