@@ -40,8 +40,9 @@
 		for (const assignment of $session.gradebook.assignments) {
 			if (assignment?.new === true) {
 				// console.log(assignment)
-				new Notification(`PleasantVue - ${assignment.$.Measure} Posted`, {
-				body: `${$session.gradebook.Courses[0].Course[assignment.courseIndex].$.Staff} posted assignment`,
+				new Notification(
+					`PleasantVue — New Assignment Posted`, {
+					body: `${$session.gradebook.Courses[0].Course[assignment.courseIndex].$.Title} — ${assignment.$.Measure}`,
 				})
 				assignment.new = false;
 			}
