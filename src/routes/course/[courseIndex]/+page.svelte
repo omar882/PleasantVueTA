@@ -135,7 +135,7 @@
 <div class="layout">
 	<div class="grid-heading-container">
 		<h1 class="title">{course.$.Title}</h1>
-		<PeriodSelect bind:period={$session.selectedPeriod} />
+		<!-- <PeriodSelect bind:period={$session.selectedPeriod} /> -->
 	</div>
 	<div class="grade">
 		<h1 class="grade-letter" style={course.style}>

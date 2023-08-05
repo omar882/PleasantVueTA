@@ -15,7 +15,9 @@
 	export let data
 
 	let interval;
-	let spinning = false
+	let spinning = false;
+
+	let expandedSidebar = false;
 
 	onMount(async () => {
 		if ($settings.theme === 'dark') {
@@ -114,29 +116,71 @@
 			in:fade={{ duration: 200, delay: 200 }}
 			out:fade={{ duration: 200 }}
 			data-sveltekit-prefetch
+			on:mouseenter={e => {
+				e.target.querySelectorAll('.nav-item-title').forEach(el => {
+					el.style.display = 'block';
+					el.style.width = "auto";
+				})
+				e.target.querySelectorAll(".nav-item").forEach(el => {
+					el.style.width = "175px";
+				})
+			}}
+			on:mouseleave={e => {
+				e.target.querySelectorAll('.nav-item-title').forEach(el => {
+					el.style.display = 'none';
+					el.style.width = "0";
+				})
+				e.target.querySelectorAll(".nav-item").forEach(el => {
+					el.style.width = "auto";
+				})
+			}}
 		>
-			<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
-			<a class:active={$page.url.pathname === '/'} href="/">
-				<i class="bi bi-house" />
-			</a>
-			<a class:active={$page.url.pathname === '/courses'} href="/courses">
-				<i class="bi bi-list-ol" />
-			</a>
-			<a class:active={$page.url.pathname === '/assignments'} href="/assignments">
-				<i class="bi bi-pen" />
-			</a>
-			<a class:active={$page.url.pathname === '/schedule'} href="/schedule">
-				<i class="bi bi-bell" />
-			</a>
-			<a class:active={$page.url.pathname === '/staff'} href="/staff">
-				<i class="bi bi-people"></i>
-			</a>
-			<a class:active={$page.url.pathname === '/map'} href="/map">
-				<i class="bi bi-map"></i>
-			</a>
-			<a class="settings" class:active={$page.url.pathname === '/settings'} href="/settings">
-				<i class="bi bi-gear" />
-			</a>
+			<div class="nav-item">
+				<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
+				<div class="nav-item-title"><strong>PleasantVue</strong></div>
+			</div>
+			<div class="nav-item">
+				<a class:active={$page.url.pathname === '/'} href="/">
+					<i class="bi bi-house" />
+				</a>
+				<a class="nav-item-title" class:active={$page.url.pathname === '/'} href="/"><div>Home</div></a>
+			</div>
+			<div class="nav-item">
+				<a class:active={$page.url.pathname === '/courses'} href="/courses">
+					<i class="bi bi-list-ol" />
+				</a>
+				<a class="nav-item-title" class:active={$page.url.pathname === '/courses'} href="/courses"><div>Courses</div></a>
+			</div>
+			<div class="nav-item">
+				<a class:active={$page.url.pathname === '/assignments'} href="/assignments">
+					<i class="bi bi-pen" />
+				</a>
+				<a class="nav-item-title" class:active={$page.url.pathname === '/assignments'} href="/assignments"><div>Assignments</div></a>
+			</div>
+			<div class="nav-item">
+				<a class:active={$page.url.pathname === '/schedule'} href="/schedule">
+					<i class="bi bi-bell" />
+				</a>
+				<a class="nav-item-title" class:active={$page.url.pathname === '/schedule'} href="/schedule"><div>Bell Schedule</div></a>
+			</div>
+			<div class="nav-item">
+				<a class:active={$page.url.pathname === '/staff'} href="/staff">
+					<i class="bi bi-people"></i>
+				</a>
+				<a class="nav-item-title" class:active={$page.url.pathname === '/staff'} href="/staff"><div>Staff</div></a>
+			</div>
+			<div class="nav-item">
+				<a class:active={$page.url.pathname === '/map'} href="/map">
+					<i class="bi bi-map"></i>
+				</a>
+				<a class="nav-item-title" class:active={$page.url.pathname === '/map'} href="/map"><div>Map</div></a>
+			</div>
+			<div class="nav-item settings">
+				<a class:active={$page.url.pathname === '/settings'} href="/settings">
+					<i class="bi bi-gear" />
+				</a>
+				<a class="nav-item-title" class:active={$page.url.pathname === '/settings'} href="/settings"><div>Settings</div></a>
+			</div>
 		</nav>
 		<main in:fade={{ duration: 200, delay: 200 }} out:fade={{ duration: 200 }}>
 			{#key data.url}
@@ -162,19 +206,53 @@
 			in:fade={{ duration: 200, delay: 200 }}
 			out:fade={{ duration: 200 }}
 			data-sveltekit-prefetch
+			on:mouseenter={e => {
+				e.target.querySelectorAll('.nav-item-title').forEach(el => {
+					el.style.display = 'block';
+					el.style.width = "auto";
+				})
+				e.target.querySelectorAll(".nav-item").forEach(el => {
+					el.style.width = "175px";
+				})
+			}}
+			on:mouseleave={e => {
+				e.target.querySelectorAll('.nav-item-title').forEach(el => {
+					el.style.display = 'none';
+					el.style.width = "0";
+				})
+				e.target.querySelectorAll(".nav-item").forEach(el => {
+					el.style.width = "auto";
+				})
+			}}
 		>
-		<a class:active={$page.url.pathname === '/'} href="/">
-			<i class="bi bi-house" />
-		</a>
-		<a class:active={$page.url.pathname === '/schedule'} href="/schedule">
-			<i class="bi bi-bell" />
-		</a>
-		<a class:active={$page.url.pathname === '/staff'} href="/staff">
-			<i class="bi bi-people"></i>
-		</a>
-		<a class:active={$page.url.pathname === '/map'} href="/map">
-			<i class="bi bi-map"></i>
-		</a>
+		<div class="nav-item">
+			<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
+			<div class="nav-item-title"><strong>PleasantVue</strong></div>
+		</div>
+		<div class="nav-item">
+			<a class:active={$page.url.pathname === '/'} href="/">
+				<i class="bi bi-house" />
+			</a>
+			<a class="nav-item-title" class:active={$page.url.pathname === '/'} href="/"><div>Home</div></a>
+		</div>
+		<div class="nav-item">
+			<a class:active={$page.url.pathname === '/schedule'} href="/schedule">
+				<i class="bi bi-bell" />
+			</a>
+			<a class="nav-item-title" class:active={$page.url.pathname === '/schedule'} href="/schedule"><div>Bell Schedule</div></a>
+		</div>
+		<div class="nav-item">
+			<a class:active={$page.url.pathname === '/staff'} href="/staff">
+				<i class="bi bi-people"></i>
+			</a>
+			<a class="nav-item-title" class:active={$page.url.pathname === '/staff'} href="/staff"><div>Staff</div></a>
+		</div>
+		<div class="nav-item">
+			<a class:active={$page.url.pathname === '/map'} href="/map">
+				<i class="bi bi-map"></i>
+			</a>
+			<a class="nav-item-title" class:active={$page.url.pathname === '/map'} href="/map"><div>Map</div></a>
+		</div>
 </nav>
 {#if $page.url.pathname == "/login"}
 <main
@@ -244,27 +322,51 @@
 	}
 
 	a:first-of-type {
-		margin-top: 50px;
+		// margin-top: 50px;
 	}
 
 	a:last-of-type {
-		margin-bottom: 12.5px;
+		// margin-bottom: 12.5px;
 	}
 
 	.settings {
-		margin-top: auto;
+		margin-top: auto !important;
+		margin-bottom: 12.5px !important;
+	}
+
+	.nav-item {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		text-align: center;
+		width: auto;
+		height: 75px;
+		transition: width .5s ease-in-out;
 	}
 	
-
-	a,
-	button {
+	.nav-item-title {
+		display: none;
+		width: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		transition: width .5s ease-in-out;
+		text-decoration: none;
+	}
+	
+	a:not(.nav-item-title),
+	button,
+	img {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		text-decoration: none;
 		height: 50px;
 		width: 50px;
-		margin-top: 30px;
+		float: left;
+		margin-right: 10px;
+		margin-left: 10px;
 		text-align: center;
 		border-radius: 50%;
 		color: var(--font-color);
