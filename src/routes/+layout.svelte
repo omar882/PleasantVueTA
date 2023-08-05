@@ -118,8 +118,8 @@
 			data-sveltekit-prefetch
 		>
 			<div class="nav-item">
-				<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
-				<div class="nav-item-title"><strong>PleasantVue</strong></div>
+				<img class="logo" alt="logo" src="/icons/logo.png" />
+				<div class="nav-item-title app-title"><strong>PleasantVue</strong></div>
 			</div>
 			<div class="nav-item">
 				<a class:active={$page.url.pathname === '/'} href="/">
@@ -190,8 +190,8 @@
 			data-sveltekit-prefetch
 		>
 		<div class="nav-item">
-			<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
-			<div class="nav-item-title"><strong>PleasantVue</strong></div>
+			<img class="logo" alt="logo" src="/icons/logo.png" />
+			<div class="nav-item-title app-title"><strong>PleasantVue</strong></div>
 		</div>
 		<div class="nav-item">
 			<a class:active={$page.url.pathname === '/'} href="/">
@@ -243,6 +243,18 @@
 		width: min-content;
 		padding: $spacing-small;
 		z-index: 50;
+	}
+
+	.logo {
+		width: 30px;
+		height: 30px;
+		object-fit: cover;
+		object-position: 0 0;
+		border-radius: 0;
+	}
+
+	.app-title {
+		font-size: 1.25rem;
 	}
 
 	main {
