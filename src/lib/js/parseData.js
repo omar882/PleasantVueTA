@@ -184,8 +184,7 @@ export function parseData(session, oldAssignments) {
 		if (grades.length > 0) averageRaw = grades.reduce((a, b) => a + b) / grades.length
 
 		period.averageStyle = `color: ${getColor(averageRaw)};`
-		period.average = averageRaw >= 0 ? averageRaw.toFixed(1) + '%' : '-'
-		debugger;	
+		period.average = averageRaw >= 0 ? averageRaw.toFixed(1) + '%' : '-'	
 		period.days = getDaysLeft(new Date(period.ReportingPeriod[0].$.EndDate))
 		// assignments.sort((a, b) => new Date(b.$.DueDate) - new Date(a.$.DueDate))
 		period.assignments = assignments
