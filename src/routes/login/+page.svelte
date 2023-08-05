@@ -82,7 +82,7 @@
 <style lang="scss">
 	.content {
 		width: 100%;
-		height: 100%;
+		height: calc(100vh - 40px);
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content min-content;

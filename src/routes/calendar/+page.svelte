@@ -251,7 +251,7 @@
 
 	.layout {
 		display: flex;
-		height: 100%;
+		height: calc(100vh - 40px);
 		flex-direction: column;
 	}
 

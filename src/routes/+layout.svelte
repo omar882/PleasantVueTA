@@ -182,40 +182,6 @@
 		</div>
 	{/if}
 {:else}
-<nav
-			in:fade={{ duration: 200, delay: 200 }}
-			out:fade={{ duration: 200 }}
-			data-sveltekit-prefetch
-		>
-		<div class="nav-item">
-			<img class="logo" alt="logo" src="/icons/logo.png" />
-			<div class="nav-item-title app-title"><strong>PleasantVue</strong></div>
-		</div>
-		<div class="nav-item">
-			<a class:active={$page.url.pathname === '/'} href="/">
-				<i class="bi bi-house" />
-			</a>
-			<a class="nav-item-title" class:active={$page.url.pathname === '/'} href="/"><div>Home</div></a>
-		</div>
-		<div class="nav-item">
-			<a class:active={$page.url.pathname === '/calendar'} href="/calendar">
-				<i class="bi bi-bell" />
-			</a>
-			<a class="nav-item-title" class:active={$page.url.pathname === '/calendar'} href="/calendar"><div>Calendar</div></a>
-		</div>
-		<div class="nav-item">
-			<a class:active={$page.url.pathname === '/staff'} href="/staff">
-				<i class="bi bi-people"></i>
-			</a>
-			<a class="nav-item-title" class:active={$page.url.pathname === '/staff'} href="/staff"><div>Staff</div></a>
-		</div>
-		<div class="nav-item">
-			<a class:active={$page.url.pathname === '/map'} href="/map">
-				<i class="bi bi-map"></i>
-			</a>
-			<a class="nav-item-title" class:active={$page.url.pathname === '/map'} href="/map"><div>Map</div></a>
-		</div>
-</nav>
 {#if $page.url.pathname == "/login"}
 <main
 		class="login-container"
@@ -241,7 +207,7 @@
 		width: min-content;
 		padding: $spacing-small;
 		z-index: 50;
-
+		height: calc(100vh - 40px);
 		overflow-x: hidden;
 		overflow-y: scroll;
 	}
