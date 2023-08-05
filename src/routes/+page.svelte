@@ -12,7 +12,7 @@
 
 	let info = calendar?.[format(new Date(), "MM/dd/yyyy")] || {
 		events: [],
-		noSchool: false,
+		noSchool: true,
 	};
 </script>
 
@@ -28,16 +28,18 @@
 	</div>
 	<div class="events value">
 		<h1>Events</h1>
-		{#if info.noSchool}
-			<div class="value-label">No school today.</div>
-		{/if}
-		<div class="value-label">
-			{#if info.events.length === 0}
+		<div>
+			<div class="value-label">
+				{#if info.events.length === 0}
 				No events today.
-			{/if}
-            {#each info.events as event}
+				{/if}
+				{#each info.events as event}
 				<div>&#x2022; {event.Title} {event.Information}</div>
-            {/each}
+				{/each}
+			</div>
+			{#if info.noSchool}
+			<div class="value-label">No school today.</div>
+			{/if}
 		</div>
 	</div>
 	<!-- <div class="average value">
@@ -194,10 +196,6 @@
 
 		.value-label:last-child {
 			margin-bottom: auto;
-		}
-
-		.value-label:nth-child(2) {
-			margin-bottom: 10px;
 		}
 	}
 
