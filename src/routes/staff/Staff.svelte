@@ -70,6 +70,7 @@
 
 <style type="scss">
     div.container {
+        @include box;
         box-sizing: initial;
         width: 80%;
         border-top-left-radius: 20px;
@@ -83,10 +84,13 @@
     }
 
     div.info {
+        @include box;
         box-sizing: initial;
         width: 80%;
         height: auto;
-        border: 1px solid black;
+        border: 1px solid black;    
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         border-top: 0;
@@ -116,7 +120,6 @@
 
     a.email {
         text-decoration: none;
-        color: black;
         margin: 10px;
         opacity: .75;
         position: relative;

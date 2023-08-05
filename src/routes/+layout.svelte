@@ -213,11 +213,17 @@
 	}
 
 	.logo {
+		-webkit-filter: invert(1);
+		filter: invert(1);
 		width: 30px;
 		height: 30px;
 		object-fit: cover;
 		object-position: 0 0;
 		border-radius: 0;
+	}
+
+	.logo:hover {
+		background: transparent;
 	}
 
 	.app-title {

@@ -13,6 +13,13 @@
 	}
 
 	async function changeSetting(name, value) {
+		if (value === "bronze" || value === "night") {
+			document.querySelector("img.logo").style.webkitFilter = "invert(1)";
+			document.querySelector("img.logo").style.filter = "invert(1)";
+		} else if (value === "light" || value === "glass") {
+			document.querySelector("img.logo").style.webkitFilter = "invert(0)";
+			document.querySelector("img.logo").style.filter = "invert(0)";
+		}
 		$settings[name] = value
 		if (name === 'theme') {
 			parseData($session, null)
@@ -33,6 +40,11 @@
 		<div>{$settings.theme.charAt(0).toUpperCase() + $settings.theme.substring(1)}</div>
 		<div class="themes">
 			<button
+				class={'theme' + ($settings.theme === 'bronze' ? ' active' : '')}
+				style="background: linear-gradient(45deg, #1f1d20 0% 50%, #1a181b 50% 100%);"
+				on:click={() => changeSetting('theme', 'bronze')}
+			/>
+			<button
 				class={'theme' + ($settings.theme === 'night' ? ' active' : '')}
 				style="background: linear-gradient(45deg, #192024 0% 50%, #13161b 50% 100%);"
 				on:click={() => changeSetting('theme', 'night')}
@@ -41,11 +53,6 @@
 				class={'theme' + ($settings.theme === 'light' ? ' active' : '')}
 				style="background: linear-gradient(45deg, #e8edf7 0% 50%, #d1d8e6 50% 100%);"
 				on:click={() => changeSetting('theme', 'light')}
-			/>
-			<button
-				class={'theme' + ($settings.theme === 'bronze' ? ' active' : '')}
-				style="background: linear-gradient(45deg, #1f1d20 0% 50%, #1a181b 50% 100%);"
-				on:click={() => changeSetting('theme', 'bronze')}
 			/>
 			<button
 				class={'theme' + ($settings.theme === 'glass' ? ' active' : '')}
