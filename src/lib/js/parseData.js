@@ -11,6 +11,7 @@ export function parseData(session, oldAssignments) {
 		const Course_S = [...period.Courses[0].Course]
 
 		Course_S.forEach((course, idx) => {
+			// debugger;
 			// console.log(course)
 			course.$.Title = course.$.Title.replace(/ \([\s\S]*?\)/g, '')
 			course.index = idx
@@ -53,7 +54,9 @@ export function parseData(session, oldAssignments) {
 						weight: 100
 					}
 				}
-				[...course.Marks[0].Mark[0].Assignments[0].Assignment].reverse().forEach((assignment, aidx) => {
+				[...course.Marks[0].Mark[0].Assignments[0].Assignment]
+				.sort((a, b) => new Date(a.$.DueDate) - new Date(b.$.DueDate)).forEach((assignment, aidx) => {
+					// debugger;
 					// console.log(assignment)
 					assignment.$.Measure = assignment.$.Measure.replace('&amp;', '&')
 					assignment.course = course.Title
@@ -108,7 +111,8 @@ export function parseData(session, oldAssignments) {
 								course.scoreTypes.All.total += assignment.total
 							}
 
-							let date = new Date(assignment.$.DueDate)
+							assignment.date = new Date(assignment.$.DueDate)
+							
 							let scoreSum = 0
 							let totalSum = 0
 
@@ -121,17 +125,17 @@ export function parseData(session, oldAssignments) {
 
 							let color = getColor((scoreSum / totalSum) * 100)
 							let grade = (scoreSum / totalSum) * (course.fourPoint ? 4 : 100)
-
+							console.log(course, assignment, assignment.date, grade)
 							if (
 								course.chartData.length > 0 &&
 								course.chartData[course.chartData.length - 1].x ===
-									Math.floor(date / 8.64e7)
+									Math.floor(assignment.date / 8.64e7)
 							) {
 								course.chartData[course.chartData.length - 1].y = grade
 								course.chartData[course.chartData.length - 1].color = color
 							} else {
 								course.chartData.push({
-									x: Math.floor(date / 8.64e7),
+									x: Math.floor(assignment.date / 8.64e7),
 									y: grade,
 									color: color
 								})
@@ -140,7 +144,7 @@ export function parseData(session, oldAssignments) {
 						assignment.style = `color: ${getColor(assignment.scorePercent)};`
 					}
 					assignments.push(assignment)
-				})
+				});
 				// for (let assignment of new Array(course.Marks[0].Mark[0].Assignments[0].Assignment.reverse())) {
 				// 	console.log(assignment)
 				// 	assignment.$.Measure = assignment.$.Measure.replace('&amp;', '&')
@@ -272,7 +276,7 @@ export function parseData(session, oldAssignments) {
 		period.average = averageRaw >= 0 ? averageRaw.toFixed(1) + '%' : '-'
 
 		period.days = getDaysLeft(new Date(period.ReportingPeriod[0].$.EndDate))
-		assignments.sort((a, b) => new Date(b.DueDate) - new Date(a.DueDate))
+		// assignments.sort((a, b) => new Date(b.$.DueDate) - new Date(a.$.DueDate))
 		period.assignments = assignments
 		period.week = getWeek(period.assignments)
 	}
