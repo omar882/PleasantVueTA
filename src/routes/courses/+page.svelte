@@ -12,7 +12,6 @@
 <div class="layout" data-sveltekit-prefetch>
 	<div class="grid-heading-container">
 		<h1>Courses</h1>
-		<PeriodSelect bind:period={$session.selectedPeriod} />
 	</div>
 	<div class="content">
 		<table>
@@ -32,7 +31,7 @@
 	</div>
 	<div class="content">
 		<table>
-			{#each $session.selected.Courses[0].Course as course, index}
+			{#each $session.gradebook.Courses[0].Course as course, index}
 				<a class="row-link" href={'/course/' + index}>
 					<td class="course-name"> {course.$.Title}</td>
 					<td class="course-staff">{course.$.Staff} </td>
