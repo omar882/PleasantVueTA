@@ -148,7 +148,7 @@
 <style lang="scss">
 	.layout {
 		display: grid;
-		height: 100%;
+		height: calc(100vh - 40px);
 		width: 100%;
 		gap: $spacing;
 		grid-template-columns: 1fr 1fr 1fr 1fr 2fr;

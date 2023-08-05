@@ -219,7 +219,7 @@
 		gap: $spacing;
 		grid-template-columns: 2fr 5fr 4fr;
 		grid-template-rows: auto 1fr 2fr;
-		height: 100%;
+		height: calc(100vh - 40px);
 	}
 
 	.grid-heading-container {

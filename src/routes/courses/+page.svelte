@@ -46,7 +46,7 @@
 
 <style lang="scss">
 	.layout {
-		height: 100%;
+		height: calc(100vh - 40px);
 		flex-shrink: 3;
 	}
 
