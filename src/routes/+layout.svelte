@@ -285,14 +285,6 @@
 		border-radius: 50px;
 	}
 
-	a:first-of-type {
-		// margin-top: 50px;
-	}
-
-	a:last-of-type {
-		// margin-bottom: 12.5px;
-	}
-
 	.settings {
 		margin-top: auto !important;
 		margin-bottom: 12.5px !important;
@@ -385,6 +377,15 @@
 			margin-left: 0;
 			margin-bottom: $spacing;
 			height: calc(100% - 2 * $spacing - 50px);
+		}
+
+		.nav-item {
+			width: auto;
+		}
+
+		.nav-item-title {
+			display: none;
+			width: 0;
 		}
 	}
 </style>
