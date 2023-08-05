@@ -167,7 +167,7 @@
             maxBounds: L.latLngBounds(L.latLng(37.67080,-121.87760),L.latLng(37.66583,-121.87245)),
             minZoom: 16,
             maxBoundsViscosity: 1,
-        }).setView([37.66862, -121.87452], 18);
+        }).setView([37.66800,-121.87494], 18);
         map.attributionControl.setPrefix("Leaflet");
         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
             maxZoom: 19,
