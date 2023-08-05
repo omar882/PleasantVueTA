@@ -1,5 +1,5 @@
 <script>
-	import calendar from "$lib/data/calendar.json";
+	import calendar from "$lib/data/CALENDAR_HS_AMADOR.json";
     import MissingData from "$lib/components/MissingData.svelte";
 
     import {nextSaturday, format, isSaturday, previousSunday, isSunday, nextMonday, previousFriday, startOfDay, eachDayOfInterval, isWeekend, isToday, isTomorrow, isYesterday, nextDay, previousDay, isSameDay, addMinutes, isWithinInterval, add, parse, isFriday, isMonday } from "date-fns";

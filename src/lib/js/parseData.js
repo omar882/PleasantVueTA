@@ -1,5 +1,5 @@
 import { getColor, fourToPercent, percentToLetter } from './utils.js'
-import calendar from "$lib/data/calendar.json";
+import calendar from "$lib/data/CALENDAR_HS_AMADOR.json";
 import { format, eachDayOfInterval, isWeekend } from "date-fns";
 
 export function parseData(session, oldAssignments) {
