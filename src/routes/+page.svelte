@@ -1,5 +1,4 @@
 <script>
-	import calendar from "$lib/data/CALENDAR_HS_AMADOR.json";
 	import { format } from "date-fns";
 	import ShareSchedule from '$lib/components/ShareSchedule.svelte'
 	import { session } from '$lib/stores/session.js'

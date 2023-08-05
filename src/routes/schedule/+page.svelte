@@ -1,5 +1,4 @@
 <script>
-	import calendar from "$lib/data/CALENDAR_HS_AMADOR.json";
     import MissingData from "$lib/components/MissingData.svelte";
 
     import {nextSaturday, format, isSaturday, previousSunday, isSunday, nextMonday, previousFriday, startOfDay, eachDayOfInterval, isWeekend, isToday, isTomorrow, isYesterday, nextDay, previousDay, isSameDay, addMinutes, isWithinInterval, add, parse, isFriday, isMonday } from "date-fns";
@@ -9,9 +8,22 @@
 
     let selectedDate = startOfDay(isWeekend(new Date()) ? nextMonday(new Date()) : new Date())
     let dateInput;
+    let calendar;
+
+    if (!($session?.calendar)) {
+        try {
+            calendar = (import("$lib/data/CALENDAR_HS_AMADOR.json")).default;
+        } catch {
+            calendar = {
+                
+            }
+        }
+    } else {
+        calendar = $session.calendar
+    }
 
     function formatDate(date) {
-        return format(date, "MM/dd/yyyy");
+        return format(date, "M/dd/yyyy");
     }
 
     function prettyDate(date) {
@@ -53,6 +65,14 @@
             start: nextMonday(weekStart),
             end: previousFriday(weekEnd),
         };
+        console.log(eachDayOfInterval(interval).map((day) => {
+            console.log(formatDate(day))
+            const info = calendar[formatDate(day)];
+            return {
+                date: day,
+                info,
+            };
+        }))
         return eachDayOfInterval(interval).map((day) => {
             const info = calendar[formatDate(day)];
             return {
@@ -90,7 +110,8 @@
     function onDateChange(event) {
         const user_date = new Date(event.target.value) 
         // console.log(new Date(event.target.value), event.target.value)
-        selectedDate = startOfDay(addMinutes(new Date(event.target.value), user_date.getTimezoneOffset()));
+        const possibleWeekend = startOfDay(addMinutes(new Date(event.target.value), user_date.getTimezoneOffset()));
+        selectedDate = startOfDay(isWeekend(possibleWeekend) ? nextMonday(possibleWeekend) : possibleWeekend)
     }
 
     $: week = makeWeek(selectedDate);
