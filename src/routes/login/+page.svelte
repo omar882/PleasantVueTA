@@ -116,6 +116,7 @@
 		color: var(--font-color-2);
 		font-size: 1em;
 		text-align: center;
+		width: 35vw;
 	}
 
 	input {
