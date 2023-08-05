@@ -3,7 +3,7 @@ import { format, eachDayOfInterval, isWeekend } from "date-fns";
 import { getSchoolIdFromName } from '$lib/data/schools.js';
 
 export async function parseData(session, oldAssignments) {
-	debugger;
+	// debugger;
 	window.session = session;
 	session.doneParsing = false;
 	session.student.school = getSchoolIdFromName(session?.student?.CurrentSchool?.[0] || "Amador Valley High School")
