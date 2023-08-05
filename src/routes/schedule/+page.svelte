@@ -7,7 +7,7 @@
     import { session } from '$lib/stores/session.js'
 
 
-    let selectedDate = startOfDay(new Date());
+    let selectedDate = startOfDay(isWeekend(new Date()) ? nextMonday(new Date()) : new Date())
     let dateInput;
 
     function formatDate(date) {
