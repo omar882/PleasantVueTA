@@ -23,13 +23,16 @@
 		<h1>{$session.student.FormattedName[0].split(' ')[0]}</h1>
 	</div>
 	<div class="events value">
-		<h2>Events</h2>
+		<h1>Events</h1>
 		{#if info.noSchool}
 			<div class="value-label">No school today.</div>
 		{/if}
 		<div class="value-label">
+			{#if info.events.length === 0}
+				No events today.
+			{/if}
             {#each info.events as event}
-				<div>{event.Title} {event.Information}</div>
+				<div>&#x2022; {event.Title} {event.Information}</div>
             {/each}
 		</div>
 	</div>
@@ -92,11 +95,37 @@
 		<div class="assignments-scroll">
 			<div class="assignents-header">
 				<a class="link" href="/assignments"><h2>Assignments</h2></a>
-			<span class="show-all"><i on:click={() => {
-				document.querySelectorAll(".assignment-score").forEach((el) => {
-					el.click();
-				});
-			}} class="bi bi-eye"></i></span>
+			<!-- <span class="show-all"><i on:click={(e) => {
+				if (e.target.classList.contains("bi-eye")) {
+					document.querySelectorAll(".assignment-score").forEach((el) => {
+						if (el.querySelector("i").classList.contains("hidden")) el.click();
+					}
+					e.target.classList.remove("bi-eye");
+					e.target.classList.add("bi-eye-slash");
+				} else {
+					document.querySelectorAll(".assignment-score").forEach((el) => {
+						if (el.querySelector("i").classList.contains("hidden")) el.click();
+					}
+					e.target.classList.remove("bi-eye-slash");
+					e.target.classList.add("bi-eye");
+			}}} class="bi bi-eye"></i></span> -->
+			<span class="show-all">
+				<i on:click={(e) => {
+					if (e.target.classList.contains("bi-eye")) {
+						document.querySelectorAll(".assignment-score").forEach((el) => {
+						if (!(el.querySelector("i").classList.contains("hidden"))) el.click();
+						});
+						e.target.classList.remove("bi-eye");
+						e.target.classList.add("bi-eye-slash");
+					} else {
+						document.querySelectorAll(".assignment-score").forEach((el) => {
+							if (el.querySelector("i").classList.contains("hidden")) el.click();
+						});
+						e.target.classList.remove("bi-eye-slash");
+						e.target.classList.add("bi-eye");
+					}
+				}} class="bi bi-eye"></i>
+			</span>
 			</div>
 			
 			<table class="assignments-table">
@@ -154,15 +183,15 @@
 	.events {
 		aspect-ratio: unset;
 		grid-column: span 2;
-		h2 {
-			margin-top: 10px;
-			margin-left: 15px;
-			text-align: left;
+		h1 {
+			margin-top: auto;
 		}
 
-		.value-label {
-			text-align: left;
-			margin-left: 15px;
+		.value-label:last-child {
+			margin-bottom: auto;
+		}
+
+		.value-label:nth-child(2) {
 			margin-bottom: 10px;
 		}
 	}
