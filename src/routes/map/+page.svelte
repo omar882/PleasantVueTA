@@ -234,7 +234,7 @@
 <style lang="scss">
 
     .content {
-        height: 100%;
+        height: calc(100vh - 40px);
     }
     .map-header {
         margin: 0;
