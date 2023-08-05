@@ -232,6 +232,10 @@
 </div>
 
 <style lang="scss">
+
+    .content {
+        height: 100%;
+    }
     .map-header {
         margin: 0;
         padding: 0;

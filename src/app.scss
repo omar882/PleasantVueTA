@@ -36,6 +36,10 @@ body {
 }
 
 @media (max-width: $breakpoint-phone) {
+	main {
+		// scroll-padding-bottom: 100px;
+		padding-bottom: 100px;
+	}
 	#svelte {
 		display: unset;
 		justify-content: space-between;
