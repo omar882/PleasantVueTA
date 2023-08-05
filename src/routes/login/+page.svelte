@@ -56,9 +56,6 @@
 </svelte:head>
 
 <div class="content">
-	<header class="header">
-		<h1>Pleasant Vue</h1>
-	</header>
 	<form on:submit|preventDefault={login}>
 		<h2>Login</h2>
 		<input type="text" placeholder="Username" bind:value={username} />

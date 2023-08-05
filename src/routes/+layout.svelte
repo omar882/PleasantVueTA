@@ -22,7 +22,7 @@
 			$settings.theme = 'night'
 		}
 		if (data.user) {
-			console.log('load')
+			//console.log('load')
 			await load()
 			if (!interval) {
 				// interval = setInterval(refresh, 10*1000 );
@@ -71,7 +71,7 @@
 	async function load() {
 		const res = await fetch('/data')
 		if (!res.ok) {
-			console.log('fetch data not ok: ', res.status)
+			//console.log('fetch data not ok: ', res.status)
 			goto('/login')
 			return
 		}

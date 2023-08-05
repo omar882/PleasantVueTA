@@ -2,9 +2,9 @@ import { redirect } from '@sveltejs/kit'
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params, locals }) {
-	console.log('grades server load')
+	//('grades server load')
 	if (!locals.user) {
-		console.log('redirect to login')
+		//console.log('redirect to login')
 		throw redirect(302, '/login')
 	}
 }

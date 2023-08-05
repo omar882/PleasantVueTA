@@ -8,7 +8,7 @@
 
     function handleSearch() {
         staffListFiltered = staffList.filter(handleSearchElement);
-        console.log(staffListFiltered);
+        // console.log(staffListFiltered);
     }
 
 	function handleSearchElement(element) {

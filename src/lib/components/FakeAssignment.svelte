@@ -134,6 +134,7 @@
 		background: rgba(0, 0, 0, 0.4);
 		backdrop-filter: blur(3px);
 		display: flex;
+		z-index: 5000;
 	}
 
 	.modal {

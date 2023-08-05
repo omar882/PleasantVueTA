@@ -4,11 +4,11 @@ import { parseStringPromise } from "xml2js"
 import { env } from '$env/dynamic/private'
 
 export async function POST({ request }) {
-	console.log('post login')
+	//console.log('post login')
 
 	const body = await request.json();
 	let result
-	console.log(body);
+	//console.log(body);
 
 	try {
 		let client = await login(env.PRIVATE_SYNERGY_BACKEND, body.username, body.password, {}, parseStringPromise);
@@ -29,13 +29,13 @@ export async function POST({ request }) {
 			// client.getGradebook(2).then((value) => JSON.parse(value).Gradebook),
 			// client.getGradebook(3).then((value) => JSON.parse(value).Gradebook)
 		]);
-		console.log(result);
+		//console.log(result);
 
 		if (!result[0]) {
 			throw new Error('No data returned')
 		}
 	} catch (error) {
-		console.log(error)
+		//console.log(error)
 		return new Response(null, {
 			status: 401
 		})

@@ -21,7 +21,7 @@ const hashOne = (one) => hashMany([one]);
 
 
 export async function GET({ locals }) {
-	console.log('get schedshare')
+	//console.log('get schedshare')
 
 	
 	const ctx = {
@@ -49,7 +49,7 @@ export async function GET({ locals }) {
         const parsedSched = await parseStringPromise(sched)
         ctx.sched = parsedSched;
     } catch (e) {
-        console.log(e);
+        //console.log(e);
 		return new Response({
 			"error": "username or password fields are invalid",
             "note": "if this is wrong, please contact"
@@ -85,7 +85,7 @@ export async function GET({ locals }) {
     
 
     } catch (e) {
-        console.log(e);
+        //console.log(e);
 		return new Response({
             "error": "could not parse schedule",
             "note": "if this continues, please contact",

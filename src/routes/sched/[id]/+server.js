@@ -23,7 +23,7 @@ const renderImage = async (html) => {
 }
 
 export async function GET({ locals, params }) {
-	console.log('get schedshare')
+	//console.log('get schedshare')
 
 	
 
@@ -57,7 +57,7 @@ export async function GET({ locals, params }) {
             id: ref?.id,
         };
     }
-    console.log(match);
+    //console.log(match);
     const html = template({
         theme: "light",
         classes: (match.classes || []).map((c) => {

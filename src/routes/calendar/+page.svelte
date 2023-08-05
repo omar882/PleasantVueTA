@@ -65,14 +65,14 @@
             start: nextMonday(weekStart),
             end: previousFriday(weekEnd),
         };
-        console.log(eachDayOfInterval(interval).map((day) => {
-            console.log(formatDate(day))
-            const info = calendar[formatDate(day)];
-            return {
-                date: day,
-                info,
-            };
-        }))
+        // console.log(eachDayOfInterval(interval).map((day) => {
+        //     console.log(formatDate(day))
+        //     const info = calendar[formatDate(day)];
+        //     return {
+        //         date: day,
+        //         info,
+        //     };
+        // }))
         return eachDayOfInterval(interval).map((day) => {
             const info = calendar[formatDate(day)];
             return {

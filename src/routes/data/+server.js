@@ -4,7 +4,7 @@ import { parseStringPromise } from "xml2js";
 import { env } from "$env/dynamic/private";
 
 export async function GET({ locals }) {
-	console.log('get data')
+	//console.log('get data')
 
 	let result;
 
@@ -29,13 +29,13 @@ export async function GET({ locals }) {
 				}
 			)
 		])
-		console.log(result);
+		//console.log(result);
 		
 		if (!result[0]) {
 			throw new Error('No data returned')
 		}
 	} catch (error) {
-		console.log(error)
+		// console.log(error)
 		return new Response(null, {
 			status: 401,
 			headers: {
@@ -49,7 +49,7 @@ export async function GET({ locals }) {
 		})
 	}
 
-	console.log('logged in');
+	//console.log('logged in');
 
 	
 
