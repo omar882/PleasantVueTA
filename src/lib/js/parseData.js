@@ -1,9 +1,19 @@
 import { getColor, fourToPercent, percentToLetter } from './utils.js'
-import calendar from "$lib/data/CALENDAR_HS_AMADOR.json";
 import { format, eachDayOfInterval, isWeekend } from "date-fns";
+import { getSchoolIdFromName } from '$lib/data/schools.js';
 
-export function parseData(session, oldAssignments) {
+export async function parseData(session, oldAssignments) {
+	debugger;
 	window.session = session;
+	session.doneParsing = false;
+	session.student.school = getSchoolIdFromName(session?.student?.CurrentSchool?.[0] || "Amador Valley High School")
+	let calendar;
+	try {
+		calendar = (await import(`$lib/data/CALENDAR_${session.student.school}.json`)).default;
+	} catch {
+		calendar = {}
+	}
+	session.calendar = calendar;
 	for (let period of session.periods) {	
 		let grades = []
 		let assignments = []
@@ -185,14 +195,15 @@ export function parseData(session, oldAssignments) {
 
 		period.averageStyle = `color: ${getColor(averageRaw)};`
 		period.average = averageRaw >= 0 ? averageRaw.toFixed(1) + '%' : '-'	
-		period.days = getDaysLeft(new Date(period.ReportingPeriod[0].$.EndDate))
+		period.days = getDaysLeft(new Date(period.ReportingPeriod[0].$.EndDate), session.calendar)
 		// assignments.sort((a, b) => new Date(b.$.DueDate) - new Date(a.$.DueDate))
 		period.assignments = assignments
 		period.week = getWeek(period.assignments)
 	}
+	session.doneParsing = true;
 }
 
-function getDaysLeft(endDate) {
+function getDaysLeft(endDate, calendar) {
 	// let currentDate = format(new Date(), "MM/dd/yyyy");
 	// let endDate = format(date, "MM/dd/yyyy");
 	const interval = {
