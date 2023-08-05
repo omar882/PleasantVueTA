@@ -163,7 +163,8 @@
 	.value {
 		@include box;
 		text-align: center;
-		aspect-ratio: 1;
+		// aspect-ratio: 1;
+		height: 25vh;
 		display: flex;
 		flex-direction: column;
 		min-width: 0;
@@ -255,6 +256,10 @@
 			font-size: large;
 			float: right;
 			margin-left: auto;
+			position: relative;
+			top: 50%;
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
 		}
 	}
 
