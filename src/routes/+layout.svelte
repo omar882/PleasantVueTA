@@ -85,7 +85,7 @@
 			selected: periods[currentPeriod],
 			gradebook: periods[currentPeriod]
 		}
-		parseData($session, $oldAssignments);
+		await parseData($session, $oldAssignments);
 		await checkNotificationPermissions();
 		
 
@@ -109,7 +109,7 @@
 </svelte:head>
 
 {#if data.user}
-	{#if $session.gradebook && $session.student}
+	{#if $session.gradebook && $session.student && $session.doneParsing}
 		<nav
 			in:fade={{ duration: 200, delay: 200 }}
 			out:fade={{ duration: 200 }}

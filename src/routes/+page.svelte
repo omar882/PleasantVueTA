@@ -10,7 +10,7 @@
 	let shareSchedule;
 
 
-	let info = calendar?.[format(new Date(), "MM/dd/yyyy")] || {
+	let info = $session?.calendar?.[format(new Date(), "MM/dd/yyyy")] || {
 		events: [],
 		noSchool: false,
 	};

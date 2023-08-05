@@ -115,7 +115,7 @@
 	<div class="grid-heading-container">
 		<h1>Schedule</h1>
 	</div>
-    {#if $session.student?.CurrentSchool?.[0] && !($session.student.CurrentSchool[0].includes("Amador"))}
+    {#if Object.keys(calendar).length === 0}
 		<MissingData message={"We are missing schedule data for your school!"} />
     {:else}
 	<div class="content">
