@@ -3,7 +3,6 @@
 	import { onDestroy, onMount } from 'svelte'
     import ordinal from 'ordinal';
     import MissingData from '$lib/components/MissingData.svelte';
-	import { normalize } from 'xml2js/lib/processors';
     import { browser } from '$app/environment';
 
     let map;
@@ -180,15 +179,15 @@
                 const normalizedName = course?.$?.Room?.toUpperCase?.();
                 if (course?.$?.Room && normalizedName in roomLocations) {
                     // L.marker(roomLocations[course.$.Room.toUpperCase()]).addTo(map)
-                    const tooltip = L.tooltip(roomLocations[normalizedName])
+                    const tooltip = L.tooltip(roomLocations[normalizedName], {permanent:true})
                     // console.log([normalizedName.includes("GYM") && $session?.student?.Gender?.[0]]);
                     if (normalizedName.includes("GYM") && $session?.student?.Gender?.[0]) {
                         if ($session?.student?.Gender?.[0] === "Male" || $session?.student?.Gender?.[0] === "Spider") {
-                            const tooltip_locker_room = L.tooltip(roomLocations.LOCKER_ROOM_MALE);
+                            const tooltip_locker_room = L.tooltip(roomLocations.LOCKER_ROOM_MALE, {permanent:true});
                             tooltip_locker_room.setContent(`<span>Locker Room</span>`);
                             tooltip_locker_room.addTo(map);
                         } else if ($session?.student?.Gender?.[0] == "Female") {
-                            const tooltip_locker_room = L.tooltip(roomLocations.LOCKER_ROOM_FEMALE);
+                            const tooltip_locker_room = L.tooltip(roomLocations.LOCKER_ROOM_FEMALE, {permanent:true});
                             tooltip_locker_room.setContent(`<span>Locker Room</span>`);
                             tooltip_locker_room.addTo(map);
                         }
