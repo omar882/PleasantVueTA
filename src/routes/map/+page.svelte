@@ -223,7 +223,7 @@
 		<MissingData message={"We are missing map data for your school!"} />
     {:else}
     <div class="grid-heading-container">
-		<h1>Map of AVHS</h1>
+		<h1 class="map-header">Map of AVHS</h1>
 	</div>
 	<div class="content">
 		<div id="map"></div>
@@ -232,6 +232,11 @@
 </div>
 
 <style lang="scss">
+    .map-header {
+        margin: 0;
+        padding: 0;
+    }
+
     .layout {
         height: 100%;
         display: grid;
