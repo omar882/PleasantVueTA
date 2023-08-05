@@ -9,7 +9,11 @@
 	let greeting = date.getHours() < 12 ? 'morning' : date.getHours() < 18 ? 'afternoon' : 'evening'
 	let shareSchedule;
 
-	let info = calendar[format(new Date(), "MM/dd/yyyy")];
+
+	let info = calendar?.[format(new Date(), "MM/dd/yyyy")] || {
+		events: [],
+		noSchool: false,
+	};
 </script>
 
 <svelte:head>
