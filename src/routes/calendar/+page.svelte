@@ -129,15 +129,15 @@
 </script>
 
 <svelte:head>
-	<title>Schedule</title>
+	<title>Calendar</title>
 </svelte:head>
 
 <div class="layout" data-sveltekit-prefetch>
 	<div class="grid-heading-container">
-		<h1>Schedule</h1>
+		<h1>Calendar</h1>
 	</div>
     {#if Object.keys(calendar).length === 0}
-		<MissingData message={"We are missing schedule data for your school!"} />
+		<MissingData message={"We are missing calendar data for your school!"} />
     {:else}
 	<div class="content">
 		<div class="date-selection">

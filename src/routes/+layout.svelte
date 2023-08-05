@@ -25,7 +25,7 @@
 			console.log('load')
 			await load()
 			if (!interval) {
-				interval = setInterval(refresh, 10*1000 );
+				// interval = setInterval(refresh, 10*1000 );
 			}
 		}
 	});
@@ -138,10 +138,10 @@
 				<a class="nav-item-title" class:active={$page.url.pathname === '/assignments'} href="/assignments"><div>Assignments</div></a>
 			</div>
 			<div class="nav-item">
-				<a class:active={$page.url.pathname === '/schedule'} href="/schedule">
+				<a class:active={$page.url.pathname === '/calendar'} href="/calendar">
 					<i class="bi bi-bell" />
 				</a>
-				<a class="nav-item-title" class:active={$page.url.pathname === '/schedule'} href="/schedule"><div>Bell Schedule</div></a>
+				<a class="nav-item-title" class:active={$page.url.pathname === '/calendar'} href="/calendar"><div>Calendar</div></a>
 			</div>
 			<div class="nav-item">
 				<a class:active={$page.url.pathname === '/staff'} href="/staff">
@@ -198,10 +198,10 @@
 			<a class="nav-item-title" class:active={$page.url.pathname === '/'} href="/"><div>Home</div></a>
 		</div>
 		<div class="nav-item">
-			<a class:active={$page.url.pathname === '/schedule'} href="/schedule">
+			<a class:active={$page.url.pathname === '/calendar'} href="/calendar">
 				<i class="bi bi-bell" />
 			</a>
-			<a class="nav-item-title" class:active={$page.url.pathname === '/schedule'} href="/schedule"><div>Bell Schedule</div></a>
+			<a class="nav-item-title" class:active={$page.url.pathname === '/calendar'} href="/calendar"><div>Calendar</div></a>
 		</div>
 		<div class="nav-item">
 			<a class:active={$page.url.pathname === '/staff'} href="/staff">
