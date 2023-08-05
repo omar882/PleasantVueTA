@@ -17,8 +17,6 @@
 	let interval;
 	let spinning = false;
 
-	let expandedSidebar = false;
-
 	onMount(async () => {
 		if ($settings.theme === 'dark') {
 			$settings.theme = 'night'
@@ -243,6 +241,9 @@
 		width: min-content;
 		padding: $spacing-small;
 		z-index: 50;
+
+		overflow-x: hidden;
+		overflow-y: scroll;
 	}
 
 	.logo {
@@ -261,6 +262,7 @@
 		width: 100%;
 		height: 100%;
 		margin-left: $spacing;
+		overflow-y: scroll;
 	}
 
 	.transition-container {
@@ -297,9 +299,11 @@
 		border-radius: 50px;
 	}
 
-	.settings {
-		margin-top: auto !important;
-		margin-bottom: 12.5px !important;
+	@media (min-width: $breakpoint-phone) {
+		.settings {
+			margin-top: auto !important;
+			margin-bottom: 12.5px !important;
+		}
 	}
 
 	.nav-item {
@@ -375,6 +379,9 @@
 			flex-direction: row;
 			justify-content: space-between;
 			width: 100%;
+			
+			overflow-x: scroll;
+			overflow-y: visible;
 		}
 
 		a {
@@ -393,6 +400,9 @@
 
 		.nav-item {
 			width: auto;
+			height: unset;
+			padding: 0px;
+			margin: 0px
 		}
 
 		.nav-item-title {
