@@ -116,7 +116,7 @@
 			data-sveltekit-prefetch
 		>
 			<div class="nav-item">
-				<img class="logo" alt="logo" src="/icons/logo.png" />
+				<img class={`logo ${$settings.theme}`} alt="logo" src="/icons/logo.png" />
 				<div class="nav-item-title app-title"><strong>PleasantVue</strong></div>
 			</div>
 			<div class="nav-item">
@@ -224,6 +224,26 @@
 
 	.logo:hover {
 		background: transparent;
+	}
+
+	.logo.night {
+		-webkit-filter: invert(67%) sepia(41%) saturate(283%) hue-rotate(182deg) brightness(92%) contrast(82%);
+		filter: invert(67%) sepia(41%) saturate(283%) hue-rotate(182deg) brightness(92%) contrast(82%);
+	}
+
+	.logo.bronze {
+		-webkit-filter: invert(1);
+		filter: invert(1);
+	}
+
+	.logo.glass {
+		-webkit-filter: invert(1);
+		filter: invert(1);
+	}
+
+	.logo.light {
+		-webkit-filter: invert(0);
+		filter: invert(0);
 	}
 
 	.app-title {

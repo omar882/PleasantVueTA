@@ -13,17 +13,11 @@
 	}
 
 	async function changeSetting(name, value) {
-		if (value === "bronze" || value === "night") {
-			document.querySelector("img.logo").style.webkitFilter = "invert(1)";
-			document.querySelector("img.logo").style.filter = "invert(1)";
-		} else if (value === "light" || value === "glass") {
-			document.querySelector("img.logo").style.webkitFilter = "invert(0)";
-			document.querySelector("img.logo").style.filter = "invert(0)";
-		}
 		$settings[name] = value
 		if (name === 'theme') {
 			parseData($session, null)
 		}
+		location.reload();
 	}
 </script>
 
