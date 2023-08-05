@@ -116,24 +116,6 @@
 			in:fade={{ duration: 200, delay: 200 }}
 			out:fade={{ duration: 200 }}
 			data-sveltekit-prefetch
-			on:mouseenter={e => {
-				e.target.querySelectorAll('.nav-item-title').forEach(el => {
-					el.style.display = 'block';
-					el.style.width = "auto";
-				})
-				e.target.querySelectorAll(".nav-item").forEach(el => {
-					el.style.width = "175px";
-				})
-			}}
-			on:mouseleave={e => {
-				e.target.querySelectorAll('.nav-item-title').forEach(el => {
-					el.style.display = 'none';
-					el.style.width = "0";
-				})
-				e.target.querySelectorAll(".nav-item").forEach(el => {
-					el.style.width = "auto";
-				})
-			}}
 		>
 			<div class="nav-item">
 				<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
@@ -206,24 +188,6 @@
 			in:fade={{ duration: 200, delay: 200 }}
 			out:fade={{ duration: 200 }}
 			data-sveltekit-prefetch
-			on:mouseenter={e => {
-				e.target.querySelectorAll('.nav-item-title').forEach(el => {
-					el.style.display = 'block';
-					el.style.width = "auto";
-				})
-				e.target.querySelectorAll(".nav-item").forEach(el => {
-					el.style.width = "175px";
-				})
-			}}
-			on:mouseleave={e => {
-				e.target.querySelectorAll('.nav-item-title').forEach(el => {
-					el.style.display = 'none';
-					el.style.width = "0";
-				})
-				e.target.querySelectorAll(".nav-item").forEach(el => {
-					el.style.width = "auto";
-				})
-			}}
 		>
 		<div class="nav-item">
 			<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
@@ -341,14 +305,14 @@
 		margin-top: 10px;
 		margin-bottom: 10px;
 		text-align: center;
-		width: auto;
+		width: 175px;
 		height: 75px;
 		transition: width .5s ease-in-out;
 	}
 	
 	.nav-item-title {
-		display: none;
-		width: 0;
+		display: block;
+		width: auto;
 		overflow: hidden;
 		white-space: nowrap;
 		transition: width .5s ease-in-out;
