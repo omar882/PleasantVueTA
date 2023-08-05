@@ -1,5 +1,5 @@
 {
-    "08/01/2023": {
+    "8/01/2023": {
         "noSchool": true,
         "events": [
             {
@@ -8,7 +8,7 @@
             }
         ]
     },
-    "08/02/2023": {
+    "8/02/2023": {
         "noSchool": true,
         "events": [
             {
@@ -17,7 +17,7 @@
             }
         ]
     },
-    "08/03/2023": {
+    "8/03/2023": {
         "noSchool": true,
         "events": [
             {
@@ -42,7 +42,7 @@
             }
         ]
     },
-    "08/04/2023": {
+    "8/04/2023": {
         "noSchool": true,
         "events": [
             {
@@ -55,7 +55,7 @@
             }
         ]
     },
-    "08/07/2023": {
+    "8/07/2023": {
         "noSchool": true,
         "events": [
             {
@@ -64,7 +64,7 @@
             }
         ]
     },
-    "08/08/2023": {
+    "8/08/2023": {
         "noSchool": true,
         "events": [
             {
@@ -73,7 +73,7 @@
             }
         ]
     },
-    "08/09/2023": {
+    "8/09/2023": {
         "noSchool": true,
         "events": [
             {
@@ -82,7 +82,7 @@
             }
         ]
     },
-    "08/10/2023": {
+    "8/10/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -133,7 +133,7 @@
             }
         ]
     },
-    "08/11/2023": {
+    "8/11/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -179,7 +179,7 @@
         },
         "events": []
     },
-    "08/14/2023": {
+    "8/14/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -225,7 +225,7 @@
         },
         "events": []
     },
-    "08/15/2023": {
+    "8/15/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -276,7 +276,7 @@
             }
         ]
     },
-    "08/16/2023": {
+    "8/16/2023": {
         "noSchool": false,
         "schedule": {
             "1st Period": {
@@ -315,7 +315,7 @@
             }
         ]
     },
-    "08/17/2023": {
+    "8/17/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -353,7 +353,7 @@
         },
         "events": []
     },
-    "08/18/2023": {
+    "8/18/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -404,7 +404,7 @@
             }
         ]
     },
-    "08/21/2023": {
+    "8/21/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -450,7 +450,7 @@
         },
         "events": []
     },
-    "08/22/2023": {
+    "8/22/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -496,7 +496,7 @@
         },
         "events": []
     },
-    "08/23/2023": {
+    "8/23/2023": {
         "noSchool": false,
         "schedule": {
             "1st Period": {
@@ -530,7 +530,7 @@
         },
         "events": []
     },
-    "08/24/2023": {
+    "8/24/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -568,7 +568,7 @@
         },
         "events": []
     },
-    "08/25/2023": {
+    "8/25/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -631,7 +631,7 @@
             }
         ]
     },
-    "08/28/2023": {
+    "8/28/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -677,7 +677,7 @@
         },
         "events": []
     },
-    "08/29/2023": {
+    "8/29/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -723,7 +723,7 @@
         },
         "events": []
     },
-    "08/30/2023": {
+    "8/30/2023": {
         "noSchool": false,
         "schedule": {
             "1st Period": {
@@ -757,7 +757,7 @@
         },
         "events": []
     },
-    "08/31/2023": {
+    "8/31/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -820,7 +820,7 @@
             }
         ]
     },
-    "09/01/2023": {
+    "9/01/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -875,7 +875,7 @@
             }
         ]
     },
-    "09/04/2023": {
+    "9/04/2023": {
         "noSchool": true,
         "events": [
             {
@@ -884,7 +884,7 @@
             }
         ]
     },
-    "09/05/2023": {
+    "9/05/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -947,7 +947,7 @@
             }
         ]
     },
-    "09/06/2023": {
+    "9/06/2023": {
         "noSchool": false,
         "schedule": {
             "1st Period": {
@@ -986,7 +986,7 @@
             }
         ]
     },
-    "09/07/2023": {
+    "9/07/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1061,7 +1061,7 @@
             }
         ]
     },
-    "09/08/2023": {
+    "9/08/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1120,7 +1120,7 @@
             }
         ]
     },
-    "09/11/2023": {
+    "9/11/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1166,7 +1166,7 @@
         },
         "events": []
     },
-    "09/12/2023": {
+    "9/12/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1229,7 +1229,7 @@
             }
         ]
     },
-    "09/13/2023": {
+    "9/13/2023": {
         "noSchool": false,
         "schedule": {
             "1st Period": {
@@ -1263,7 +1263,7 @@
         },
         "events": []
     },
-    "09/14/2023": {
+    "9/14/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1342,7 +1342,7 @@
             }
         ]
     },
-    "09/15/2023": {
+    "9/15/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1409,7 +1409,7 @@
             }
         ]
     },
-    "09/18/2023": {
+    "9/18/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1455,7 +1455,7 @@
         },
         "events": []
     },
-    "09/19/2023": {
+    "9/19/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1522,7 +1522,7 @@
             }
         ]
     },
-    "09/20/2023": {
+    "9/20/2023": {
         "noSchool": false,
         "schedule": {
             "1st Period": {
@@ -1556,7 +1556,7 @@
         },
         "events": []
     },
-    "09/21/2023": {
+    "9/21/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1635,7 +1635,7 @@
             }
         ]
     },
-    "09/22/2023": {
+    "9/22/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1690,7 +1690,7 @@
             }
         ]
     },
-    "09/25/2023": {
+    "9/25/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1736,7 +1736,7 @@
         },
         "events": []
     },
-    "09/26/2023": {
+    "9/26/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1803,7 +1803,7 @@
             }
         ]
     },
-    "09/27/2023": {
+    "9/27/2023": {
         "noSchool": false,
         "schedule": {
             "1st Period": {
@@ -1837,7 +1837,7 @@
         },
         "events": []
     },
-    "09/28/2023": {
+    "9/28/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
@@ -1916,7 +1916,7 @@
             }
         ]
     },
-    "09/29/2023": {
+    "9/29/2023": {
         "noSchool": false,
         "schedule": {
             "A Period": {
