@@ -71,7 +71,7 @@
 				{error}
 			{:else}
 				Your login info will not be saved anywhere except your browser.<br />
-				You can see all the code on <a rel="noreferrer" target="_blank" href="https://github.com/amadorapps/PleasantVue">GitHub</a>.
+				You can see all the code on <a rel="noreferrer" target="_blank" href="https://github.com/PleasantVue/PleasantVue">GitHub</a>.
 			{/if}
 		</div>
 		<button type="submit">
