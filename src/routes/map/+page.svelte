@@ -221,7 +221,8 @@
 
 <div class="layout" data-sveltekit-prefetch>
     {#if $session.student?.CurrentSchool?.[0] && !($session.student.CurrentSchool[0].includes("Amador"))}
-		<MissingData message={"We are missing map data for your school!"} />
+		<h1>Map</h1>
+        <MissingData message={"We are missing map data for your school!"} />
     {:else}
     <div class="grid-heading-container">
 		<h1 class="map-header">Map of AVHS</h1>
