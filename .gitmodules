@@ -1,0 +1,4 @@
+[submodule "studentvue.js"]
+	path = studentvue.js
+	url = https://github.com/StudentVue/StudentVue.js.git
+	branch = remove-xml-parse
