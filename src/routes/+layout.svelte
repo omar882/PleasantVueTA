@@ -207,7 +207,7 @@
 		width: min-content;
 		padding: $spacing-small;
 		z-index: 50;
-		height: calc(100vh - 40px);
+		
 		overflow-x: hidden;
 		overflow-y: scroll;
 	}
@@ -295,6 +295,10 @@
 		.settings {
 			margin-top: auto !important;
 			margin-bottom: 12.5px !important;
+		}
+
+		nav {
+			height: calc(100vh - 40px);
 		}
 	}
 
