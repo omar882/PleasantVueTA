@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte'
 	import { session } from '$lib/stores/session.js'
-	import { Chart } from 'chart.js/dist/chart.esm.js'
+	import { Chart, registerables } from 'chart.js';
 	import PeriodSelect from '$lib/components/PeriodSelect.svelte'
 	import FakeAssignment from '$lib/components/FakeAssignment.svelte'
 	import EditAssignment from '$lib/components/EditAssignment.svelte'
@@ -58,6 +58,7 @@
 		Chart.defaults.font.family = 'Outfit'
 		Chart.defaults.font.weight = 300
 		Chart.defaults.font.size = 14
+		Chart.register(...registerables);
 		Chart.defaults.color = getComputedStyle(chartCanvas).getPropertyValue('--font-color-2')
 		chart = new Chart(chartCanvas, {
 			type: 'line',

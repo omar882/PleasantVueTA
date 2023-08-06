@@ -1,7 +1,6 @@
 <script>
 	import { session } from '$lib/stores/session.js'
 	import { onDestroy, onMount } from 'svelte'
-    import ordinal from 'ordinal';
     import MissingData from '$lib/components/MissingData.svelte';
     import { browser } from '$app/environment';
 
@@ -151,6 +150,24 @@
         R213: [37.66703,-121.87571],
         R211: [37.66704,-121.87581],
         R212: [37.66705,-121.87591],
+    }
+
+    const indicator = (i) => {
+        i = Math.abs(i)
+        var cent = i % 100
+        if (cent >= 10 && cent <= 20) return 'th'
+        var dec = i % 10
+        if (dec === 1) return 'st'
+        if (dec === 2) return 'nd'
+        if (dec === 3) return 'rd'
+        return 'th'
+    }
+
+    const ordinal = (i) => {
+        if (typeof i !== 'number') throw new TypeError('Expected Number, got ' + (typeof i) + ' ' + i)
+
+        if (!Number.isFinite(i)) return i
+        return i + indicator(i)
     }
 
     onDestroy(() => {
