@@ -22,7 +22,7 @@
 </script>
 
 <svelte:head>
-	<title>Settings</title>
+	<title>Settings - PleasantVue</title>
 </svelte:head>
 
 <div class="layout">

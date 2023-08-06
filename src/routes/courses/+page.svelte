@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Grades</title>
+	<title>Courses - PleasantVue</title>
 </svelte:head>
 
 <div class="layout" data-sveltekit-prefetch>
@@ -33,7 +33,7 @@
 		<table>
 			{#each $session.gradebook.Courses[0].Course as course, index}
 				<a class="row-link" href={'/course/' + index}>
-					<td class="course-name"> {course.$.Title}</td>
+					<td class="course-name">{course.$.Period} — {course.$.Title}</td>
 					<td class="course-staff">{course.$.Staff} </td>
 					<td class="course-room">{course.$.Room} </td>
 					<td class="course-grade" style={course.style}>{course.scoreString} </td>

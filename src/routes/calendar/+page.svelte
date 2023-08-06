@@ -129,7 +129,7 @@
 </script>
 
 <svelte:head>
-	<title>Calendar</title>
+	<title>Calendar - PleasantVue</title>
 </svelte:head>
 
 <div class="layout" data-sveltekit-prefetch>

@@ -118,7 +118,7 @@
 </script>
 
 <svelte:head>
-	<title>Staff</title>
+	<title>Staff - PleasantVue</title>
 </svelte:head>
 
 <div class="layout" data-sveltekit-prefetch>

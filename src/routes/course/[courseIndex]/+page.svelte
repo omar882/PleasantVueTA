@@ -129,7 +129,7 @@
 </script>
 
 <svelte:head>
-	<title>{course.$.Title}</title>
+	<title>{course.$.Title} - PleasantVue</title>
 </svelte:head>
 
 <div class="layout">

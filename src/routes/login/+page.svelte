@@ -52,7 +52,7 @@
 </script>
 
 <svelte:head>
-	<title>Login</title>
+	<title>Login - PleasantVue</title>
 </svelte:head>
 
 <div class="content">

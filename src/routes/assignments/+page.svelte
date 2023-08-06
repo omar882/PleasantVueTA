@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Assignments</title>
+	<title>Assignments - PleasantVue</title>
 </svelte:head>
 
 <div class="layout" data-sveltekit-prefetch>

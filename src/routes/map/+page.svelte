@@ -216,7 +216,7 @@
 </script>
 
 <svelte:head>
-	<title>Map</title>
+	<title>Map - PleasantVue</title>
 </svelte:head>
 
 <div class="layout" data-sveltekit-prefetch>
