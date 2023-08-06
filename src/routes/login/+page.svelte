@@ -56,8 +56,14 @@
 </svelte:head>
 
 <div class="content">
+	<header class="header">
+		<!-- <button><i class="bi bi-circle-half"></i></button> -->
+		<h1>PleasantVue</h1>
+		<a href="/about">About</a>
+	</header>
 	<form on:submit|preventDefault={login}>
 		<h2>Login</h2>
+		<p style="text-align: center;">Try username "test" and password "test" to preview the app before StudentVUE accounts are available!</p>
 		<input type="text" autocorrect="off" autocapitalize="none" placeholder="Username" bind:value={username} />
 		<input type="password" autocorrect="off" autocapitalize="none" placeholder="Password" bind:value={password} />
 		<div class="error">
@@ -65,8 +71,7 @@
 				{error}
 			{:else}
 				Your login info will not be saved anywhere except your browser.<br />
-				You can see all the code on the
-				<a rel="external" href="https://github.com/amadorapps/studentvue">github</a>.
+				You can see all the code on <a rel="noreferrer" target="_blank" href="https://github.com/amadorapps/PleasantVue">GitHub</a>.
 			{/if}
 		</div>
 		<button type="submit">
@@ -98,9 +103,30 @@
 	}
 
 	.header h1 {
+		display: inline;
 		padding: 0px;
 		margin: 0px;
-		margin-left: 10px;
+		margin-left: 20px;
+	}
+
+	.header button {
+		display: inline;
+		float: right;
+		margin-right: 20px;
+	}
+
+	.header a {
+		float: right;
+		padding: 0px;
+		margin: 0px;
+		margin-bottom: 0 !important;
+		line-height: 40px;
+		margin-right: 30px;
+		text-decoration: none;
+		font-size: x-large;
+		color: var(--accent-color);
+		margin-top: 0;
+		margin-bottom: $spacing-small;
 	}
 
 	form {
@@ -116,7 +142,7 @@
 		color: var(--font-color-2);
 		font-size: 1em;
 		text-align: center;
-		width: 35vw;
+		min-width: 35vw;
 	}
 
 	input {

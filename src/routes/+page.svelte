@@ -257,10 +257,8 @@
 			font-size: large;
 			float: right;
 			margin-left: auto;
-			position: relative;
-			top: 50%;
-			-ms-transform: translateY(-50%);
-			transform: translateY(-50%);
+			margin-top: auto;
+			margin-bottom: auto;
 		}
 	}
 
