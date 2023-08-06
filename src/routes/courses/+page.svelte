@@ -2,7 +2,7 @@
 	import { session } from '$lib/stores/session.js'
 	import PeriodSelect from '$lib/components/PeriodSelect.svelte'
 
-	let missingAssignments = $session.gradebook.assignments.filter(assignment => eval(assignment.score) === 0).length
+	let missingAssignments = $session.gradebook.assignments.filter(assignment => assignment.score.toString().startsWith("0")).length
 </script>
 
 <svelte:head>
