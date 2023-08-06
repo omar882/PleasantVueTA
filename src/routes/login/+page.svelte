@@ -58,8 +58,8 @@
 <div class="content">
 	<form on:submit|preventDefault={login}>
 		<h2>Login</h2>
-		<input type="text" placeholder="Username" bind:value={username} />
-		<input type="password" placeholder="Password" bind:value={password} />
+		<input type="text" autocorrect="off" autocapitalize="none" placeholder="Username" bind:value={username} />
+		<input type="password" autocorrect="off" autocapitalize="none" placeholder="Password" bind:value={password} />
 		<div class="error">
 			{#if error}
 				{error}
