@@ -48,19 +48,19 @@
 		<div class="value-label">Average grade<br />&nbsp;</div>
 	</div> -->
 	<div class="week-assignments value">
-		<h1>{$session.gradebook.week.length}</h1>
+		<h1>{$session?.gradebook?.week?.length || "No"}</h1>
 		<div class="value-label">
-			{$session.gradebook.week.length === 1 ? 'Assignment' : 'Assignments'}
+			{$session?.gradebook?.week?.length === 1 ? 'Assignment' : 'Assignments'}
 			<br />this week
 		</div>
 	</div>
 	<div class="days value">
 		<h1>
-			{$session.gradebook.days}
+			{$session?.gradebook?.days | "Unknown"}
 		</h1>
 		<div class="value-label">
 			{$session.days === 1 ? 'School day' : 'School days'} left in
-			<br />{$session.gradebook.ReportingPeriod[0].$.GradePeriod}
+			<br />{$session?.gradebook?.ReportingPeriod?.[0]?.$?.GradePeriod || "This quarter"}
 		</div>
 	</div>
 	<!-- <div class="grades">
@@ -86,7 +86,7 @@
 			<button on:click={shareSchedule.show}>Share Schedule</button>
 		</div>
 		<table class="grades-table">
-			{#each $session.gradebook.Courses[0].Course as course, index}
+			{#each ($session?.gradebook?.Courses?.[0]?.Course || []) as course, index}
 				<a class="row-link" href={'/course/' + index}>
 					<td class="course-name">{course.$.Period} — {course.$.Title}</td>
 					<!-- <td class="course-grade" style={course.style}>{course.scoreString}</td>
@@ -134,7 +134,7 @@
 			</div>
 			
 			<table class="assignments-table">
-				{#each $session.gradebook.assignments as assignment}
+				{#each ($session?.gradebook?.assignments || []) as assignment}
 					{#if assignment.scorePercent >= 0}
 						<AssignmentHomepage assignment={assignment} />
 					{/if}
