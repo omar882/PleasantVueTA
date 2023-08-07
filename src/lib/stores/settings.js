@@ -5,9 +5,7 @@ const defaultSettings = {
 	theme: 'bronze'
 }
 
-const initial = browser
-	? JSON.parse(window.localStorage.getItem('settings')) ?? defaultSettings
-	: defaultSettings
+const initial = browser ? (JSON.parse(window.localStorage.getItem('settings')) || defaultSettings) : defaultSettings
 
 export const settings = writable(initial)
 

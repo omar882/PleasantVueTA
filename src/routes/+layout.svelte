@@ -11,6 +11,7 @@
 	import { oldAssignments } from '$lib/stores/oldAssignments.js'
 	import Spinner from '$lib/components/Spinner.svelte'
 	import { browser } from '$app/environment'
+	import { ReturnDocument } from 'mongodb'
 
 	export let data
 
@@ -37,6 +38,9 @@
 	})
 
 	async function showNotifications() {
+		if ($oldAssignments?.length) {
+			return;
+		}
 		for (const assignment of $session.gradebook.assignments) {
 			if (assignment?.new === true) {
 				// console.log(assignment)
@@ -50,20 +54,25 @@
 	}
 
 	async function checkNotificationPermissions() {
-		if (!browser) {
-			return;
-		}
-		if (!("Notification" in window)) return;
-		if (Notification.permission === "granted") {
-			await showNotifications();
-			return;
-		} else if (Notification.permission !== "denied") {
-			const permission = await Notification.requestPermission();
-			if (permission === "granted") {
-				await showNotifications();
+		try {
+			if (!browser) {
 				return;
 			}
+			if (!("Notification" in window)) return;
+			if (Notification.permission === "granted") {
+				await showNotifications();
+				return;
+			} else if (Notification.permission !== "denied") {
+				const permission = await Notification.requestPermission();
+				if (permission === "granted") {
+					await showNotifications();
+					return;
+				}
 
+			}
+		} catch (ignored) {
+			// chrome for android requires service worker registration,
+			// samsung internet doesn't support,
 		}
 		return;
 	}
