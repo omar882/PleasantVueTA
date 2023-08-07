@@ -56,8 +56,8 @@ export async function POST({ request }) {
 	return new Response(
 		JSON.stringify({
 			student: result[0],
-			childList: result[1] || [],
-			periods: result[2] || [],
+			childList: result[1] ? [result[1]] : [],
+			periods: result[2] ? [result[2]] : [],
 			currentPeriod
 		}),
 		{

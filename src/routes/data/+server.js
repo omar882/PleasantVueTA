@@ -57,12 +57,11 @@ export async function GET({ locals }) {
 
 	//console.log('logged in');
 
-
 	return new Response(
 		JSON.stringify({
 			student: result[0],
-			childList: result[1] || [],
-			periods: result[2] || [],
+			childList: result[1] ? [result[1]] || [],
+			periods: result[2] ? [result[2]] : [],
 			currentPeriod: 0,
 		}),
 		{
