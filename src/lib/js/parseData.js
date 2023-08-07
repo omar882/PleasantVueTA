@@ -135,7 +135,7 @@ export async function parseData(session, oldAssignments) {
 
 							let color = getColor((scoreSum / totalSum) * 100)
 							let grade = (scoreSum / totalSum) * (course.fourPoint ? 4 : 100)
-							console.log(course, assignment, assignment.date, grade)
+							//console.log(course, assignment, assignment.date, grade)
 							if (
 								course.chartData.length > 0 &&
 								course.chartData[course.chartData.length - 1].x ===
