@@ -19,6 +19,11 @@ export async function POST({ request }) {
 					return value.StudentInfo;
 				}
 			),
+			client.getChildList().then(async (value) => 
+				{
+					return value.ChildList;
+				}
+			),
 			client.getGradebook(0).then(async (value) =>
 				{
 					return value.Gradebook;
@@ -51,7 +56,8 @@ export async function POST({ request }) {
 	return new Response(
 		JSON.stringify({
 			student: result[0],
-			periods: result[1] || [],
+			childList: result[1] || [],
+			periods: result[2] || [],
 			currentPeriod
 		}),
 		{

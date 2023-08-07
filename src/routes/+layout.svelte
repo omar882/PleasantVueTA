@@ -83,10 +83,11 @@
 			return
 		}
 		const json = await res.json()
-		let { student, periods, currentPeriod } = json
+		let { student, childList, periods, currentPeriod } = json
 		$session = {
 			student,
 			periods,
+			childList,
 			currentPeriod,
 			selectedPeriod: currentPeriod,
 			selected: periods[currentPeriod],
