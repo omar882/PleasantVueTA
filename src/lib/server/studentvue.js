@@ -103,7 +103,7 @@ export class StudentVueClient {
 export function login(url, username, password, soapOptions = {}, serialize) {
     const _url = new URL(url);
     _url.pathname = "/Service/PXPCommunication.asmx";
-    _url.search = "";
+    _url.search = "WSDL";
     _url.hash = "";
 
     const resolvedOptions = Object.assign({
