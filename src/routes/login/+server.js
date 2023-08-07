@@ -35,7 +35,6 @@ export async function POST({ request }) {
 			throw new Error('No data returned')
 		}
 	} catch (error) {
-		//console.log(error)
 		return new Response(null, {
 			status: 401
 		})
@@ -51,8 +50,8 @@ export async function POST({ request }) {
 
 	return new Response(
 		JSON.stringify({
-			student: result.shift(),
-			periods: result,
+			student: result[0],
+			periods: result[1] || [],
 			currentPeriod
 		}),
 		{

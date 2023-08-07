@@ -49,14 +49,14 @@ export async function GET({ locals }) {
 		})
 	}
 
+
 	//console.log('logged in');
 
-	
 
 	return new Response(
 		JSON.stringify({
-			student: result.shift(),
-			periods: result,
+			student: result[0],
+			periods: result[1] || [],
 			currentPeriod: 0,
 		}),
 		{
