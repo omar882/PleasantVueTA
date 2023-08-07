@@ -180,7 +180,6 @@
         await import("leaflet/dist/leaflet.css");
         L = (await import("leaflet")).default;
         // alert(window.screen.width);
-        console.log(L);
         map = L.map("map", {
             maxBounds: L.latLngBounds(L.latLng(37.67080,-121.87760),L.latLng(37.66583,-121.87245)),
             minZoom: 16,

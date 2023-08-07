@@ -31,10 +31,7 @@
 			const json = await res.json()
 			let { student, periods, currentPeriod } = json
 			$session = {
-				user: {
-					username,
-					password,
-				},
+				user: true,
 				student,
 				periods,
 				currentPeriod,
