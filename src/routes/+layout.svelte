@@ -213,7 +213,7 @@
 		align-items: center;
 		width: min-content;
 		padding: $spacing-small;
-		z-index: 50;
+		z-index: 50000;
 		
 		overflow-x: hidden;
 		overflow-y: scroll;
