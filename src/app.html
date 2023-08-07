@@ -16,8 +16,11 @@
 
 		<link rel="stylesheet" href="/font/font.css" />
 		<link rel="stylesheet" href="/bootstrap-icons/bootstrap-icons.css" />
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-R43F56CHJ3"></script>
+		<script>
+			if (location.href.endsWith("/login?")) {
+				alert("update your browser/phone to the latest version!");
+			}
+		</script>
 		<script>
 			window.dataLayer = window.dataLayer || []
 			function gtag() {
