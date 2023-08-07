@@ -11,8 +11,6 @@
 	import { oldAssignments } from '$lib/stores/oldAssignments.js'
 	import Spinner from '$lib/components/Spinner.svelte'
 	import { browser } from '$app/environment'
-	import { ReturnDocument } from 'mongodb'
-
 	export let data
 
 	let interval;
