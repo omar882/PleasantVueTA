@@ -45,6 +45,11 @@ export class StudentVueClient {
         return this._serialize(this._makeServiceRequest('StudentInfo'));
     }
 
+    getChildList() {
+        return this._serialize(this._makeServiceMultiRequest('ChildList'));
+    }
+
+
     getSchedule(termIndex) {
         let params = {};
         if (typeof termIndex !== 'undefined') {
@@ -75,7 +80,13 @@ export class StudentVueClient {
 
     _serialize(servicePromise) {
         return servicePromise.then((result) => {
-            return this.serialize(result[0].ProcessWebServiceRequestResult)
+            if ("ProcessWebServiceRequestResult" in result[0]) {
+                return this.serialize(result[0].ProcessWebServiceRequestResult);
+            }
+            else if ("ProcessWebServiceRequestMultiWebResult" in result[0]) {
+                return this.serialize(result[0].ProcessWebServiceRequestMultiWebResult);
+            }
+            return {};
         });
     }
 
@@ -89,6 +100,26 @@ export class StudentVueClient {
         paramStr += '&lt;/Parms&gt;';
 
         return this.client.ProcessWebServiceRequestAsync({
+            userID: this.username,
+            password: this.password,
+            skipLoginLog: 1,
+            parent: 0,
+            webServiceHandleName: serviceHandle,
+            methodName,
+            paramStr
+        });
+    }
+
+    _makeServiceMultiRequest(methodName, params = {}, serviceHandle = 'PXPWebServices') {
+        let paramStr = '&lt;Parms&gt;';
+        Object.entries(params).forEach(([key, value]) => {
+            paramStr += '&lt;' + key + '&gt;';
+            paramStr += value;
+            paramStr += '&lt;/' + key + '&gt;';
+        });
+        paramStr += '&lt;/Parms&gt;';
+
+        return this.client.ProcessWebServiceRequestMultiWebAsync({
             userID: this.username,
             password: this.password,
             skipLoginLog: 1,
