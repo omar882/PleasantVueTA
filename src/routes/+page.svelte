@@ -309,6 +309,9 @@
 		.layout {
 			grid-template-columns: 1fr 1fr 1fr 1.75fr;
 		}
+		.week-assignments {
+			display: none;
+		}
 		h1 {
 			grid-column: 1 / 4;
 		}
@@ -326,6 +329,9 @@
 		}
 		.improvement {
 			display: flex;
+		}
+		.assignments {
+			display: none;
 		}
 		h1 {
 			grid-column: 1 / 4;
