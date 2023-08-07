@@ -60,7 +60,7 @@ export async function GET({ locals }) {
 	return new Response(
 		JSON.stringify({
 			student: result[0],
-			childList: result[1] ? [result[1]] || [],
+			childList: result[1] ? [result[1]] : [],
 			periods: result[2] ? [result[2]] : [],
 			currentPeriod: 0,
 		}),
