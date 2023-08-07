@@ -116,7 +116,7 @@
 </svelte:head>
 
 {#if data.user}
-	{#if $session.gradebook && $session.student && $session.doneParsing}
+	{#if $session.doneParsing}
 		<nav
 			in:fade={{ duration: 200, delay: 200 }}
 			out:fade={{ duration: 200 }}
