@@ -15,7 +15,7 @@
 	<div class="content">
 		<div class="scroll">
 			<table>
-				{#each $session.selected.assignments as assignment}
+				{#each ($session?.selected?.assignments || []) as assignment}
 					<tr class={assignment.fake || assignment.edited ? 'fake' : ''}>
 						<td class="name" style={assignment.new ? 'font-weight: bold;' : ''}>
 							{assignment.$.Measure}
