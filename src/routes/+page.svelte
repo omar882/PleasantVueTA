@@ -22,7 +22,7 @@
 <div class="layout" data-sveltekit-prefetch>
 	<h1>Good {greeting}, {$session.student.FormattedName[0].split(' ')[0]}!</h1>
 	<div class="grid-heading-container">
-		<img alt="profile" src={'data:image/jpeg;base64,' + $session.student.Photo[0]} />
+		<img class="logo-head" alt="logo" src="/icons/logo.png" />
 		<h1>{$session.student.FormattedName[0].split(' ')[0]}</h1>
 	</div>
 	<div class="events value">
@@ -165,6 +165,16 @@
 
 	.grid-heading-container {
 		display: none;
+	}
+
+	.logo-head {
+		-webkit-filter: invert(1);
+		filter: invert(1);
+	}
+
+	.logo-head.night {
+		-webkit-filter: invert(67%) sepia(41%) saturate(283%) hue-rotate(182deg) brightness(92%) contrast(82%);
+		filter: invert(67%) sepia(41%) saturate(283%) hue-rotate(182deg) brightness(92%) contrast(82%);
 	}
 
 	.value {
