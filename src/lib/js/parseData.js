@@ -39,7 +39,7 @@ export async function parseData(session, oldAssignments) {
 				}
 			}
 
-			if (course.Marks[0].Mark[0] && course.Marks[0].Mark[0].Assignments[0].Assignment[0]) {
+			if (course.Marks[0].Mark[0] && course.Marks[0].Mark[0].Assignments[0].Assignment && course.Marks[0].Mark[0].Assignments[0].Assignment[0]) {
 				// if (!Array.isArray(course.Marks[0].Mark[0].Assignments[0].Assignment)) {
 				// 	course.Marks[0].Mark[0].Assignments.Assignment = [
 				// 		course.Marks[0].Mark[0].Assignments.Assignment[0]
