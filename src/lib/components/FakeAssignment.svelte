@@ -22,6 +22,7 @@
 	}
 
 	function cancel() {
+		reset()
 		shown = false
 	}
 
@@ -46,7 +47,7 @@
 		name ??= 'Fake Assignment'
 		let assignment = {
 			$: {
-				GradebookID: '-',
+				GradebookID: '123',
 				Date: today,
 				DueDate: today,
 				Measure: name,
@@ -63,6 +64,7 @@
 		// sort assignments
 		parseData($session, null)
 		$session = $session
+		history.back()
 	}
 
 	function reset() {

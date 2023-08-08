@@ -37,6 +37,7 @@
 		course.Marks[0].Mark[0].Assignments[0].Assignment.splice(assignment.index, 1)
 		parseData($session, null)
 		$session = $session
+		history.back()
 	}
 
 	function cancel() {

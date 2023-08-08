@@ -67,11 +67,9 @@ export async function parseData(session, oldAssignments) {
 				}
 				[...course.Marks[0].Mark[0].Assignments[0].Assignment]
 				.sort((a, b) => new Date(a.$.DueDate) - new Date(b.$.DueDate)).forEach((assignment, aidx) => {
-					// debugger;
-					// console.log(assignment)
 					assignment.$.Measure = assignment.$.Measure.replace('&amp;', '&')
 					assignment.course = course.Title
-					assignment.courseIndex = idx
+					assignment.courseIndex = aidx
 					assignment.style = null
 					assignment.scorePercent = -1
 					if (assignment.$.Points?.includes?.('Points Possible')) {
@@ -91,38 +89,39 @@ export async function parseData(session, oldAssignments) {
 					if (assignment.$.Points?.includes?.(' / ') || assignment.edited) {
 						if (assignment.$.Points?.includes?.(' / ')) {
 							let split = assignment.$.Points.split(' / ')
-							assignment.$.PointsOriginal = parseFloat(split[0])
+							assignment.$.pointsOriginal = parseFloat(split[0])
 							assignment.totalOriginal = parseFloat(split[1])
 							if (!assignment.edited) {
-								assignment.$.Points = assignment.$.PointsOriginal
+								assignment.$.points = assignment.$.pointsOriginal
 								assignment.total = assignment.totalOriginal
 							}
 						}
-						assignment.score = assignment.$.Points + ' / ' + assignment.total
+						assignment.score = assignment.$.points + ' / ' + assignment.total
 
 						if (
-							(assignment.$.Points === 0 && assignment.total === 0) ||
+							(assignment.$.points === 0 && assignment.total === 0) ||
 							assignment.$.Notes.toLowerCase().includes('not for grading')
 						) {
 							assignment.scorePercent = -1
 							assignment.percent = '-'
 						} else {
-							assignment.scorePercent = (assignment.$.Points / assignment.total) * 100
+							assignment.scorePercent = (assignment.$.points / assignment.total) * 100
 							assignment.percent = assignment.scorePercent
 								? assignment.scorePercent.toFixed(1) + '%'
 								: '0.0%'
 
 							if (course.Marks[0].Mark[0].GradeCalculationSummary[0].AssignmentGradeCalc) {
 								if (course.scoreTypes[assignment.Type]) {
-									course.scoreTypes[assignment.Type].score += assignment.$.Points
+									course.scoreTypes[assignment.Type].score += assignment.$.points
 									course.scoreTypes[assignment.Type].total += assignment.total
 								}
 							} else {
-								course.scoreTypes.All.score += assignment.$.Points
+								course.scoreTypes.All.score += assignment.$.points
 								course.scoreTypes.All.total += assignment.total
 							}
 
 							assignment.date = new Date(assignment.$.DueDate)
+							let date = assignment.date
 							
 							let scoreSum = 0
 							let totalSum = 0
@@ -136,17 +135,17 @@ export async function parseData(session, oldAssignments) {
 
 							let color = getColor((scoreSum / totalSum) * 100)
 							let grade = (scoreSum / totalSum) * (course.fourPoint ? 4 : 100)
-							//console.log(course, assignment, assignment.date, grade)
+
 							if (
 								course.chartData.length > 0 &&
 								course.chartData[course.chartData.length - 1].x ===
-									Math.floor(assignment.date / 8.64e7)
+									Math.floor(date / 8.64e7)
 							) {
 								course.chartData[course.chartData.length - 1].y = grade
 								course.chartData[course.chartData.length - 1].color = color
 							} else {
 								course.chartData.push({
-									x: Math.floor(assignment.date / 8.64e7),
+									x: Math.floor(date / 8.64e7),
 									y: grade,
 									color: color
 								})
