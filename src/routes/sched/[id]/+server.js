@@ -61,6 +61,13 @@ export async function GET({ locals, params }) {
     const html = template({
         theme: "light",
         classes: (match.classes || []).map((c) => {
+            if (c?.period) {
+                if (c.period == "0") {
+                    c.period = "A"
+                } else if (c.period == "10") {
+                    c.period = "Ac"
+                }
+            }
             return {
                 name: (c?.name) || "Course",
                 period: (c?.period) || "?",
@@ -69,7 +76,7 @@ export async function GET({ locals, params }) {
             }
         }),
         term: (match?.termName) || "",
-        title: "AVHS",
+        title: "2023-2024",
         logo: "PleasantVue",
         header: "Here's my schedule!",
 
