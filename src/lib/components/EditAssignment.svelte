@@ -27,9 +27,12 @@
 	}
 
 	function reset() {
+		assignment.edited = false
+		assignment.fake = false
 		error = ''
-		points = assignment.pointsOriginal
+		points = assignment.$.pointsOriginal
 		total = assignment.totalOriginal
+		location.reload()
 	}
 
 	function del() {
@@ -37,7 +40,7 @@
 		course.Marks[0].Mark[0].Assignments[0].Assignment.splice(assignment.index, 1)
 		parseData($session, null)
 		$session = $session
-		history.back()
+		location.reload()
 	}
 
 	function cancel() {
@@ -62,7 +65,6 @@
 			return
 		}
 		shown = false
-		console.log(points, total)
 		if (points == assignment.pointsOriginal && total == assignment.totalOriginal) {
 			assignment.edited = false
 		} else {
@@ -72,6 +74,7 @@
 		assignment.total = total
 		parseData($session, null)
 		$session = $session
+		history.back()
 	}
 </script>
 

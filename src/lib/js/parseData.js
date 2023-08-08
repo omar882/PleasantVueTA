@@ -72,12 +72,12 @@ export async function parseData(session, oldAssignments) {
 					assignment.courseIndex = aidx
 					assignment.style = null
 					assignment.scorePercent = -1
-					if (assignment.$.Points?.includes?.('Points Possible')) {
+					if (assignment.points?.includes?.('Points Possible')) {
 						assignment.percent = '?'
 						assignment.score = 'Not Graded'
 					} else {
 						assignment.percent = '-'
-						assignment.score = assignment.$.Points
+						assignment.score = assignment.points
 					}
 					if (oldAssignments) {
 						if (assignment.new !== true) {
@@ -88,13 +88,16 @@ export async function parseData(session, oldAssignments) {
 
 					if (assignment.$.Points?.includes?.(' / ') || assignment.edited) {
 						if (assignment.$.Points?.includes?.(' / ')) {
-							let split = assignment.$.Points.split(' / ')
+							let split = assignment.$.Points?.split(' / ')
 							assignment.$.pointsOriginal = parseFloat(split[0])
 							assignment.totalOriginal = parseFloat(split[1])
 							if (!assignment.edited) {
 								assignment.$.points = assignment.$.pointsOriginal
 								assignment.total = assignment.totalOriginal
 							}
+						}
+						if (assignment.edited) {
+							assignment.$.points = assignment.points
 						}
 						assignment.score = assignment.$.points + ' / ' + assignment.total
 
