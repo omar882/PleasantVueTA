@@ -27,7 +27,7 @@
 						</td>
 						<td class="date">{assignment.$.DueDate}</td>
 						<td class="points" style={assignment.style}>
-							{assignment.score}
+							{assignment.score || "—"}
 						</td>
 						<td class="percentage" style={assignment.style}>
 							{assignment.percent}

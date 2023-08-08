@@ -39,7 +39,7 @@
 					<td class="course-name">{course.$.Period} — {course.$.Title}</td>
 					<td class="course-staff">{course.$.Staff} </td>
 					<td class="course-room">{course.$.Room} </td>
-					<td class="course-grade" style={course.style}>{course.scoreString} </td>
+					<td class="course-grade" style={course.style}>{course.scoreString || "—"}</td>
 					<td class="course-score" style={course.style}>{course.score} </td>
 				</a>
 			{/each}
