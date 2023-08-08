@@ -163,6 +163,12 @@
 				</a>
 				<a class="nav-item-title" class:active={$page.url.pathname === '/map'} href="/map"><div>Map</div></a>
 			</div>
+			<div class="nav-item about">
+				<a class:active={$page.url.pathname === '/about'} href="/about">
+					<i class="bi bi-info" />
+				</a>
+				<a class="nav-item-title" class:active={$page.url.pathname === '/about'} href="/about"><div>About</div></a>
+			</div>
 			<div class="nav-item settings">
 				<a class:active={$page.url.pathname === '/settings'} href="/settings">
 					<i class="bi bi-gear" />
@@ -301,8 +307,12 @@
 
 	@media (min-width: $breakpoint-phone) {
 		.settings {
+			margin-top: 10px !important;
+		}
+
+		.about {
 			margin-top: auto !important;
-			margin-bottom: 12.5px !important;
+			margin-bottom: 0 !important;
 		}
 
 		nav {
@@ -318,7 +328,7 @@
 		margin-bottom: 10px;
 		text-align: center;
 		width: 175px;
-		height: 75px;
+		height: 50px;
 		transition: width .5s ease-in-out;
 	}
 	
