@@ -4,7 +4,6 @@ import { getSchoolIdFromName } from '$lib/data/schools.js';
 
 export async function parseData(session, oldAssignments) {
 	// debugger;
-	window.session = session;
 	session.doneParsing = false;
 	session.student.school = getSchoolIdFromName(session?.student?.CurrentSchool?.[0] ||
 		session?.childList?.Child?.[0]?.OrganizationName?.[0] || "Amador Valley High School")
