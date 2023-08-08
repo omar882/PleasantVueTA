@@ -88,7 +88,7 @@
 		<table class="grades-table">
 			{#each ($session?.gradebook?.Courses?.[0]?.Course || []) as course, index}
 				<a class="row-link" href={'/course/' + index}>
-					<td class="course-name">{course.$.Period} — {course.$.Title}</td>
+					<td class="course-name">{course.$.Period === "10" ? "ACCESS" : course.$.Period} — {course.$.Title}</td>
 					<!-- <td class="course-grade" style={course.style}>{course.scoreString}</td>
 					<td class="course-score" style={course.style}>{course.score}</td> -->
 					<td class="course-view"><i class="bi bi-eye"></i></td>

@@ -212,7 +212,7 @@
                     if (course.$.Period) {
                         try {
                             const num = parseInt(course.$.Period);
-                            tooltip.setContent(`<span>${ordinal(num)}: ${course.$.Room}</span>`)    
+                            tooltip.setContent(`<span>${ordinal(num) === "10th" ? "ACCESS" : ordinal(num)}: ${course.$.Room}</span>`)    
                         } catch (excpected) {
                             tooltip.setContent(`<span>${course.$.Period}: ${course.$.Room}</span>`)
                         }
