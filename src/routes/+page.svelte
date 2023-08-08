@@ -48,7 +48,7 @@
 		<div class="value-label">Average grade<br />&nbsp;</div>
 	</div> -->
 	<div class="week-assignments value">
-		<h1>{$session?.gradebook?.week?.length || "No"}</h1>
+		<h1>{$session?.gradebook?.week?.length || "0"}</h1>
 		<div class="value-label">
 			{$session?.gradebook?.week?.length === 1 ? 'Assignment' : 'Assignments'}
 			<br />this week
@@ -114,23 +114,25 @@
 					e.target.classList.remove("bi-eye-slash");
 					e.target.classList.add("bi-eye");
 			}}} class="bi bi-eye"></i></span> -->
-			<span class="show-all">
-				<i on:click={(e) => {
-					if (e.target.classList.contains("bi-eye")) {
-						document.querySelectorAll(".assignment-score").forEach((el) => {
-						if (!(el.querySelector("i").classList.contains("hidden"))) el.click();
-						});
-						e.target.classList.remove("bi-eye");
-						e.target.classList.add("bi-eye-slash");
-					} else {
-						document.querySelectorAll(".assignment-score").forEach((el) => {
-							if (el.querySelector("i").classList.contains("hidden")) el.click();
-						});
-						e.target.classList.remove("bi-eye-slash");
-						e.target.classList.add("bi-eye");
-					}
-				}} class="bi bi-eye"></i>
-			</span>
+			{#if $session?.gradebook?.assignments.length > 0}
+				<span class="show-all">
+					<i on:click={(e) => {
+						if (e.target.classList.contains("bi-eye")) {
+							document.querySelectorAll(".assignment-score").forEach((el) => {
+							if (!(el.querySelector("i").classList.contains("hidden"))) el.click();
+							});
+							e.target.classList.remove("bi-eye");
+							e.target.classList.add("bi-eye-slash");
+						} else {
+							document.querySelectorAll(".assignment-score").forEach((el) => {
+								if (el.querySelector("i").classList.contains("hidden")) el.click();
+							});
+							e.target.classList.remove("bi-eye-slash");
+							e.target.classList.add("bi-eye");
+						}
+					}} class="bi bi-eye"></i>
+				</span>
+			{/if}
 			</div>
 			
 			<table class="assignments-table">

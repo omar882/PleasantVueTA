@@ -62,8 +62,8 @@
 	</header>
 	<form on:submit|preventDefault={login}>
 		<h2>Login</h2>
-		<p style="text-align: center">Use your email address as the username and your password to login with your school account and view and share your schedule!</p>
-		<p style="text-align: center;">Or try username "test" and password "test" to preview the app with grades data.</p>
+		<p style="text-align: center">PUSD has not directly enabled login without Google yet, so to get access, reset your password <a target="_blank" href="https://ca-pleas-psv.edupoint.com/PXP2_Password_Help.aspx?S=Y">here</a>. Then, use your email address as the username and your password to login here, and you won't need to login with Google again!</p>
+		<p style="text-align: center;">Or use username "test" and password "test" to preview the app with grades data.</p>
 		<input type="text" autocorrect="off" autocapitalize="none" placeholder="Username" bind:value={username} />
 		<input type="password" autocorrect="off" autocapitalize="none" placeholder="Password" bind:value={password} />
 		<div class="error">
@@ -131,7 +131,7 @@
 
 	form {
 		@include box;
-
+		max-width: 35vw;
 		display: flex;
 		flex-direction: column;
 		margin-inline: auto;
