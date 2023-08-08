@@ -140,7 +140,7 @@
 	</div>
 	<div class="grade">
 		<h1 class="grade-letter" style={course.style}>
-			{course.scoreString}
+			{course.scoreString || "No Grade"}
 		</h1>
 		<div style={course.style}>{course.score}</div>
 	</div>
@@ -201,7 +201,7 @@
 							<td class="assignment-course">{assignment.$.Type}</td>
 							<td class="assignment-date">{assignment.$.DueDate}</td>
 							<td class="assignment-points" style={assignment.style}>
-								{assignment.score}
+								{assignment.score || "—"}
 							</td>
 							<td class="assignment-percentage" style={assignment.style}>
 								{assignment.percent}
