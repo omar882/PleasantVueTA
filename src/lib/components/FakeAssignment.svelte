@@ -26,7 +26,14 @@
 		shown = false
 	}
 
-	function add() {
+	function add(e) {
+		if (points == null) {
+			points = e.target.querySelector('.points').value
+		}
+		if (total == null) {
+			total = e.target.querySelector('.total').value
+		}
+		
 		if (points == null) {
 			error = 'Please enter a point value.'
 			return
@@ -47,7 +54,7 @@
 		name ??= 'Fake Assignment'
 		let assignment = {
 			$: {
-				GradebookID: '123',
+				GradebookID: '-',
 				Date: today,
 				DueDate: today,
 				Measure: name,
@@ -84,7 +91,7 @@
 			in:fly={{ y: -5, duration: 200 }}
 			out:fly|local={{ y: 5, duration: 200 }}
 		>
-			<form on:submit={add}>
+			<form on:submit={(e) => add(e)}>
 				<h3>Fake Assignment</h3>
 				<input class="name" type="string" placeholder="Name" bind:value={name} />
 				<div class="row">
