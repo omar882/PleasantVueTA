@@ -130,7 +130,6 @@
 
 	form {
 		@include box;
-		max-width: 35vw;
 		display: flex;
 		flex-direction: column;
 		margin-inline: auto;
