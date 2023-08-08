@@ -70,7 +70,7 @@ export async function GET({ locals, params }) {
         }),
         term: (match?.termName) || "",
         title: "AVHS",
-        logo: "Logo?",
+        logo: "PleasantVue",
         header: "Here's my schedule!",
 
     });
