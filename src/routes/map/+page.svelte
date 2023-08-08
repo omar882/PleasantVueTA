@@ -193,8 +193,8 @@
 
         if ($session?.gradebook) {
             for (const course of ($session?.gradebook?.Courses?.[0]?.Course) || []) {
-                const normalizedName = course?.$?.Room?.toUpperCase?.();
-                if (course?.$?.Room && normalizedName in roomLocations) {
+                const normalizedName = course?.$?.Room?.toUpperCase?.().replace("-", "");
+                if (normalizedName in roomLocations) {
                     // L.marker(roomLocations[course.$.Room.toUpperCase()]).addTo(map)
                     const tooltip = L.tooltip(roomLocations[normalizedName], {permanent:true})
                     // console.log([normalizedName.includes("GYM") && $session?.student?.Gender?.[0]]);

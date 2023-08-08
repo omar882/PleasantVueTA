@@ -1,17 +1,17 @@
 import { login } from '$lib/server/studentvue.js';
 import cookie from 'cookie'
 import { parseStringPromise } from "xml2js"
-import { env } from '$env/dynamic/private'
+import { env } from "$env/dynamic/public"
 
 export async function POST({ request }) {
 	//console.log('post login')
 
 	const body = await request.json();
 	let result
-	//console.log(body);
+	console.log(body, env);
 
 	try {
-		let client = await login(env.PRIVATE_SYNERGY_BACKEND, body.username, body.password, {}, parseStringPromise);
+		let client = await login(env.PUBLIC_SYNERGY_BACKEND, body.username, body.password, {}, parseStringPromise);
 		result = await Promise.all([
 			
 			client.getStudentInfo().then(async (value) =>
@@ -35,7 +35,6 @@ export async function POST({ request }) {
 			// client.getGradebook(3).then((value) => JSON.parse(value).Gradebook)
 		]);
 		//console.log(result);
-
 		if (!result[0]) {
 			throw new Error('No data returned')
 		}

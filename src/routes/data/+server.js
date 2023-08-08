@@ -10,11 +10,11 @@ export async function GET({ locals }) {
 
 	try {
 		let client = await login(
-			env.PRIVATE_SYNERGY_BACKEND,
+			env.PUBLIC_SYNERGY_BACKEND,
 			Buffer.from(locals.user.username, 'base64').toString('ascii'),
 			Buffer.from(locals.user.password, 'base64').toString('ascii'),
 			{}, parseStringPromise,
-		)
+		);
 		// let student = JSON.parse(await client.getStudentInfo()).StudentInfo
 		// let gradebook = JSON.parse(await client.getGradebook()).Gradebook
 		result = await Promise.all([
