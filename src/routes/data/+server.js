@@ -1,7 +1,7 @@
 import { login } from '$lib/server/studentvue.js';
 import * as cookie from 'cookie';
 import { parseStringPromise } from "xml2js";
-import { env } from "$env/dynamic/private";
+import { env } from "$env/dynamic/public";
 
 export async function GET({ locals }) {
 	//console.log('get data')

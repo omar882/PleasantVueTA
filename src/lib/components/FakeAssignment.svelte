@@ -14,7 +14,12 @@
 	let name = null
 	let points = null
 	let total = null
-	let type = Object.keys(course.scoreTypes)[0]
+	let type;
+	if (course?.scoreTypes) {
+		type = Object.keys(course.scoreTypes)[0]
+	}
+	type = "All";
+	
 
 	export function show() {
 		reset()

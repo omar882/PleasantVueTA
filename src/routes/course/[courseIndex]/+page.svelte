@@ -153,7 +153,8 @@
 		<div class="scroll">
 			<h2>Summary</h2>
 			<table>
-				{#each Object.entries(course.scoreTypes) as [name, type]}
+				{#if course?.scoreTypes}
+				{#each (Object.entries(course?.scoreTypes)) as [name, type]}
 					<tr>
 						<td class="type-name">{name}</td>
 						<td class="type-points" style={type.style}>
@@ -163,6 +164,7 @@
 						<td class="type-weight">{type.weight}%</td>
 					</tr>
 				{/each}
+				{/if}
 				<tr>
 					<td class="type-name">Total</td>
 					<td class="type-points" />
