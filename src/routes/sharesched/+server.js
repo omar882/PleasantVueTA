@@ -50,6 +50,8 @@ export async function GET({ locals }) {
         ctx.sched = parsedSched;
     } catch (e) {
         //console.log(e);
+
+        console.log("db connection issue");
 		return new Response({
 			"error": "username or password fields are invalid",
             "note": "if this is wrong, please contact"

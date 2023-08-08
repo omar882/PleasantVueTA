@@ -8,8 +8,6 @@ export async function POST({ request }) {
 
 	const body = await request.json();
 	let result
-	console.log(body, env);
-
 	try {
 		let client = await login(env.PUBLIC_SYNERGY_BACKEND, body.username, body.password, {}, parseStringPromise);
 		result = await Promise.all([
@@ -36,6 +34,7 @@ export async function POST({ request }) {
 		]);
 		//console.log(result);
 		if (!result[0]) {
+			console.log("Error in login!");
 			throw new Error('No data returned')
 		}
 	} catch (error) {
