@@ -62,8 +62,8 @@
 	</header>
 	<form on:submit|preventDefault={login}>
 		<h2>Login</h2>
-		<p style="text-align: center;">Try username "test" and password "test" to preview the app before StudentVUE accounts are available!</p>
-		<p style="text-align: center">Use your email address to login with your school account!</p>
+		<p style="text-align: center">Use your email address as the username and your password to login with your school account and view and share your schedule!</p>
+		<p style="text-align: center;">Or try username "test" and password "test" to preview the app with grades data.</p>
 		<input type="text" autocorrect="off" autocapitalize="none" placeholder="Username" bind:value={username} />
 		<input type="password" autocorrect="off" autocapitalize="none" placeholder="Password" bind:value={password} />
 		<div class="error">
