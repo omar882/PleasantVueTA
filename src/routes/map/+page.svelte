@@ -152,6 +152,10 @@
         R212: [37.66705,-121.87591],
     }
 
+    const TRANSLATIONS = {
+        "CHOI": "MUSIC",
+    }
+
     const indicator = (i) => {
         i = Math.abs(i)
         var cent = i % 100
@@ -193,7 +197,10 @@
 
         if ($session?.gradebook) {
             for (const course of ($session?.gradebook?.Courses?.[0]?.Course) || []) {
-                const normalizedName = course?.$?.Room?.toUpperCase?.().replace("-", "");
+                let normalizedName = course?.$?.Room?.toUpperCase?.().replace("-", "");
+                if (normalizedName in TRANSLATIONS) {
+                    normalizedName = TRANSLATIONS[normalizedName];
+                }
                 if (normalizedName in roomLocations) {
                     // L.marker(roomLocations[course.$.Room.toUpperCase()]).addTo(map)
                     const tooltip = L.tooltip(roomLocations[normalizedName], {permanent:true})
