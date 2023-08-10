@@ -20,6 +20,9 @@ dependencies:
   handlebars:
     specifier: ^4.7.7
     version: 4.7.8
+  html-entities:
+    specifier: ^2.4.0
+    version: 2.4.0
   leaflet:
     specifier: ^1.9.4
     version: 1.9.4
@@ -1514,6 +1517,10 @@ packages:
     dependencies:
       lru-cache: 6.0.0
     dev: true
+
+  /html-entities@2.4.0:
+    resolution: {integrity: sha512-igBTJcNNNhvZFRtm8uA6xMY6xYleeDwn3PeBCkDz7tHttv4F2hsDI2aPgNERWzvRcNYHNT3ymRaQzllmXj4YsQ==}
+    dev: false
 
   /htmlparser2@8.0.2:
     resolution: {integrity: sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==}

@@ -2,6 +2,13 @@ import { login } from '$lib/server/studentvue.js';
 import cookie from 'cookie'
 import { parseStringPromise } from "xml2js"
 import { env } from "$env/dynamic/public"
+import {encode} from "html-entities";
+
+const encodeXml = (text) => {
+	return encode(text, {
+		level: "xml",
+	})
+}
 
 export async function POST({ request }) {
 	//console.log('post login')
@@ -9,7 +16,7 @@ export async function POST({ request }) {
 	const body = await request.json();
 	let result
 	try {
-		let client = await login(env.PUBLIC_SYNERGY_BACKEND, body.username, body.password, {}, parseStringPromise);
+		let client = await login(env.PUBLIC_SYNERGY_BACKEND, encodeXml(body.username), encodeXml(body.password), {}, parseStringPromise);
 		result = await Promise.all([
 			
 			client.getStudentInfo().then(async (value) =>
