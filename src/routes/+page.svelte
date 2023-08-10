@@ -88,7 +88,7 @@
 		<table class="grades-table">
 			{#each ($session?.gradebook?.Courses?.[0]?.Course || []) as course, index}
 				<a class="row-link" href={'/course/' + index}>
-					<td class="course-name">{course.$.Period === "10" ? "ACCESS" : course.$.Period === "0" ? "A" : course.$.Period} — {course.$.Title}</td>
+					<td class="course-name">{course.$.Period === "10" ? "ACCESS" : course.$.Period === "0" ? "A" : course.$.Period} — {course.$.Title} — {course.$.Staff}</td>
 					<!-- <td class="course-grade" style={course.style}>{course.scoreString}</td>
 					<td class="course-score" style={course.style}>{course.score}</td> -->
 					<td class="course-view"><i class="bi bi-eye"></i></td>
@@ -99,22 +99,8 @@
 	<div class="assignments">
 		<div class="assignments-scroll">
 			<div class="assignents-header">
-				<a class="link" href="/assignments"><h2>Assignments</h2></a>
-			<!-- <span class="show-all"><i on:click={(e) => {
-				if (e.target.classList.contains("bi-eye")) {
-					document.querySelectorAll(".assignment-score").forEach((el) => {
-						if (el.querySelector("i").classList.contains("hidden")) el.click();
-					}
-					e.target.classList.remove("bi-eye");
-					e.target.classList.add("bi-eye-slash");
-				} else {
-					document.querySelectorAll(".assignment-score").forEach((el) => {
-						if (el.querySelector("i").classList.contains("hidden")) el.click();
-					}
-					e.target.classList.remove("bi-eye-slash");
-					e.target.classList.add("bi-eye");
-			}}} class="bi bi-eye"></i></span> -->
-			{#if $session?.gradebook?.assignments.length > 0}
+				<a class="link" href="/assignments"><h2>Graded Assignments</h2></a>
+			{#if $session?.gradebook?.assignments.filter((a) => a.scorePercent >= 0).length > 0}
 				<span class="show-all">
 					<i on:click={(e) => {
 						if (e.target.classList.contains("bi-eye")) {
@@ -265,7 +251,12 @@
 			background: var(--bg-color-1);
 		}
 
+		.course-name {
+			width: 85%;
+		}
+
 		.course-view {
+			width: 30%;
 			font-size: large;
 			float: right;
 			margin-left: auto;
@@ -305,7 +296,6 @@
 
 	.course-teacher {
 		padding: 0;
-		font-weight: bold;
 	}
 
 	// @media (max-height: 650px) {
@@ -390,7 +380,7 @@
 		.grades-table {
 			table-layout: fixed;
 			td {
-				@include nowrap;
+				// @include nowrap;
 			}
 			.course-teacher {
 				width: min-content;
@@ -400,6 +390,9 @@
 			}
 		}
 
+		.course-teacher {
+			display: none;
+		}
 		
 		.improvement,
 		.assignments {
