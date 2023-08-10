@@ -2,6 +2,13 @@ import { login } from '$lib/server/studentvue.js';
 import * as cookie from 'cookie';
 import { parseStringPromise } from "xml2js";
 import { env } from "$env/dynamic/public";
+import {encode} from "html-entities";
+
+const encodeXml = (text) => {
+	return encode(text, {
+		level: "xml",
+	})
+}
 
 export async function GET({ locals }) {
 	//console.log('get data')
@@ -11,8 +18,8 @@ export async function GET({ locals }) {
 	try {
 		let client = await login(
 			env.PUBLIC_SYNERGY_BACKEND,
-			Buffer.from(locals.user.username, 'base64').toString('ascii'),
-			Buffer.from(locals.user.password, 'base64').toString('ascii'),
+			encodeXml(Buffer.from(locals.user.username, 'base64').toString('ascii')),
+			encodeXml(Buffer.from(locals.user.password, 'base64').toString('ascii')),
 			{}, parseStringPromise,
 		);
 		// let student = JSON.parse(await client.getStudentInfo()).StudentInfo
