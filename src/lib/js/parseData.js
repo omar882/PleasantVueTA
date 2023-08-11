@@ -67,8 +67,8 @@ export async function parseData(session, oldAssignments) {
 				[...course.Marks[0].Mark[0].Assignments[0].Assignment]
 				.sort((a, b) => new Date(a.$.DueDate) - new Date(b.$.DueDate)).forEach((assignment, aidx) => {
 					assignment.$.Measure = assignment.$.Measure.replace('&amp;', '&')
-					assignment.course = course.Title
-					assignment.courseIndex = aidx
+					assignment.course = course.$.Title
+					assignment.courseIndex = idx;
 					assignment.style = null
 					assignment.scorePercent = -1
 					if (assignment.points?.includes?.('Points Possible')) {
