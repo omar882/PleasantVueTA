@@ -2,6 +2,7 @@
 	import { format } from "date-fns";
 	import ShareSchedule from '$lib/components/ShareSchedule.svelte'
 	import { session } from '$lib/stores/session.js'
+	import { settings } from '$lib/stores/settings.js'
 	import AssignmentHomepage from "$lib/components/AssignmentHomepage.svelte"
 
 	let date = new Date()
@@ -22,7 +23,7 @@
 <div class="layout" data-sveltekit-prefetch>
 	<h1>Good {greeting}, {$session.student.FormattedName[0].split(' ')[0]}!</h1>
 	<div class="grid-heading-container">
-		<img class="logo-head" alt="logo" src="/icons/logo.png" />
+		<img class={`logo logo-head ${$settings.theme}`} alt="logo" src="/icons/logo.png" />
 		<h1>{$session.student.FormattedName[0].split(' ')[0]}</h1>
 	</div>
 	<div class="events value">
@@ -161,6 +162,21 @@
 	.logo-head.night {
 		-webkit-filter: invert(67%) sepia(41%) saturate(283%) hue-rotate(182deg) brightness(92%) contrast(82%);
 		filter: invert(67%) sepia(41%) saturate(283%) hue-rotate(182deg) brightness(92%) contrast(82%);
+	}
+
+	.logo-head.bronze {
+		-webkit-filter: invert(1);
+		filter: invert(1);
+	}
+
+	.logo-head.glass {
+		-webkit-filter: invert(1);
+		filter: invert(1);
+	}
+
+	.logo-head.light {
+		-webkit-filter: invert(0);
+		filter: invert(0);
 	}
 
 	.value {
@@ -365,7 +381,6 @@
 			height: 50px;
 			object-fit: cover;
 			object-position: 0 0;
-			border-radius: 50px;
 			margin-right: $spacing-small;
 		}
 
