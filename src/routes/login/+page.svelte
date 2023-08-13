@@ -80,7 +80,7 @@
 				Login
 			{/if}
 		</button>
-		<p>We are working with the district to bring PleasantVue to everyone. Many teachers, admin, and students across the district have loved what PleasantVue brings to the community. PleasantVue is not availble on school networks, but it will be soon: <a href="https://forms.gle/4eahJESnnso5RwLV8" target="_blank">Click Here for an availibility email.</a></p>
+		<p style="text-align: center">We are working with the district to bring PleasantVue to everyone. Many teachers, admin, and students across the district have loved what PleasantVue brings to the community. PleasantVue is not availble on school networks, but it will be soon. <a href="https://forms.gle/4eahJESnnso5RwLV8" target="_blank">Click here for an availability email.</a></p>
 	</form>
 </div>
 
@@ -134,6 +134,7 @@
 		display: flex;
 		flex-direction: column;
 		margin-inline: auto;
+		max-width: 35vw;
 	}
 
 	.error {
@@ -141,7 +142,7 @@
 		color: var(--font-color-2);
 		font-size: 1em;
 		text-align: center;
-		min-width: 35vw;
+		min-width: 25vw;
 	}
 
 	input {
@@ -161,6 +162,12 @@
 	@media (max-width: $breakpoint-phone) {
 		form {
 			margin: auto $spacing;
+		}
+	}
+
+	@media (orientation: portrait) {
+		form {
+			max-width: none;
 		}
 	}
 </style>
