@@ -96,7 +96,7 @@
 			in:fly={{ y: -5, duration: 200 }}
 			out:fly|local={{ y: 5, duration: 200 }}
 		>
-			<form on:submit={(e) => add(e)}>
+			<!-- <form on:submit={(e) => add(e)}>
 				<h3>Fake Assignment</h3>
 				<input class="name" type="string" placeholder="Name" bind:value={name} />
 				<div class="row">
@@ -129,7 +129,8 @@
 					<button on:click={cancel}>Cancel</button>
 					<button type="submit">Add</button>
 				</div>
-			</form>
+			</form> -->
+			<h3>Fake Assignments are coming soon!</h3>
 		</div>
 	</div>
 {/if}

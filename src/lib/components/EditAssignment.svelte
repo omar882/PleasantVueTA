@@ -90,7 +90,7 @@
 			in:fly={{ y: -5, duration: 200 }}
 			out:fly|local={{ y: 5, duration: 200 }}
 		>
-			<h3>{assignment.$.Measure}</h3>
+			<!-- <h3>{assignment.$.Measure}</h3>
 			<div class="row info">
 				<p class="name">{assignment.$.Type}</p>
 				<p class="date">{assignment.$.DueDate}</p>
@@ -134,7 +134,8 @@
 					<button on:click={cancel}>Cancel</button>
 					<button type="submit">Save</button>
 				</div>
-			</form>
+			</form> -->
+			<h3>Assignment Editing is coming soon!</h3>
 		</div>
 	</div>
 {/if}
