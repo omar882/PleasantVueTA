@@ -153,7 +153,7 @@
 		<div class="scroll">
 			<h2>Summary</h2>
 			<table>
-				{#each (Object.entries(course?.scoreTypes)) as [name, type]}
+				{#each (Object.entries(course?.scoreTypes || {})) as [name, type]}
 					<tr>
 						<td class="type-name">{name}</td>
 						<td class="type-points" style={type.style}>
@@ -167,7 +167,7 @@
 					<td class="type-name">Total</td>
 					<td class="type-points" />
 					<td class="type-score" style={course.style}>
-						{course.scorePercent?.toFixed(1) < 0 ? "—" : course.scorePercent.toFixed(1)}%
+						{(course?.scorePercent == NaN || course.scorePercent?.toFixed(1) < 0) ? "—" : course.scorePercent.toFixed(1)}%
 					</td>
 					<td class="type-weight">100.0%</td>
 				</tr>

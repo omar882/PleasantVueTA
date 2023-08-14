@@ -166,7 +166,7 @@ export async function parseData(session, oldAssignments) {
 				let totalWeight = 0
 				for (let type of Object.values(course.scoreTypes)) {
 					if (type.total === 0) {
-						type.weight = 0
+						// type.weight = 0
 					}
 					totalWeight += type.weight
 				}
