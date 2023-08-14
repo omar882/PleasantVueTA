@@ -46,14 +46,20 @@ export async function parseData(session, oldAssignments) {
 				// } // new xml2js = always array
 
 				course.scoreTypes = {}
+				// debugger;
+
 				if (course.Marks[0].Mark[0].GradeCalculationSummary[0].AssignmentGradeCalc) {
+					// debugger;
 					for (let type of course.Marks[0].Mark[0].GradeCalculationSummary[0]
 						.AssignmentGradeCalc) {
-						if (parseInt(type.$.Weight) !== 100.0) {
+						// console.log(type, parseInt(type.$.Weight));
+						const weight = parseInt(type.$.Weight)
+						
+						if (weight !== 100.0) {
 							course.scoreTypes[type.$.Type] = {
 								score: 0,
 								total: 0,
-								weight: parseInt(type.$.Weight)
+								weight,
 							}
 						}
 					}
@@ -113,9 +119,9 @@ export async function parseData(session, oldAssignments) {
 								: '0.0%'
 
 							if (course.Marks[0].Mark[0].GradeCalculationSummary[0].AssignmentGradeCalc) {
-								if (course.scoreTypes[assignment.Type]) {
-									course.scoreTypes[assignment.Type].score += assignment.$.points
-									course.scoreTypes[assignment.Type].total += assignment.total
+								if (course.scoreTypes[assignment.$.Type]) {
+									course.scoreTypes[assignment.$.Type].score += assignment.$.points
+									course.scoreTypes[assignment.$.Type].total += assignment.total
 								}
 							} else {
 								course.scoreTypes.All.score += assignment.$.points
