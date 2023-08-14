@@ -80,7 +80,6 @@
 				Login
 			{/if}
 		</button>
-		<p style="text-align: center">We are working with the district to bring PleasantVue to everyone. Many teachers, admin, and students across the district have loved what PleasantVue brings to the community. PleasantVue is not availble on school networks, but it will be soon. <a href="https://forms.gle/4eahJESnnso5RwLV8" target="_blank">Click here for an availability email.</a></p>
 	</form>
 </div>
 
