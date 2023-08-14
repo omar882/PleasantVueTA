@@ -301,8 +301,12 @@
 
 	td {
 		padding-top: $spacing-small;
-		padding-bottom: $spacing-small;
+		padding-bottom: 0;
 		position: relative;
+	}
+
+	.assignment td {
+		padding-bottom: $spacing-small;
 	}
 
 	.type-name {
