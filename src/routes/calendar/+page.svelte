@@ -40,12 +40,12 @@
     }
 
     function getPeriodName(periodName, idx) {
-        if (!(session?.gradebook?.Courses?.[0]?.Course)) {
-            return periodName; 
+        if (!($session?.gradebook?.Courses?.[0]?.Course)) {
+            return periodName;
         }
         for (const course of $session.gradebook.Courses[0].Course) {
             if (course.index == (periodName[0] - 1)) {
-                return course.$.Title;
+                return periodName[0] + ". " + course.$.Title;
             }
         }
         return periodName;
