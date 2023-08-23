@@ -28,6 +28,7 @@ export async function parseData(session, oldAssignments) {
 			course.chartData = []
 
 			course.fourPoint = false
+			course.scoreString = course.Marks[0].Mark[0].$.CalculatedScoreString
 			if (course.Marks[0].Mark && course.Marks[0].Mark[0].$.CalculatedScoreString !== 'N/A') {
 				if (
 					course.Marks[0].Mark[0].Assignments[0].Assignment[0] &&
@@ -180,7 +181,6 @@ export async function parseData(session, oldAssignments) {
 
 			course.scorePercent = -1
 			course.score = '-'
-			course.scoreString = course.Marks[0].Mark[0] ? course.Marks[0].Mark[0].CalculatedScoreString : 'N/A'
 			if (course.chartData.length > 0) {
 				course.scorePercent = course.chartData[course.chartData.length - 1].y
 				course.score = course.scorePercent.toFixed(1)
@@ -190,7 +190,6 @@ export async function parseData(session, oldAssignments) {
 					course.score += '%'
 				}
 				grades.push(course.scorePercent)
-				course.scoreString = percentToLetter(course.scorePercent)
 			}
 			course.color = getColor(course.scorePercent)
 			course.style = `color: ${course.color};`
