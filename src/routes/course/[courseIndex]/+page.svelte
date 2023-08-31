@@ -24,7 +24,7 @@
 		addColorStops(gradient)
 
 		chart.options.scales.y.suggestedMax = course.fourPoint ? 4.0 : 100
-		chart.options.scales.y.suggestedMin = course.fourPoint ? 1.0 : 60
+		chart.options.scales.y.suggestedMin = course.fourPoint ? 1.0 : 90
 		chart.update()
 	}
 
@@ -66,7 +66,7 @@
 				datasets: [
 					{
 						borderColor: getGradient,
-						tension: 0.3,
+						tension: 0,
 						data: course.chartData
 					}
 				]
@@ -107,23 +107,26 @@
 						ticks: {
 							precision: 0,
 							callback: function (value) {
-								return new Date(value * 8.64e7).toLocaleDateString('en-US', {
-									month: 'short',
+								let date = new Date(value * 8.64e7);
+								let showToday = (new Date(course.chartData[0].x).getDate() - date.getDate()) % 2 === 0;
+								return showToday ? new Date(value * 8.64e7).toLocaleDateString('en-US', {
+									month: 'numeric',
 									day: 'numeric',
 									timeZone: 'UTC'
-								})
+								}) : '';
 							}
 						}
 					},
 					y: {
 						type: 'linear',
 						suggestedMax: course.fourPoint ? 4.0 : 100,
-						suggestedMin: course.fourPoint ? 1.0 : 60,
+						suggestedMin: course.fourPoint ? 1.0 : 90,
 						grid: {
 							color: getComputedStyle(chartCanvas).getPropertyValue('--bg-color-3')
 						}
 					}
-				}
+				},
+				bezierCurve: false
 			}
 		})
 	})
