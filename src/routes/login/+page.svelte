@@ -24,15 +24,16 @@
 			method: 'POST',
 			body: JSON.stringify({
 				username,
-				password,
-			}),
+				password
+			})
 		})
 		if (res.ok) {
 			const json = await res.json()
 			let { student, periods, currentPeriod } = json
 			$session = {
 				user: {
-					username, password,
+					username,
+					password
 				},
 				student,
 				periods,
@@ -62,15 +63,39 @@
 	</header>
 	<form on:submit|preventDefault={login}>
 		<h2>Login</h2>
-		<p style="text-align: center">PUSD has not directly enabled login without Google yet, so to get access, reset your password <a target="_blank" href="https://ca-pleas-psv.edupoint.com/PXP2_Password_Help.aspx?S=Y">here</a>. Then, use your email address as the username and your password to login here, and you won't need to login with Google again!</p>
-		<input type="text" autocorrect="off" autocapitalize="none" placeholder="Username" bind:value={username} />
-		<input type="password" autocorrect="off" autocapitalize="none" placeholder="Password" bind:value={password} />
+		<p style="text-align: center">
+			PUSD has not directly enabled login without Google yet, so to get access, reset your
+			password <a
+				target="_blank"
+				href="https://ca-pleas-psv.edupoint.com/PXP2_Password_Help.aspx?S=Y">here</a
+			>. Then, use your email address as the username and your password to login here, and you
+			won't need to login with Google again!
+		</p>
+		<input
+			type="text"
+			autocorrect="off"
+			autocapitalize="none"
+			placeholder="Username"
+			bind:value={username}
+		/>
+		<input
+			type="password"
+			autocorrect="off"
+			autocapitalize="none"
+			placeholder="Password"
+			bind:value={password}
+		/>
 		<div class="error">
 			{#if error}
 				{error}
 			{:else}
 				Your login info will not be saved anywhere except your browser.<br />
-				You can see all the code on <a rel="noreferrer" target="_blank" href="https://github.com/PleasantVue/PleasantVue">GitHub</a>.
+				You can see all the code on
+				<a
+					rel="noreferrer"
+					target="_blank"
+					href="https://github.com/PleasantVue/PleasantVue">GitHub</a
+				>.
 			{/if}
 		</div>
 		<button type="submit">
@@ -91,9 +116,8 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content min-content;
 		gap: 10px;
-		
 	}
-	
+
 	.header {
 		@include box;
 		padding: 5px;

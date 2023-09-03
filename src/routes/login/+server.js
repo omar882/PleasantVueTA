@@ -1,47 +1,46 @@
-import { login } from '$lib/server/studentvue.js';
+import { login } from '$lib/server/studentvue.js'
 import cookie from 'cookie'
-import { parseStringPromise } from "xml2js"
-import { env } from "$env/dynamic/public"
-import {encode} from "html-entities";
+import { parseStringPromise } from 'xml2js'
+import { env } from '$env/dynamic/public'
+import { encode } from 'html-entities'
 
 const encodeXml = (text) => {
 	return encode(text, {
-		level: "xml",
+		level: 'xml'
 	})
 }
 
 export async function POST({ request }) {
-	//console.log('post login')
+	console.log('post login')
 
-	const body = await request.json();
+	const body = await request.json()
 	let result
 	try {
-		let client = await login(env.PUBLIC_SYNERGY_BACKEND, encodeXml(body.username), encodeXml(body.password), {}, parseStringPromise);
+		let client = await login(
+			env.PUBLIC_SYNERGY_BACKEND,
+			encodeXml(body.username),
+			encodeXml(body.password),
+			{},
+			parseStringPromise
+		)
 		result = await Promise.all([
-			
-			client.getStudentInfo().then(async (value) =>
-				{
-					return value.StudentInfo;
-				}
-			),
-			client.getChildList().then(async (value) => 
-				{
-					return value.ChildList;
-				}
-			),
-			client.getGradebook(0).then(async (value) =>
-				{
-					return value.Gradebook;
-				}
-			)
+			client.getStudentInfo().then(async (value) => {
+				return value.StudentInfo
+			}),
+			client.getChildList().then(async (value) => {
+				return value.ChildList
+			}),
+			client.getGradebook(0).then(async (value) => {
+				return value.Gradebook
+			})
 			// client.getGradebook(0).then((value) => JSON.parse(value).Gradebook),
 			// client.getGradebook(1).then((value) => JSON.parse(value).Gradebook),
 			// client.getGradebook(2).then((value) => JSON.parse(value).Gradebook),
 			// client.getGradebook(3).then((value) => JSON.parse(value).Gradebook)
-		]);
+		])
 		//console.log(result);
 		if (!result[0]) {
-			console.log("Error in login!");
+			console.log('Error in login!')
 			throw new Error('No data returned')
 		}
 	} catch (error) {
@@ -49,7 +48,7 @@ export async function POST({ request }) {
 			status: 401
 		})
 	}
-	const currentPeriod = 0;
+	const currentPeriod = 0
 	// result[1].ReportingPeriods[0].ReportPeriod -
 	// 	1 -
 	// 	result[1].ReportingPeriods[0].ReportPeriod.slice()

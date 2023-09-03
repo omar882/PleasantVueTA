@@ -2,10 +2,10 @@
 	import { session } from '$lib/stores/session.js'
 	import PeriodSelect from '$lib/components/PeriodSelect.svelte'
 
-	let missingAssignments = ($session?.gradebook?.assignments || []).filter(assignment => {
-		if (assignment.$.Score == "Not Due") return false;
-		return assignment?.score?.toString().startsWith("0")
-		}).length
+	let missingAssignments = ($session?.gradebook?.assignments || []).filter((assignment) => {
+		if (assignment.$.Score == 'Not Due') return false
+		return assignment?.score?.toString().startsWith('0')
+	}).length
 </script>
 
 <svelte:head>
@@ -24,23 +24,38 @@
 			</div>
 			<div class="grade-stats-row">
 				<span>Average grade</span>
-				<span>{$session?.gradebook?.average || "??"}</span>
+				<span>{$session?.gradebook?.average || '??'}</span>
 			</div>
 			<div class="grade-stats-row">
 				<span>Average grade this week</span>
-				<span>{$session?.gradebook?.week?.average || "??"}</span>
+				<span>{$session?.gradebook?.week?.average || '??'}</span>
 			</div>
 		</table>
 	</div>
 	<div class="content">
 		<table>
-			{#each ($session?.gradebook?.Courses?.[0]?.Course || []) as course, index}
-				<a class="row-link" href={'/course/' + index}>
-					<td class="course-name">{course.$.Period === "10" ? "ACCESS" : course.$.Period === "0" ? "A" : course.$.Period} — {course.$.Title} — {course.$.Staff}</td>
+			{#each $session?.gradebook?.Courses?.[0]?.Course || [] as course, index}
+				<a
+					class="row-link"
+					href={course.$.Title === 'TA Teacher' || course.$.Title.includes('Access')
+						? ''
+						: '/course/' + index}
+				>
+					<td class="course-name"
+						>{course.$.Period === '10'
+							? 'ACCESS'
+							: course.$.Period === '0'
+							? 'A'
+							: course.$.Period} — {course.$.Title} — {course.$.Staff}</td
+					>
 					<td class="course-staff">{course.$.Staff} </td>
 					<td class="course-room">{course.$.Room} </td>
-					<td class="course-grade" style={course.style}>{course.scoreString || "-"}</td>
-					<td class="course-score" style={course.style}>{course.score} </td>
+					<td class="course-grade" style={course.style}>{course.scoreString || '-'}</td>
+					<td class="course-score" style={course.style}
+						>{course.$.Title === 'TA Teacher' || course.$.Title.includes('Access')
+							? '-'
+							: course.score}
+					</td>
 				</a>
 			{/each}
 		</table>
